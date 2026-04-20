@@ -1,0 +1,193 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TwoLayerModel from '../components/diagrams/TwoLayerModel.astro';
+import Callout from '../components/content/Callout.astro';
+import NewsletterCTA from '../components/sections/NewsletterCTA.astro';
+
+const talkingPoints = [
+  {
+    n: '01',
+    title: 'Agentic Relations produces a direct causal metric.',
+    body:
+      'The First-Attempt Integration Success Rate connects DevRel work directly to adoption outcomes. When the Agent Champion program improves FAISR by ten points, AI-assisted developers succeed with the platform at a higher rate. The conversation with leadership changes.',
+  },
+  {
+    n: '02',
+    title: 'The Amdahl tax argument wins the engineering conversation.',
+    body:
+      'When the Agent Champion can show 70% of integration time is consumed by human-speed tool interactions — and a competitor has lowered that fraction — DevRel has an engineering argument backed by measurable data.',
+  },
+  {
+    n: '03',
+    title: 'The recipe library is the encoded institutional memory the field has always needed.',
+    body:
+      'Senior DevRel practitioners carry enormous tacit knowledge that walks out the door when they leave. The recipe library encodes that knowledge into compounding institutional capital — accessible to every AI tool a developer might use.',
+  },
+  {
+    n: '04',
+    title: 'Human community patterns become more valuable, not less.',
+    body:
+      'As AI floods every content channel, the patterns that require genuine human presence — conference sessions, office hours, community events — become the scarcest signal in the ecosystem. Agentic Relations creates a separate layer, freeing human-facing programs to invest in the things only humans can provide.',
+  },
+  {
+    n: '05',
+    title: 'The field is splitting, and Agentic Relations names the split.',
+    body:
+      'DevRel teams everywhere are discovering that some of their work has shifted toward AI-adjacent tasks — without a name, career path, or measurement framework. Agentic Relations names it, structures it, and gives practitioners a vocabulary and a professional community.',
+  },
+];
+
+const objections = [
+  {
+    q: '"We already ship an MCP server."',
+    a: 'MCP makes the platform accessible to agents. It does not make it fast enough — and it does not make it accurate enough. Measure the fraction of integration time that is tool interaction versus model reasoning. Measure the first-attempt success rate. The MCP server is the starting point, not the finish line.',
+  },
+  {
+    q: '"We don\'t have budget for new roles."',
+    a: 'Start with one day per week from an existing practitioner, dedicated to the Agent Champion monitoring function. The first controlled test suite run will surface findings that justify the investment. Most teams that run the test for the first time discover their FAISR is significantly lower than they assumed.',
+  },
+  {
+    q: '"Our developers don\'t use AI tools that heavily."',
+    a: 'The silent majority is the measurement problem. Developers who use AI tools to integrate and fail don\'t generate support tickets — they leave. Run one controlled test suite against your top five integration tasks and measure what you find. The number is almost always surprising.',
+  },
+  {
+    q: '"This is an engineering problem, not a DevRel problem."',
+    a: 'DevRel has always influenced documentation and integration design. Agentic Relations formalizes that influence and backs it with measurement. The Agent Champion\'s feedback loop to engineering is the same feedback loop DevRel has always run — with better data.',
+  },
+];
+---
+
+<PageLayout
+  title="Agentic Relations for DevRel Practitioners"
+  description="What Agentic Relations means for practicing DevRel professionals — five talking points, the objections you'll face, and what to do in week one."
+>
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">For DevRel practitioners</p>
+    <h1 class="max-w-3xl">Agentic Relations for DevRel Practitioners</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      The relevance crisis is real. The name for what's happening is
+      Agentic Relations. Here's how to lead the conversation — and what
+      to do in week one, with no new budget.
+    </p>
+  </section>
+
+  <section class="container-prose pb-12">
+    <h2>The crisis you can feel but might not have named</h2>
+    <p class="mt-5">
+      Something has shifted in DevRel, and most practitioners can feel it
+      without being able to name it precisely.
+    </p>
+    <p class="mt-5">
+      AI tools are flooding every content channel. Documentation that took
+      days to write can be generated in hours. Tutorials that required real
+      technical expertise are being produced by developers who point AI
+      tools at API references. Blog posts, guides, quick starts — the
+      traditional content output of DevRel — are available at a price
+      approaching zero.
+    </p>
+    <p class="mt-5">
+      This doesn't make DevRel obsolete. But it does change where DevRel's
+      value concentrates. The execution layer is being automated. The
+      judgment layer is not. And a new layer has appeared that most DevRel
+      programs aren't serving at all: the agent ecosystem layer, where AI
+      coding tools either produce correct integrations with a platform or
+      don't — silently, at scale, without generating any traditional
+      feedback signals.
+    </p>
+    <p class="mt-5">
+      Agentic Relations names the work that DevRel needs to do at that
+      layer.
+    </p>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="container-prose px-0 mb-10">
+        <h2>Five talking points for your team and your leadership</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {
+          talkingPoints.map((t) => (
+            <div class="border border-border rounded-xl bg-surface p-6">
+              <p class="font-mono text-primary font-bold text-sm mb-2">{t.n}</p>
+              <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
+                {t.title}
+              </h3>
+              <p class="text-body text-sm leading-relaxed">{t.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>The two-layer operating model</h2>
+      <p class="mt-5">
+        Agentic Relations doesn't replace the human-facing work of DevRel.
+        It runs alongside it as a second operating track — with its own
+        practitioners, metrics, and time horizons, but sharing platform
+        expertise and leadership.
+      </p>
+    </div>
+    <TwoLayerModel />
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>Objections you'll face — and responses</h2>
+      <div class="mt-8 space-y-6">
+        {
+          objections.map((o) => (
+            <div class="border-l-4 border-amber bg-amber-surface rounded-r-lg p-5">
+              <p class="font-semibold text-heading">{o.q}</p>
+              <p class="text-body mt-3 leading-relaxed">{o.a}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>What to do in week one</h2>
+      <p class="mt-5">
+        No new budget required. No new headcount required. One decision
+        required: designate one practitioner as the responsible owner of
+        agent ecosystem monitoring. Give them one day per week. Ask them to
+        do three things:
+      </p>
+
+      <Callout type="primary" label="Step 1">
+        Write a list of the <strong>10 most common integration tasks</strong>
+        developers ask for help with. These are your canonical tasks.
+      </Callout>
+
+      <Callout type="primary" label="Step 2">
+        For each task, write the <strong>median prompt</strong> — what a
+        reasonably competent developer would actually type into Copilot or
+        Claude Code. Not the best prompt. The typical one.
+      </Callout>
+
+      <Callout type="primary" label="Step 3">
+        Run those prompts through <strong>two AI tools</strong>. Score the
+        outputs using the rubric from the Measurement page. Document the
+        scores.
+      </Callout>
+
+      <p class="mt-6">
+        That's your baseline. You now have more signal about agent
+        ecosystem health than anything in your current dashboard. Everything
+        else — automation, broader tooling, full recipe library — is built
+        on top of this baseline.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-site pb-20">
+    <NewsletterCTA />
+  </section>
+</PageLayout>

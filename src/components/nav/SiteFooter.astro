@@ -1,0 +1,83 @@
+---
+const year = new Date().getFullYear();
+
+const groups = [
+  {
+    heading: 'Read',
+    links: [
+      { href: '/what-is-agentic-relations/', label: 'What Is Agentic Relations' },
+      { href: '/the-amdahl-tax/', label: 'The Amdahl Tax' },
+      { href: '/devrel-patterns-reframed/', label: 'The 37 Patterns Reframed' },
+      { href: '/new-roles/', label: 'New Roles' },
+      { href: '/measurement/', label: 'Measurement' },
+    ],
+  },
+  {
+    heading: 'Apply',
+    links: [
+      { href: '/for-devrel-teams/', label: 'For DevRel Teams' },
+      { href: '/for-companies/', label: 'For Companies' },
+      { href: '/essays/', label: 'Essays' },
+      { href: '/newsletter/', label: 'Newsletter' },
+    ],
+  },
+  {
+    heading: 'About',
+    links: [
+      { href: '/about/', label: 'Chris Woodruff' },
+      { href: '/about/#speaking', label: 'Speaking' },
+      { href: 'https://ecosynt.io', label: 'EcoSynt', external: true },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-border bg-surface mt-24">
+  <div class="container-site py-14">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-1">
+        <a href="/" class="flex items-center gap-2 no-underline">
+          <span
+            class="inline-flex items-center justify-center h-9 w-9 rounded-md bg-primary text-white font-bold font-mono text-sm"
+            >AR</span
+          >
+          <span class="text-heading font-semibold tracking-tight">Agentic Relations</span>
+        </a>
+        <p class="text-muted text-sm mt-4 leading-relaxed">
+          The canonical reference for the discipline of Agentic Relations — where
+          Developer Relations meets the AI-agent era.
+        </p>
+      </div>
+
+      {
+        groups.map((g) => (
+          <div>
+            <h3 class="text-heading text-sm font-semibold uppercase tracking-wider mb-4">
+              {g.heading}
+            </h3>
+            <ul class="space-y-2">
+              {g.links.map((l) => (
+                <li>
+                  <a
+                    href={l.href}
+                    class="text-body hover:text-primary text-sm no-underline"
+                    {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm text-muted">
+      <p>&copy; {year} Chris Woodruff. All rights reserved.</p>
+      <p class="font-mono text-xs">
+        agenticairelations.com
+      </p>
+    </div>
+  </div>
+</footer>

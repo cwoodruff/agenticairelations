@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  status: 'gains-layer' | 'rewrite' | 'more-valuable';
+  chapterRef?: number | string;
+}
+
+const { name, status, chapterRef } = Astro.props;
+
+const badge = {
+  'gains-layer': { label: 'Gains agent layer', class: 'bg-primary-surface text-primary' },
+  rewrite: { label: 'Requires rewrite', class: 'bg-amber-surface text-amber' },
+  'more-valuable': { label: 'Grows more valuable', class: 'bg-purple-surface text-purple' },
+};
+---
+
+<div
+  class="flex items-start gap-3 p-3 border border-border rounded-lg hover:border-primary transition-colors bg-surface"
+>
+  {
+    chapterRef && (
+      <span class="text-muted font-mono text-xs mt-0.5 w-6 shrink-0">
+        {chapterRef}
+      </span>
+    )
+  }
+  <div class="flex-1">
+    <p class="font-medium text-heading text-sm">{name}</p>
+    <span
+      class={`inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium ${badge[status].class}`}
+    >
+      {badge[status].label}
+    </span>
+  </div>
+</div>

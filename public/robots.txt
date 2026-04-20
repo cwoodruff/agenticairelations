@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agenticairelations.com/sitemap-index.xml

@@ -1,0 +1,22 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteNav from '../components/nav/SiteNav.astro';
+import SiteFooter from '../components/nav/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogType?: string;
+  ogImage?: string;
+}
+
+const props = Astro.props;
+---
+
+<BaseLayout {...props}>
+  <SiteNav />
+  <main id="main">
+    <slot />
+  </main>
+  <SiteFooter />
+</BaseLayout>

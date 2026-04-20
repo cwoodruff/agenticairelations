@@ -1,0 +1,76 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/what-is-agentic-relations/', label: 'What Is It' },
+  { href: '/devrel-patterns-reframed/', label: 'The Patterns' },
+  { href: '/new-roles/', label: 'New Roles' },
+  { href: '/measurement/', label: 'Measurement' },
+  { href: '/essays/', label: 'Essays' },
+  { href: '/about/', label: 'About' },
+];
+
+const isActive = (href: string) =>
+  pathname === href || pathname === href.replace(/\/$/, '');
+---
+
+<header class="border-b border-border bg-bg/90 backdrop-blur sticky top-0 z-40">
+  <div class="container-site flex items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-2 no-underline" aria-label="Agentic Relations home">
+      <span
+        class="inline-flex items-center justify-center h-9 w-9 rounded-md bg-primary text-white font-bold font-mono text-sm"
+        >AR</span
+      >
+      <span class="text-heading font-semibold tracking-tight">Agentic Relations</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class:list={[
+              'px-3 py-2 text-sm rounded-md no-underline transition-colors',
+              isActive(l.href)
+                ? 'text-primary font-semibold bg-primary-surface'
+                : 'text-body hover:text-primary hover:bg-primary-surface/60',
+            ]}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <details class="md:hidden relative">
+      <summary
+        class="list-none cursor-pointer p-2 -mr-2 text-heading"
+        aria-label="Open menu"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </summary>
+      <nav
+        class="absolute right-0 mt-2 w-64 bg-surface border border-border rounded-lg shadow-md p-2 flex flex-col"
+        aria-label="Mobile"
+      >
+        {
+          links.map((l) => (
+            <a
+              href={l.href}
+              class:list={[
+                'px-3 py-2 text-sm rounded-md no-underline',
+                isActive(l.href)
+                  ? 'text-primary font-semibold bg-primary-surface'
+                  : 'text-body hover:bg-primary-surface/60',
+              ]}
+            >
+              {l.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+  </div>
+</header>

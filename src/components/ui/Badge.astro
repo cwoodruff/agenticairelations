@@ -1,0 +1,20 @@
+---
+interface Props {
+  variant?: 'primary' | 'amber' | 'purple' | 'muted';
+}
+
+const { variant = 'primary' } = Astro.props;
+
+const styles = {
+  primary: 'bg-primary-surface text-primary',
+  amber: 'bg-amber-surface text-amber',
+  purple: 'bg-purple-surface text-purple',
+  muted: 'bg-bg text-muted border border-border',
+};
+---
+
+<span
+  class={`inline-block text-xs font-medium px-2 py-0.5 rounded-full ${styles[variant]}`}
+>
+  <slot />
+</span>

@@ -1,0 +1,72 @@
+---
+// Diagram 4 — The Two-Layer DevRel Operating Model
+---
+
+<figure class="my-10">
+  <svg
+    role="img"
+    aria-labelledby="twoLayerTitle twoLayerDesc"
+    viewBox="0 0 680 380"
+    class="w-full h-auto max-w-3xl mx-auto"
+  >
+    <title id="twoLayerTitle">The Two-Layer DevRel Operating Model</title>
+    <desc id="twoLayerDesc">
+      Two parallel horizontal lanes: Human Relations on top, Agent Relations on bottom,
+      with bidirectional feedback between them and shared and distinct attributes listed
+      alongside.
+    </desc>
+
+    <defs>
+      <marker id="two-layer-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="#5F5E5A" />
+      </marker>
+    </defs>
+
+    <!-- Human Relations Lane (teal) -->
+    <g>
+      <rect x="30" y="30" width="620" height="120" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2" />
+      <text x="50" y="58" font-family="Inter, sans-serif" font-weight="700" font-size="15" fill="#0F6E56">
+        Human Relations Layer
+      </text>
+      <g font-family="Inter, sans-serif" font-size="12" fill="#1A1A18">
+        <text x="50" y="90">Ambassadors · Community · Events · Office Hours · Content</text>
+        <text x="50" y="112">Metric: reach, engagement, NPS</text>
+        <text x="50" y="134">Practitioners: Developer Advocates, Community Managers</text>
+      </g>
+    </g>
+
+    <!-- Agent Relations Lane (purple) -->
+    <g>
+      <rect x="30" y="210" width="620" height="120" rx="12" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="50" y="238" font-family="Inter, sans-serif" font-weight="700" font-size="15" fill="#3C3489">
+        Agent Relations Layer
+      </text>
+      <g font-family="Inter, sans-serif" font-size="12" fill="#1A1A18">
+        <text x="50" y="270">Agent Champions · Recipe Library · FAISR testing · MCP</text>
+        <text x="50" y="292">Metric: FAISR, Amdahl ceiling, recipe freshness</text>
+        <text x="50" y="314">Practitioners: Agent Champions, Doc Architects, API Experience Designers</text>
+      </g>
+    </g>
+
+    <!-- Feedback arrows between lanes -->
+    <g stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="6 4" fill="none" marker-end="url(#two-layer-arrow)">
+      <path d="M250 150 L250 210" />
+      <path d="M430 210 L430 150" />
+    </g>
+    <text x="340" y="185" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5F5E5A" font-style="italic">
+      Feedback flows both ways
+    </text>
+
+    <!-- Footer captions -->
+    <g font-family="Inter, sans-serif" font-size="11" fill="#5F5E5A">
+      <text x="30" y="356" font-weight="600" fill="#1A1A18">Shared:</text>
+      <text x="82" y="356">platform expertise, leadership, developer empathy</text>
+
+      <text x="430" y="356" font-weight="600" fill="#1A1A18">Distinct:</text>
+      <text x="480" y="356">skills, metrics, time horizons, practitioners</text>
+    </g>
+  </svg>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    Two parallel tracks, feedback between them, one shared leadership layer.
+  </figcaption>
+</figure>

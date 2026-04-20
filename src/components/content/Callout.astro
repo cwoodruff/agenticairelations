@@ -1,0 +1,33 @@
+---
+interface Props {
+  type?: 'primary' | 'amber' | 'purple';
+  label?: string;
+}
+
+const { type = 'primary', label } = Astro.props;
+
+const styles = {
+  primary: 'border-primary bg-primary-surface',
+  amber: 'border-amber bg-amber-surface',
+  purple: 'border-purple bg-purple-surface',
+};
+
+const labelStyles = {
+  primary: 'text-primary',
+  amber: 'text-amber',
+  purple: 'text-purple',
+};
+---
+
+<aside class={`border-l-4 ${styles[type]} rounded-r-lg p-5 my-6`}>
+  {
+    label && (
+      <p class={`font-mono font-bold text-xs uppercase tracking-widest mb-2 ${labelStyles[type]}`}>
+        {label}
+      </p>
+    )
+  }
+  <div class="text-body leading-relaxed">
+    <slot />
+  </div>
+</aside>

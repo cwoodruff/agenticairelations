@@ -1,0 +1,17 @@
+---
+interface Props {
+  term: string;
+}
+
+const { term } = Astro.props;
+---
+
+<div class="border-2 border-primary rounded-xl p-8 my-8 bg-primary-surface">
+  <p class="text-primary font-mono text-sm font-bold mb-3 uppercase tracking-widest">
+    Definition
+  </p>
+  <h2 class="text-heading text-2xl font-bold mb-4">{term}</h2>
+  <div class="text-body text-lg leading-relaxed">
+    <slot />
+  </div>
+</div>

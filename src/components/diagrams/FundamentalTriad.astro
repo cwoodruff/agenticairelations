@@ -1,0 +1,93 @@
+---
+// Diagram 1 — The Extended Fundamental Triad
+// Inner triangle (Community, Company, Customer) with three outer extension nodes.
+---
+
+<figure class="my-10">
+  <svg
+    role="img"
+    aria-labelledby="triadTitle triadDesc"
+    viewBox="0 0 680 520"
+    class="w-full h-auto max-w-3xl mx-auto"
+  >
+    <title id="triadTitle">The Extended Fundamental Triad</title>
+    <desc id="triadDesc">
+      The original Developer Relations Fundamental Triad — Community, Company, Customer —
+      shown as an inner triangle with three outer extension nodes representing the
+      Agentic Relations additions: Agent Ecosystem, Signal Loss / New Metrics, and the
+      AI-Assisted Buyer.
+    </desc>
+
+    <defs>
+      <marker id="triad-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="#5F5E5A" />
+      </marker>
+    </defs>
+
+    <!-- Dashed connectors (drawn first so they appear beneath nodes) -->
+    <g stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="6 4" fill="none" marker-end="url(#triad-arrow)">
+      <line x1="340" y1="120" x2="340" y2="50" />
+      <line x1="200" y1="360" x2="95" y2="430" />
+      <line x1="480" y1="360" x2="585" y2="430" />
+    </g>
+
+    <!-- Inner triangle -->
+    <polygon
+      points="340,140 200,360 480,360"
+      fill="#E1F5EE"
+      stroke="#0F6E56"
+      stroke-width="2.5"
+    />
+
+    <!-- Inner triangle vertex labels -->
+    <g font-family="Inter, sans-serif" font-weight="700" fill="#1A1A18" text-anchor="middle">
+      <text x="340" y="190" font-size="18">Community</text>
+      <text x="220" y="345" font-size="18">Company</text>
+      <text x="460" y="345" font-size="18">Customer</text>
+    </g>
+
+    <!-- Center label -->
+    <g text-anchor="middle" font-family="Inter, sans-serif">
+      <text x="340" y="258" fill="#0F6E56" font-size="14" font-weight="700" letter-spacing="1">
+        FUNDAMENTAL TRIAD
+      </text>
+      <text x="340" y="282" fill="#5F5E5A" font-size="12">
+        Extended for Agentic Relations
+      </text>
+    </g>
+
+    <!-- Extension node — Community → Agent Ecosystem -->
+    <g>
+      <rect x="230" y="10" width="220" height="44" rx="8" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="340" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#3C3489">
+        Agent Ecosystem
+      </text>
+    </g>
+
+    <!-- Extension node — Company → Signal Loss / New Metrics -->
+    <g>
+      <rect x="10" y="440" width="220" height="60" rx="8" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="120" y="466" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#3C3489">
+        Signal Loss
+      </text>
+      <text x="120" y="485" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3C3489">
+        New Metrics Required
+      </text>
+    </g>
+
+    <!-- Extension node — Customer → AI-Assisted Buyer -->
+    <g>
+      <rect x="450" y="440" width="220" height="60" rx="8" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="560" y="466" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#3C3489">
+        AI-Assisted Buyer
+      </text>
+      <text x="560" y="485" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3C3489">
+        Evaluation by agent
+      </text>
+    </g>
+  </svg>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    The Fundamental Triad, extended. Each human-centered vertex gains a
+    parallel agent-era extension.
+  </figcaption>
+</figure>

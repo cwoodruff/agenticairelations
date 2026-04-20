@@ -1,0 +1,309 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import RoleCard from '../components/content/RoleCard.astro';
+import AgentChampionFlow from '../components/diagrams/AgentChampionFlow.astro';
+import RecipeLibrary from '../components/diagrams/RecipeLibrary.astro';
+---
+
+<PageLayout
+  title="New Roles for Agentic Relations"
+  description="Three new practitioner roles that Agentic Relations requires — the Agent Champion, the Documentation Architect for agent consumption, and the API Experience Designer."
+>
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">Operational roles</p>
+    <h1 class="max-w-3xl">New Roles for Agentic Relations</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      Three practitioner roles — the Agent Champion, the Documentation
+      Architect for Agent Consumption, and the API Experience Designer.
+      Named, scoped, and measured.
+    </p>
+  </section>
+
+  <section class="container-prose pb-12">
+    <h2>The shift upstream</h2>
+    <p class="mt-5">
+      In the traditional DevRel model, value was created through production:
+      writing tutorials, giving talks, building demos, running events. The
+      skill was in execution. Agentic Relations changes where value
+      concentrates. As AI tools accelerate the production of content, the
+      binding constraint shifts from production to judgment. The judgment is
+      where value now accumulates.
+    </p>
+    <p class="mt-5">
+      This is Amdahl's Law applied to DevRel work itself. Scarcity migrates
+      upstream: from execution to review, from review to evaluation of
+      approaches, from evaluation to framing problems, from framing to
+      encoded institutional standards that everything else gets evaluated
+      against.
+    </p>
+    <p class="mt-5">
+      The three new roles Agentic Relations requires each operate primarily
+      at this upstream layer.
+    </p>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="grid md:grid-cols-3 gap-6">
+        <RoleCard
+          title="Agent Champion"
+          also="Also: Agent Liaison · AI Integration Steward"
+          color="primary"
+        >
+          <p>
+            Maintains the agent-consumable infrastructure that determines
+            whether AI coding tools produce correct integrations with the
+            platform. Monitors FAISR. Owns the recipe library. Files the
+            feedback that makes the platform structurally more agent-friendly.
+          </p>
+        </RoleCard>
+        <RoleCard
+          title="Documentation Architect for Agent Consumption"
+          also="Also: AI Documentation Strategist"
+          color="purple"
+        >
+          <p>
+            Optimizes documentation for machine retrieval and semantic
+            precision rather than human navigation. Thinks in chunking
+            strategy, RAG accuracy, and agent query patterns rather than
+            reader journey and progressive disclosure.
+          </p>
+        </RoleCard>
+        <RoleCard
+          title="API Experience Designer"
+          also="Also: Agent-Native API Strategist"
+          color="amber"
+        >
+          <p>
+            Audits the platform's API surface for agent-parseability. Makes
+            the case for agent-native investment. Influences error model
+            design, auth flow simplicity, rate limit calibration, and the
+            availability of machine-readable schemas.
+          </p>
+        </RoleCard>
+      </div>
+    </div>
+  </section>
+
+  <section id="agent-champion" class="section container-site">
+    <div class="container-prose px-0">
+      <p class="eyebrow mb-3">Role 01</p>
+      <h2>The Agent Champion</h2>
+      <p class="lead text-muted mt-5">
+        The Agent Champion maintains the agent-consumable infrastructure that
+        determines whether AI coding tools produce correct integrations with
+        the platform — monitoring success rates, maintaining the recipe
+        library, and feeding failures back to the platform engineering team.
+      </p>
+
+      <h3 class="mt-10">What they do day-to-day</h3>
+      <p class="mt-4">
+        <strong>Monitoring (continuous).</strong> The Agent Champion runs a
+        structured test suite weekly — directing multiple AI coding tools at
+        common integration tasks and scoring the output against a rubric. Did
+        the agent authenticate correctly? Did it use current API endpoints?
+        Did it handle the primary error states? Did it over-engineer? This
+        produces a FAISR score, tracked as a time series, broken down by
+        tool and by task.
+      </p>
+      <p class="mt-5">
+        <strong>Maintenance (triggered).</strong> When a new API version
+        ships, the Agent Champion audits all published recipes for breakage
+        and updates them before the old version is deprecated. When
+        monitoring surfaces a recurring failure, they produce a corrective
+        recipe and identify the doc gap that caused it.
+      </p>
+      <p class="mt-5">
+        <strong>Feedback (systematic).</strong> Recurring agent failures are
+        symptoms. Behind each is either a documentation ambiguity, an API
+        surface complexity, or a missing machine-readable schema. The Agent
+        Champion translates symptoms into specific, actionable improvement
+        requests for the platform engineering team — each quantified against
+        the Amdahl ceiling.
+      </p>
+    </div>
+
+    <AgentChampionFlow />
+
+    <div class="container-prose px-0">
+      <h3 class="mt-6">The recipe library</h3>
+      <p class="mt-4">
+        The Agent Champion's primary artifact is the recipe library: a
+        versioned collection of validated prompt recipes, MCP server
+        definitions, and structured integration examples. It is not
+        documentation in the traditional sense — it is designed for agent
+        retrieval, not human navigation. Semantically precise, answer-first,
+        with explicit error taxonomy.
+      </p>
+      <p class="mt-5">
+        Strategically, the recipe library is the platform's encoded
+        institutional taste. The accumulated judgment of every integration
+        failure, architectural decision, and edge case — made accessible to
+        every AI tool a developer might use. It compounds rather than
+        depreciates. It does not depend on any individual's continued
+        employment.
+      </p>
+    </div>
+
+    <RecipeLibrary />
+
+    <div class="container-prose px-0">
+      <h3>Skills profile</h3>
+      <p class="mt-4">
+        Deep platform expertise (non-negotiable) + systematic engineering
+        rigor + data analysis for error log interpretation + enough
+        understanding of AI tool behavior to diagnose prompt engineering
+        failures. This combination is currently rare. It describes the 20%
+        of Developer Advocates who already do this work informally and call
+        it "AI tool testing."
+      </p>
+    </div>
+  </section>
+
+  <section id="doc-architect" class="section section-alt">
+    <div class="container-prose">
+      <p class="eyebrow mb-3" style="color: #3C3489">Role 02</p>
+      <h2>The Documentation Architect for Agent Consumption</h2>
+      <p class="lead text-muted mt-5">
+        Optimizes documentation for machine retrieval and semantic precision
+        rather than human navigation — the technical writer equivalent who
+        thinks in chunking strategy, RAG accuracy, and agent query patterns.
+      </p>
+
+      <h3 class="mt-10">What distinguishes this from technical writing</h3>
+      <p class="mt-4">
+        Traditional technical writing optimizes for the human reader:
+        narrative flow, progressive disclosure, assumed prior knowledge,
+        clear headings that support skimming. A skilled technical writer
+        produces documentation a human can navigate efficiently.
+      </p>
+      <p class="mt-5">
+        The Documentation Architect for agent consumption optimizes for a
+        fundamentally different consumer. AI tools retrieve specific
+        sections as context for generation tasks. They don't read
+        progressively. Documentation that is beautifully structured for
+        humans can produce catastrophically bad agent context if:
+      </p>
+      <ul class="list-disc pl-6 mt-4 space-y-2 text-body">
+        <li>The precise answer to a specific integration question is buried inside a larger narrative</li>
+        <li>Ambiguous pronouns make it unclear which parameter or endpoint a sentence refers to</li>
+        <li>Error codes are described without explicit remediation paths</li>
+        <li>Deprecated patterns appear without immediate migration guidance</li>
+      </ul>
+      <p class="mt-5">
+        The Documentation Architect audits documentation against a set of
+        common agent queries, identifies which pages produce the highest
+        rate of agent errors when used as context, and redesigns those
+        pages for dual-audience consumption.
+      </p>
+
+      <h3 class="mt-10">Skills profile</h3>
+      <p class="mt-4">
+        Technical writing experience + understanding of how RAG systems
+        chunk and embed content + ability to think about documentation as a
+        retrieval corpus rather than a narrative + willingness to instrument
+        and measure documentation performance against agent query accuracy.
+      </p>
+    </div>
+  </section>
+
+  <section id="api-designer" class="section container-site">
+    <div class="container-prose px-0">
+      <p class="eyebrow mb-3" style="color: #854F0B">Role 03</p>
+      <h2>The API Experience Designer</h2>
+      <p class="lead text-muted mt-5">
+        Audits the platform's API surface for agent-parseability and makes
+        the case for agent-native investment — influencing error model
+        design, auth flow simplicity, rate limit calibration, and the
+        availability of machine-readable schemas.
+      </p>
+
+      <h3 class="mt-10">The problem they solve</h3>
+      <p class="mt-4">
+        Most APIs are designed for human developers. Error messages are
+        written to be readable. Auth flows are designed for session-based
+        human login. Rate limits are set at levels that prevent abuse by
+        human-speed calling. Response structures are optimized for human
+        comprehension over machine parsing.
+      </p>
+      <p class="mt-5">
+        AI agents interact with all of this at a fundamentally different
+        speed and with a fundamentally different tolerance for ambiguity.
+        "Invalid token — please re-authenticate" may be semantically opaque
+        to an agent that needs to map the error to a specific remediation
+        path. Rate limits calibrated for human-speed calling trigger
+        constantly when an AI agent is making rapid sequential calls.
+      </p>
+      <p class="mt-5">
+        The API Experience Designer sits at the intersection of DevRel and
+        platform engineering. They audit the API surface from the agent's
+        perspective, quantify the Amdahl tax imposed by each human-speed
+        design decision, and make the engineering case for agent-native
+        redesign — backed by adoption data and competitive benchmarking.
+      </p>
+
+      <h3 class="mt-10">Skills profile</h3>
+      <p class="mt-4">
+        Platform engineering credibility + DevRel orientation + deep
+        understanding of AI agent behavior + ability to translate adoption
+        data into engineering investment arguments. The rarest combination
+        of the three new roles.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>How the roles interact</h2>
+      <p class="mt-5">
+        The three roles form a feedback loop. The Agent Champion's
+        monitoring surfaces integration failures. The Documentation
+        Architect addresses failures caused by documentation quality. The
+        API Experience Designer addresses failures caused by API surface
+        design. The Agent Champion's metrics validate that the fixes worked.
+      </p>
+      <p class="mt-5">
+        The loop runs weekly for monitoring and maintenance. It runs on a
+        release cadence for API changes. It informs a quarterly product
+        roadmap review for structural investment decisions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>Staffing model by org size</h2>
+      <div class="overflow-x-auto mt-6">
+        <table class="w-full border-collapse text-left">
+          <thead>
+            <tr class="bg-primary-surface">
+              <th class="p-4 border border-border text-sm font-semibold">Organization</th>
+              <th class="p-4 border border-border text-sm font-semibold">Minimum viable</th>
+              <th class="p-4 border border-border text-sm font-semibold">Full program</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Small (1–5 DevRel)</td>
+              <td class="p-4 border border-border text-sm">One practitioner owns Agent Champion function one day per week. Manual test suite of 10 tasks. Recipes in docs.</td>
+              <td class="p-4 border border-border text-sm">Grow suite and recipe library. Hire dedicated Agent Champion at 20% AI-tool adoption threshold.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Mid-size (6–15)</td>
+              <td class="p-4 border border-border text-sm">Dedicated Agent Champion, full-time. Automated test suite across 5 AI tools. Versioned recipe library.</td>
+              <td class="p-4 border border-border text-sm">Add Documentation Architect. Agentic Hackathon program. Full four-layer dashboard.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Large (15+)</td>
+              <td class="p-4 border border-border text-sm">Two-track structure: Human Relations + Agent Relations, shared leadership. FAISR and Amdahl ceiling as primary metrics.</td>
+              <td class="p-4 border border-border text-sm">API Experience Designer role. Agent-native MCP server. Competitive benchmarking. Recipe library as published community resource.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-8 font-semibold">
+        <a href="/for-devrel-teams/">Continue to: For DevRel Teams →</a>
+      </p>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,156 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import EssayPreview from '../components/sections/EssayPreview.astro';
+import AboutSnippet from '../components/sections/AboutSnippet.astro';
+import NewsletterCTA from '../components/sections/NewsletterCTA.astro';
+import FundamentalTriad from '../components/diagrams/FundamentalTriad.astro';
+
+const principles = [
+  {
+    n: '01',
+    title: 'The agent ecosystem is shaped by deliberate choices or by neglect.',
+    body:
+      'AI tools draw on whatever corpus is available — your docs, your open-source examples, your MCP servers. That corpus is being shaped right now. The only question is whether it is being shaped intentionally.',
+  },
+  {
+    n: '02',
+    title: 'Agent failures are silent and systemic.',
+    body:
+      'A developer whose AI tool generates a broken integration may debug silently or abandon the platform. No support ticket. No forum question. The traditional DevRel dashboard shows green while adoption degrades.',
+  },
+  {
+    n: '03',
+    title: 'Encoded judgment is the moat.',
+    body:
+      'AI models are commodities. What is not commoditized is encoded judgment about what a correct integration looks like. That judgment, maintained by practitioners with deep platform expertise, becomes institutional capital that compounds.',
+  },
+];
+
+const pagesToRead = [
+  {
+    href: '/what-is-agentic-relations/',
+    title: 'What Is Agentic Relations',
+    body: 'The canonical definition, three principles, and how it extends the Fundamental Triad.',
+  },
+  {
+    href: '/the-amdahl-tax/',
+    title: 'The Amdahl Tax',
+    body: 'Why the environment is the binding constraint, and what DevRel can do about it.',
+  },
+  {
+    href: '/devrel-patterns-reframed/',
+    title: 'The 37 Patterns Reframed',
+    body: 'How every DevRel activity pattern bifurcates for the AI-agent era.',
+  },
+  {
+    href: '/new-roles/',
+    title: 'New Roles',
+    body: 'The Agent Champion, the Documentation Architect, and the API Experience Designer.',
+  },
+  {
+    href: '/measurement/',
+    title: 'Measurement',
+    body: 'FAISR and the four-layer Agent Ecosystem Health Dashboard.',
+  },
+];
+---
+
+<PageLayout
+  title="Agentic Relations"
+  description="Agentic Relations is the discipline inside Developer Relations responsible for the AI agent layer of every developer platform. The canonical reference, by Chris Woodruff."
+>
+  <Hero
+    eyebrow="A new discipline inside Developer Relations"
+    headline="When a developer asks AI to integrate with your platform, does it work?"
+    subheadline="Most DevRel programs don't know. Agentic Relations is the discipline that makes the answer knowable — and then systematically improves it."
+    ctaPrimary={{ href: '/what-is-agentic-relations/', label: 'What is Agentic Relations?' }}
+    ctaSecondary={{ href: '/essays/', label: 'Read the essays' }}
+  />
+
+  <section class="container-site pb-12">
+    <div class="max-w-3xl text-lg text-body leading-relaxed space-y-5">
+      <p>The developer community has a new member.</p>
+      <p>
+        It doesn't attend your conferences. It doesn't read your blog posts. It
+        doesn't care about your ambassador program. But it touches every
+        integration your platform hosts, amplifies every ambiguity in your
+        documentation, and makes a decision about your platform on behalf of
+        every developer who asks it to write some code.
+      </p>
+      <p>
+        That member is the AI coding agent. And Developer Relations, as a
+        field, has no framework for serving it.
+      </p>
+      <p class="text-heading font-semibold">
+        <strong>Agentic Relations</strong> is that framework.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="max-w-2xl mb-10">
+        <p class="eyebrow mb-3">The Fundamental Triad, extended</p>
+        <h2>One platform. Two audiences. A missing framework.</h2>
+        <p class="text-muted mt-4">
+          The original Fundamental Triad of Developer Relations — Community,
+          Company, Customer — assumed every vertex was human. That assumption
+          has broken. Each vertex now has an agent-era extension.
+        </p>
+      </div>
+      <FundamentalTriad />
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="max-w-2xl mb-10">
+      <p class="eyebrow mb-3">Three principles</p>
+      <h2>What Agentic Relations assumes about the world.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        principles.map((p) => (
+          <div class="border border-border rounded-xl p-6 bg-surface">
+            <p class="font-mono text-primary font-bold text-sm mb-3">{p.n}</p>
+            <h3 class="text-heading text-lg font-bold mb-3 leading-snug">{p.title}</h3>
+            <p class="text-muted text-sm leading-relaxed">{p.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="max-w-2xl mb-10">
+        <p class="eyebrow mb-3">Start here</p>
+        <h2>Five pages worth reading first.</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {
+          pagesToRead.map((p) => (
+            <a
+              href={p.href}
+              class="group block border border-border rounded-xl p-6 bg-surface hover:border-primary transition-colors no-underline"
+            >
+              <h3 class="text-heading text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                {p.title}
+              </h3>
+              <p class="text-muted text-sm leading-relaxed">{p.body}</p>
+              <p class="text-primary font-semibold text-sm mt-4">Read →</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <EssayPreview />
+
+  <AboutSnippet />
+
+  <section class="container-site pb-20">
+    <NewsletterCTA />
+  </section>
+</PageLayout>

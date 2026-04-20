@@ -1,0 +1,59 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Callout from '../components/content/Callout.astro';
+---
+
+<PageLayout
+  title="The Agentic Relations Brief"
+  description="Subscribe to The Agentic Relations Brief — twice-monthly dispatches on the discipline of Agentic Relations, from Chris Woodruff."
+>
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">Newsletter</p>
+    <h1 class="max-w-3xl">The Agentic Relations Brief</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      Twice-monthly dispatches for DevRel practitioners working through the
+      agent era. One original observation, one annotated link, one action
+      item. Nothing else.
+    </p>
+  </section>
+
+  <section class="container-prose pb-16">
+    <p class="mt-6">
+      The <em>Agentic Relations Brief</em> publishes when there is something
+      worth saying — approximately twice per month. Each issue contains:
+    </p>
+    <ul class="list-disc pl-6 mt-5 space-y-2">
+      <li>One original observation or framework fragment (100–300 words)</li>
+      <li>One relevant external link with annotation</li>
+      <li>One practical action item for practitioners</li>
+    </ul>
+
+    <p class="mt-6">
+      The newsletter serves as the bridge between essays — keeping the
+      community engaged between major publications, and providing the kind
+      of specific, actionable guidance that makes people open the next issue.
+    </p>
+
+    <Callout type="primary" label="Subscribe">
+      <p>
+        The newsletter is hosted on <strong>Buttondown</strong>, which
+        respects your inbox and your data.
+      </p>
+      <p class="mt-4">
+        <a
+          href="https://buttondown.com/agenticrelations"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center px-6 py-3 mt-2 font-semibold rounded-md bg-primary text-white hover:bg-primary-light no-underline"
+        >
+          Subscribe on Buttondown →
+        </a>
+      </p>
+      <p class="mt-4 text-sm text-muted">
+        Prefer email? Send a note to
+        <a href="mailto:chris@agenticairelations.com" class="font-mono">chris@agenticairelations.com</a>
+        and I'll add you by hand.
+      </p>
+    </Callout>
+  </section>
+</PageLayout>

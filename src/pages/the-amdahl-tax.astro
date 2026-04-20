@@ -1,0 +1,177 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import AmdahlBar from '../components/diagrams/AmdahlBar.astro';
+import MCPStates from '../components/diagrams/MCPStates.astro';
+import Callout from '../components/content/Callout.astro';
+import Metric from '../components/ui/Metric.astro';
+---
+
+<PageLayout
+  title="The Amdahl Tax"
+  description="The infrastructure argument for Agentic Relations: why the environment — not the model — is the binding constraint on AI-assisted developer experience."
+>
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">The infrastructure argument</p>
+    <h1 class="max-w-3xl">The Amdahl Tax</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      Why the environment — not the model — is the binding constraint on
+      AI-assisted developer experience, and what DevRel can do about it.
+    </p>
+  </section>
+
+  <section class="container-prose pb-12 pt-6">
+    <h2>Jeff Dean's 47×</h2>
+    <p class="mt-5">
+      At GTC, Jeff Dean observed that making a model infinitely fast would
+      yield only a 2–3× end-to-end improvement in a typical software
+      development task. The other 47× is eaten by the environment: tools,
+      APIs, auth flows, documentation — all designed for human hands.
+    </p>
+    <p class="mt-5">
+      The implication is uncomfortable for anyone optimizing model quality
+      alone. If most of the gain is sitting in the environment, the
+      environment is where the work is.
+    </p>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="container-prose px-0 mb-4">
+        <h2>The METR result</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-10">
+        <Metric value="19%" label="Slower with AI tools (measured)" deltaDirection="down" />
+        <Metric value="20%" label="Faster with AI tools (estimated)" deltaDirection="up" />
+        <Metric value="39 pts" label="Perception vs. reality gap" />
+      </div>
+
+      <div class="container-prose px-0">
+        <p>
+          In a rigorous randomized controlled trial, sixteen experienced
+          engineers working on their own open-source repositories with AI
+          coding tools were 19% slower while estimating they were 20%
+          faster. The finding persisted after controlling for task type,
+          tool choice, and developer experience.
+        </p>
+        <Callout type="amber" label="The uncomfortable read">
+          The model wasn't the variable. The environment was. The engineers
+          were experienced. The tools were capable. What was missing was an
+          environment built to be consumed at agent speed.
+        </Callout>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>The Jellyfish contrast</h2>
+      <p class="mt-5">
+        At companies that had invested in rebuilding their internal
+        toolchains for agent-speed consumption, the same generation of AI
+        tools drove pull requests per engineer from <strong>1.36 to
+        2.9</strong>. Not because the models were different. Because the
+        environment was.
+      </p>
+      <p class="mt-5">
+        The two data points together — METR's null/negative result in
+        unoptimized environments, Jellyfish's 2× lift in optimized ones —
+        are the clearest statement the field has produced about where the
+        value is: in the infrastructure the model has to touch.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="container-prose px-0 mb-4">
+        <h2>Why the environment is the binding constraint</h2>
+      </div>
+      <AmdahlBar />
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>MCP-blindness, explained</h2>
+      <p class="mt-5">
+        Most platforms today are in one of three states with respect to
+        agent consumption. The difference between them is not marginal —
+        it is the difference between compounding advantage and compounding
+        decay.
+      </p>
+    </div>
+    <MCPStates />
+    <div class="container-prose px-0">
+      <p>
+        Shipping an MCP server makes your platform <em>agent-accessible</em>.
+        It does not make it <em>agent-native</em>. Most MCP servers are
+        thin wrappers on human-speed APIs. The wrapper hides the tax. It
+        does not eliminate it.
+      </p>
+      <p class="mt-5">
+        Agent-native means rebuilding primitives for machine consumption:
+        structured error models, programmatic auth tokens, pagination
+        designed for batch retrieval, semantic error codes with explicit
+        remediation paths, rate limits calibrated for agent-speed calling.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>What the Amdahl ceiling means for DevRel's role</h2>
+      <p class="mt-5">
+        DevRel has always owned the environment for developer integrations.
+        Agentic Relations formalizes that ownership in three concrete ways:
+      </p>
+      <ol class="list-decimal pl-6 mt-5 space-y-4 text-body">
+        <li>
+          <strong>Surface the ceiling.</strong> The Agent Champion's
+          controlled test suite produces a measurable Amdahl tax number for
+          your platform. That number is comparable over time and against
+          competitors.
+        </li>
+        <li>
+          <strong>Build the interim artifacts.</strong> A validated recipe
+          library, semantic documentation, and structured schemas lower the
+          tax incrementally, while deeper platform investment follows.
+        </li>
+        <li>
+          <strong>Make the investment argument.</strong> When DevRel can
+          quantify how much integration time is consumed by human-speed
+          overhead — and show a competitor has lowered that fraction —
+          engineering investment arguments become data-backed instead of
+          anecdotal.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>How to measure your platform's Amdahl ceiling</h2>
+      <p class="mt-5">
+        The shortest path to an Amdahl tax baseline is a one-afternoon
+        exercise:
+      </p>
+      <ol class="list-decimal pl-6 mt-5 space-y-3 text-body">
+        <li>Pick 10 canonical integration tasks developers commonly perform.</li>
+        <li>Write the median prompt for each — what a reasonably competent developer would type, not the best prompt.</li>
+        <li>Run each prompt through two AI tools.</li>
+        <li>Score the outputs against a simple rubric: compiles, uses current endpoints, authenticates, handles primary errors, architecturally sound.</li>
+        <li>Measure, for each successful run, the wall-clock time spent in model reasoning versus tool interaction (approximate from observability or trace data).</li>
+      </ol>
+      <p class="mt-5">
+        The ratio is your Amdahl baseline. Above 70% tool-interaction
+        overhead, you have an agent-hostile environment. Below 40%, you
+        have an agent-friendly one.
+      </p>
+      <p class="mt-5">
+        <a href="/measurement/" class="font-semibold">
+          Continue to: The full measurement framework →
+        </a>
+      </p>
+    </div>
+  </section>
+</PageLayout>

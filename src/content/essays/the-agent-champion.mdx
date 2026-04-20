@@ -1,0 +1,87 @@
+---
+title: "The Agent Champion — A Role DevRel Didn't Know It Needed"
+subtitle: "What happens when you take the agent ecosystem seriously enough to staff it."
+description: "The Agent Champion is a specific, definable practitioner role, distinct from the Developer Advocate. It exists in pieces in most organizations today."
+publishDate: 2026-04-12
+series: roles
+seriesOrder: 1
+tags: [agent-champion, devrel, roles, staffing]
+draft: false
+---
+
+Every new discipline in tech produces a role before it produces a name
+for the role. Somebody was running the company's social media presence
+before "Social Media Manager" was a title. Somebody was reviewing
+open-source contributions before "Developer Advocate" meant what it
+means today. The **Agent Champion** is in that pre-naming phase right
+now.
+
+I've seen the job descriptions, unrecognized as such, in a dozen DevRel
+teams. A Senior Developer Advocate who has quietly built a test harness
+for evaluating how well Copilot generates integration code. A
+Documentation Lead who has started writing parallel "agent-friendly"
+versions of reference pages. A Community Manager who is logging every
+time a developer mentions that Claude got the auth flow wrong.
+
+The work is real. It just doesn't have a name yet. And because it
+doesn't have a name, it doesn't have a career ladder, a budget line, a
+hiring pipeline, or a measurement framework.
+
+## What the Agent Champion actually does
+
+The role in one sentence: the Agent Champion maintains the
+agent-consumable infrastructure that determines whether AI coding tools
+produce correct integrations with the platform — monitoring success
+rates, maintaining the recipe library, and feeding failures back to the
+platform engineering team.
+
+Concretely, that resolves into three activities on a weekly rhythm:
+
+**Monitoring.** Run a structured test suite of canonical integration
+tasks through each AI tool in scope. Score the outputs against a rubric.
+Track FAISR as a time series, broken down by tool and by task.
+
+**Maintenance.** When a new API version ships, audit the recipe library
+for breakage. When monitoring surfaces a recurring failure, publish a
+corrective recipe and file the documentation gap that caused it.
+
+**Feedback.** Translate recurring agent failures into specific,
+actionable improvement requests for the platform engineering team —
+every failure tied to a quantified impact on FAISR.
+
+The currency is not reputation. It is a demonstrable success rate.
+
+## What the Agent Champion is *not*
+
+The Agent Champion is not a Developer Advocate with AI-themed talks
+added to their schedule. The Developer Advocate's work is human
+community-building — irreducibly relational, performed on-stage and in
+conversations. That work becomes *more* valuable as AI floods every
+content channel, not less.
+
+The Agent Champion's work is at a different point in the value chain.
+It is systematic, instrumented, and largely invisible to the community
+it serves. The output is not presence. The output is a high FAISR,
+maintained across API releases and competing AI tools.
+
+## Why staffing it matters now
+
+Because the work is already being done — inconsistently, as a side
+project, by practitioners whose primary role is something else — the
+cost of formalizing it is far smaller than the cost of pretending it
+isn't happening.
+
+Start with one day per week from an existing practitioner, dedicated
+explicitly to the Agent Champion function. Give them a test suite of
+ten canonical integration tasks. Ask them to run it weekly against two
+AI tools. Publish the FAISR baseline to leadership.
+
+Almost every team that does this for the first time discovers that
+their FAISR is significantly lower than they assumed. That discovery
+is the case for the role.
+
+---
+
+*See [New Roles for Agentic Relations](/new-roles/) for the full
+operational spec of the Agent Champion, Documentation Architect, and
+API Experience Designer.*

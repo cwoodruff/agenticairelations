@@ -1,0 +1,97 @@
+---
+// Diagram 3 — FAISR Measurement Funnel
+// Three approaches converging to the FAISR score.
+---
+
+<figure class="my-10">
+  <svg
+    role="img"
+    aria-labelledby="faisrTitle faisrDesc"
+    viewBox="0 0 680 460"
+    class="w-full h-auto max-w-3xl mx-auto"
+  >
+    <title id="faisrTitle">FAISR — Three Instrumentation Approaches</title>
+    <desc id="faisrDesc">
+      Three cards — Controlled Test Suite, API Log Analysis, and Developer Survey —
+      converge via arrows into the combined First-Attempt Integration Success Rate score.
+    </desc>
+
+    <!-- Card 1: Controlled Test Suite (teal) -->
+    <g>
+      <rect x="20" y="20" width="200" height="280" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2" />
+      <text x="120" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#0F6E56">
+        Controlled Test Suite
+      </text>
+      <text x="120" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#0F6E56">
+        Direct · Weekly cadence
+      </text>
+      <line x1="40" y1="90" x2="200" y2="90" stroke="#0F6E56" stroke-width="1" />
+      <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+        <text x="40" y="115">• 10–15 canonical tasks</text>
+        <text x="40" y="138">• Median prompts, not best</text>
+        <text x="40" y="161">• Automated + human rubric</text>
+        <text x="40" y="184">• Most accurate signal</text>
+        <text x="40" y="207">• Agent Champion owns it</text>
+      </g>
+    </g>
+
+    <!-- Card 2: API Log Analysis (purple) -->
+    <g>
+      <rect x="240" y="20" width="200" height="280" rx="12" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="340" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#3C3489">
+        API Log Analysis
+      </text>
+      <text x="340" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3C3489">
+        Continuous · Production signal
+      </text>
+      <line x1="260" y1="90" x2="420" y2="90" stroke="#3C3489" stroke-width="1" />
+      <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+        <text x="260" y="115">• Deprecated endpoint hits</text>
+        <text x="260" y="138">• Burst-401/403 at start</text>
+        <text x="260" y="161">• Burst-429 fixed intervals</text>
+        <text x="260" y="184">• Triangulates test results</text>
+        <text x="260" y="207">• Data engineering required</text>
+      </g>
+    </g>
+
+    <!-- Card 3: Developer Survey (amber) -->
+    <g>
+      <rect x="460" y="20" width="200" height="280" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="2" />
+      <text x="560" y="52" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#854F0B">
+        Developer Survey
+      </text>
+      <text x="560" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#854F0B">
+        Fast to deploy · Self-report
+      </text>
+      <line x1="480" y1="90" x2="640" y2="90" stroke="#854F0B" stroke-width="1" />
+      <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+        <text x="480" y="115">• Two questions added</text>
+        <text x="480" y="138">• Baseline AI adoption</text>
+        <text x="480" y="161">• Common failure cause</text>
+        <text x="480" y="184">• Most biased signal</text>
+        <text x="480" y="207">• Triangulation use</text>
+      </g>
+    </g>
+
+    <!-- Converging arrows -->
+    <g stroke="#1A1A18" stroke-width="1.5" fill="none">
+      <path d="M120 300 L120 350 L340 370" />
+      <path d="M340 300 L340 370" />
+      <path d="M560 300 L560 350 L340 370" />
+    </g>
+
+    <!-- FAISR score callout -->
+    <g>
+      <rect x="220" y="370" width="240" height="70" rx="35" fill="#0F6E56" />
+      <text x="340" y="400" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF">
+        FAISR
+      </text>
+      <text x="340" y="422" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#E1F5EE">
+        First-Attempt Integration Success Rate
+      </text>
+    </g>
+  </svg>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    Three instrumentation paths, one combined metric. Start with the first and layer the rest in.
+  </figcaption>
+</figure>

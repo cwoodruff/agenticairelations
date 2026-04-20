@@ -1,0 +1,245 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import DefinitionBox from '../components/content/DefinitionBox.astro';
+import Callout from '../components/content/Callout.astro';
+import CompareTable from '../components/content/CompareTable.astro';
+import FundamentalTriad from '../components/diagrams/FundamentalTriad.astro';
+import AmdahlBar from '../components/diagrams/AmdahlBar.astro';
+
+const comparisonRows = [
+  {
+    left: 'Human community remains the primary trust mechanism',
+    right: 'Agent ecosystem operates on corpus quality, not relationship',
+  },
+  {
+    left: 'Ambassadors earn trust through presence and authentic voice',
+    right: 'Agent Champions earn relevance through validated configurations',
+  },
+  {
+    left: 'Documentation written for human navigation',
+    right: 'Documentation must also serve agent retrieval with semantic precision',
+  },
+  {
+    left: 'SDK designed for developer ergonomics',
+    right: 'SDK also needs agent-parseable error models and structured schemas',
+  },
+  {
+    left: 'Metrics: reach, engagement, community health',
+    right: 'Metrics: FAISR, Amdahl ceiling, recipe freshness, MCP adoption tier',
+  },
+  {
+    left: 'Human community patterns grow more valuable as AI proliferates',
+    right: 'Agent ecosystem layer is where AI-assisted development wins or loses',
+  },
+];
+---
+
+<PageLayout
+  title="What Is Agentic Relations?"
+  description="The canonical definition of Agentic Relations — the discipline within Developer Relations responsible for the AI agent layer of every developer platform."
+>
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">Canonical reference</p>
+    <h1 class="max-w-3xl">What is Agentic Relations?</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      The canonical definition, the three principles, the primary metric,
+      and the way it extends the Fundamental Triad.
+    </p>
+  </section>
+
+  <section class="container-prose pb-16">
+    <DefinitionBox term="Agentic Relations (AR)">
+      The discipline within Developer Relations responsible for ensuring that
+      AI coding agents and autonomous AI systems can successfully integrate
+      with, consume, and represent a platform accurately — through deliberate
+      cultivation of agent-consumable documentation, validated prompt recipes,
+      machine-readable schemas, and the ongoing measurement of agent
+      ecosystem health.
+    </DefinitionBox>
+
+    <p class="mt-6">
+      Agentic Relations does not replace Developer Relations. It is the next
+      structural layer of the discipline — required because the audience for
+      every developer platform now includes a non-human member: the AI coding
+      agent that an increasing fraction of developers use to generate
+      integration code before they write a single line themselves.
+    </p>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>The core insight: two audiences, one platform</h2>
+      <p class="mt-6">
+        Every developer platform has always had one audience: human developers.
+        Documentation, SDKs, APIs, tutorials, support channels — all of it
+        designed for people who read, type, ask questions, and remember.
+      </p>
+      <p class="mt-5">
+        That has changed. When a developer asks GitHub Copilot, Cursor, or
+        Claude Code to write an integration with your platform, there are now
+        two parties making decisions: the developer, who evaluates the output,
+        and the AI agent, who generates it. The agent doesn't navigate your
+        documentation. It retrieves specific sections as context for
+        generation tasks. It doesn't tolerate ambiguity. It amplifies every
+        imprecision in your API surface and every gap in your documentation
+        into integration failures at scale.
+      </p>
+      <p class="mt-5">
+        The developer experience of your platform is now partly determined by
+        how well AI agents can work with it. DevRel has always been
+        responsible for the developer experience. Agentic Relations is the
+        recognition that this responsibility now extends to the non-human
+        member of the development partnership.
+      </p>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>The three principles</h2>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="border-t-4 border-primary border-x border-b border-border rounded-lg bg-surface p-6">
+        <p class="eyebrow mb-2">Principle 01</p>
+        <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
+          Shaped by deliberate choices or by neglect.
+        </h3>
+        <p class="text-body text-sm leading-relaxed">
+          When an AI tool is pointed at your platform, it draws on whatever is
+          in its context: public docs, GitHub code, Stack Overflow, MCP server
+          definitions. That corpus is being shaped right now. The only
+          question is whether it is being shaped intentionally.
+        </p>
+      </div>
+      <div class="border-t-4 border-amber border-x border-b border-border rounded-lg bg-surface p-6">
+        <p class="eyebrow mb-2 text-amber">Principle 02</p>
+        <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
+          Agent failures are silent and systemic.
+        </h3>
+        <p class="text-body text-sm leading-relaxed">
+          A developer whose AI tool generates a broken integration may debug
+          silently, find a workaround, or abandon the platform. They are
+          unlikely to file a support ticket. The failure is invisible. The
+          traditional DevRel dashboard shows green.
+        </p>
+      </div>
+      <div class="border-t-4 border-purple border-x border-b border-border rounded-lg bg-surface p-6">
+        <p class="eyebrow mb-2 text-purple">Principle 03</p>
+        <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
+          Encoded judgment is the moat.
+        </h3>
+        <p class="text-body text-sm leading-relaxed">
+          AI models are commodities. What is not commoditized is encoded
+          judgment — which error states need handling, which architectural
+          patterns hold under load, which edge cases the docs miss. That
+          judgment, encoded into machine-accessible artifacts, compounds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="container-prose px-0 mb-6">
+        <h2>The Amdahl Ceiling</h2>
+        <p class="mt-5">
+          Jeff Dean observed at GTC that making a model infinitely fast would
+          only yield a 2–3× end-to-end improvement in software development
+          tasks. The other 47× is eaten by the tools, APIs, auth flows, and
+          documentation the model touches — all designed for human hands.
+        </p>
+        <p class="mt-5">
+          This is Amdahl's Law applied to platform integrations. If 80% of the
+          time an AI agent spends integrating with your platform is consumed
+          by human-speed tool interactions, your theoretical ceiling is 5×
+          improvement regardless of how capable the model becomes. A
+          competitor who has rebuilt their integration surface for
+          agent-native consumption has a structurally higher ceiling.
+        </p>
+      </div>
+      <AmdahlBar />
+      <div class="container-prose px-0 mt-6">
+        <p>
+          DevRel's role in raising that ceiling: identify where it's binding,
+          make it visible to the platform engineering team, and build the
+          interim artifacts — structured schemas, semantic documentation,
+          validated recipes — that lower the agent tax while deeper platform
+          investment follows.
+        </p>
+        <p class="mt-4">
+          <a href="/the-amdahl-tax/" class="font-semibold">
+            Read the full Amdahl Tax argument →
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>How it extends the Fundamental Triad</h2>
+      <p class="mt-5">
+        The Fundamental Triad of Developer Relations — Community, Company,
+        Customer — assumed every vertex was human. In the Agentic Relations
+        era, each vertex gains an extension into the agent ecosystem.
+      </p>
+    </div>
+    <FundamentalTriad />
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>The primary metric: First-Attempt Integration Success Rate</h2>
+
+      <p class="mt-5">
+        Traditional DevRel has always struggled to produce metrics that
+        connect directly to adoption. Agentic Relations changes this.
+      </p>
+
+      <Callout type="primary" label="FAISR">
+        <strong>First-Attempt Integration Success Rate:</strong> Of all
+        integrations generated by AI coding tools using a platform's published
+        materials as context, what percentage produce working code without
+        manual correction on the first attempt?
+      </Callout>
+
+      <p class="mt-5">
+        This metric is measurable through controlled testing. It is
+        approximable through API log analysis. It is validatable through
+        developer surveys. And it connects directly to adoption: developers
+        who experience successful AI-assisted integrations adopt platforms;
+        developers who experience systematic AI-generated integration
+        failures choose alternatives.
+      </p>
+      <p class="mt-5">
+        Most DevRel programs today cannot answer the FAISR question for their
+        platform. Agentic Relations exists to change that.
+      </p>
+      <p class="mt-5">
+        <a href="/measurement/" class="font-semibold">
+          How to instrument FAISR for your platform →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0 mb-4">
+      <h2>What changes, what stays the same</h2>
+    </div>
+    <CompareTable
+      leftHeading="Traditional DevRel — unchanged"
+      rightHeading="Agentic Relations — new layer required"
+      rows={comparisonRows}
+    />
+
+    <div class="container-prose px-0 mt-8">
+      <p>
+        <a href="/devrel-patterns-reframed/" class="font-semibold">
+          Continue to: The 37 Patterns Reframed →
+        </a>
+      </p>
+    </div>
+  </section>
+</PageLayout>

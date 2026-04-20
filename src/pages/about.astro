@@ -1,0 +1,173 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Callout from '../components/content/Callout.astro';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Chris Woodruff',
+  url: 'https://agenticairelations.com/about/',
+  jobTitle: 'Developer Relations Practitioner & Author',
+  knowsAbout: [
+    'Developer Relations',
+    'Agentic Relations',
+    'AI Agents',
+    'Software Architecture',
+    'Developer Experience',
+  ],
+  sameAs: [
+    'https://www.linkedin.com/in/cwoodruff',
+    'https://github.com/cwoodruff',
+  ],
+};
+---
+
+<PageLayout
+  title="About Chris Woodruff"
+  description="Chris Woodruff — DevRel practitioner, co-author of Developer Relations Activity Patterns, founder of EcoSynt, and the practitioner who coined Agentic Relations."
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(personJsonLd)}
+    slot="head"
+  />
+
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">About</p>
+    <h1 class="max-w-3xl">Chris Woodruff</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      DevRel practitioner, co-author of <em>Developer Relations Activity
+      Patterns</em>, founder of EcoSynt, and the practitioner who coined
+      Agentic Relations.
+    </p>
+  </section>
+
+  <section class="container-prose pb-16">
+    <h2 class="mt-6">Why Agentic Relations, why now</h2>
+    <p class="mt-5">
+      I've spent twenty years at the intersection of developer communities
+      and the platforms they build on. I've been a developer advocate, a
+      community manager, a DevRel leader, and — in the process of writing
+      <em>Developer Relations Activity Patterns</em> with Ted Neward, Scott
+      McAllister, and David Neal — one of the practitioners who tried to
+      put the entire field on systematic ground.
+    </p>
+    <p class="mt-5">
+      When we wrote the book, we documented 37 activity patterns for a
+      field that had been operating on institutional knowledge and instinct
+      for thirty years. The response from the community was what it always
+      is when you name things that people have been experiencing without
+      vocabulary: recognition. <em>This is the thing I've been doing. Now I
+      have a name for it.</em>
+    </p>
+    <p class="mt-5">
+      Agentic Relations happened the same way. I started noticing that a
+      significant fraction of the questions being asked about developer
+      platform integrations were coming from developers who weren't writing
+      the code themselves — they were asking AI tools to write it, and the
+      AI tools were producing broken integrations. The failures were silent.
+      The documentation was unchanged. The API hadn't changed. But something
+      had changed: the audience.
+    </p>
+    <p class="mt-5">
+      I named it. I built the framework. I built this site to make the
+      framework available to the field.
+    </p>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>The book</h2>
+      <p class="mt-5">
+        <em>Developer Relations Activity Patterns: A Unified Approach to
+        DevRel, DX, and Community Management</em> — co-authored with Ted
+        Neward, Scott McAllister, and David Neal — is the field's first
+        systematic catalog of DevRel activity patterns. Inspired by the
+        Gang of Four's design pattern methodology applied to software
+        development, it documents 37 recurring activities in developer-facing
+        programs, each with intent, context, solution, participants,
+        implementation, metrics, examples, and variants.
+      </p>
+      <p class="mt-5">
+        Published by Apress in 2026. Available wherever technical books
+        are sold.
+      </p>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>EcoSynt</h2>
+      <p class="mt-5">
+        EcoSynt is an agent ecosystem health and observability platform —
+        the infrastructure that makes the Agent Ecosystem Health Dashboard
+        real at production scale. It instruments multi-agent AI systems
+        using OpenTelemetry GenAI semantic conventions, produces AgentScore
+        health metrics, and gives DevRel teams the measurement layer that
+        Agentic Relations requires.
+      </p>
+      <p class="mt-5">
+        EcoSynt is where I am applying the Agentic Relations framework in
+        practice. It is not the subject of this site — Agentic Relations is
+        — but it is the proof of concept.
+      </p>
+      <p class="mt-5">
+        <a
+          href="https://ecosynt.io"
+          target="_blank"
+          rel="noopener"
+          class="font-semibold"
+        >Learn more about EcoSynt →</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="speaking" class="section section-alt">
+    <div class="container-prose">
+      <h2>Speaking</h2>
+      <p class="mt-5">
+        I speak on Agentic Relations, DevRel evolution in the AI era, agent
+        ecosystem health, and the pattern-based approach to DevRel program
+        design. Recent and upcoming engagements include developer
+        conferences, DevRel community events, and enterprise engineering
+        leadership summits.
+      </p>
+      <p class="mt-5">
+        If you're building a program on the topic of DevRel in the AI era —
+        a conference track, a corporate training series, a community event —
+        I'd welcome the conversation.
+      </p>
+      <p class="mt-8">
+        <a
+          href="#contact"
+          class="inline-flex items-center px-6 py-3 font-semibold rounded-md bg-primary text-white hover:bg-primary-light no-underline"
+        >
+          Speaking inquiry →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="section container-site">
+    <div class="container-prose px-0">
+      <h2>Contact</h2>
+      <Callout type="primary" label="Get in touch">
+        <p>
+          For speaking, advisory, consulting, or press inquiries:
+        </p>
+        <p class="mt-3">
+          <a
+            href="mailto:chris@agenticairelations.com"
+            class="font-mono font-semibold"
+          >chris@agenticairelations.com</a>
+        </p>
+        <p class="mt-4 text-sm text-muted">
+          Also on
+          <a href="https://www.linkedin.com/in/cwoodruff" target="_blank" rel="noopener">LinkedIn</a>
+          ·
+          <a href="https://github.com/cwoodruff" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+      </Callout>
+    </div>
+  </section>
+</PageLayout>

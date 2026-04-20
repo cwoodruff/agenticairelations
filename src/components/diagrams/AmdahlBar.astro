@@ -1,0 +1,86 @@
+---
+// Diagram 2 — Amdahl Ceiling Bar Chart
+// Two horizontal stacked bars: Platform A (human-speed) vs Platform B (agent-native).
+---
+
+<figure class="my-10">
+  <svg
+    role="img"
+    aria-labelledby="amdahlTitle amdahlDesc"
+    viewBox="0 0 680 300"
+    class="w-full h-auto max-w-3xl mx-auto"
+  >
+    <title id="amdahlTitle">The Amdahl Ceiling for Platform Integrations</title>
+    <desc id="amdahlDesc">
+      Two horizontal stacked bars compare a human-speed platform against an agent-native
+      platform. Even with the same model, the platform whose tool-interaction overhead
+      dominates has a structurally lower performance ceiling.
+    </desc>
+
+    <!-- Title -->
+    <text
+      x="340"
+      y="28"
+      text-anchor="middle"
+      font-family="Inter, sans-serif"
+      font-weight="700"
+      font-size="16"
+      fill="#1A1A18"
+    >
+      Why the environment is the binding constraint
+    </text>
+
+    <!-- Platform A label -->
+    <text x="10" y="78" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#1A1A18">
+      Platform A — human-speed
+    </text>
+    <!-- Platform A bar: 20% teal, 80% amber, starting at x=10, width 580, y=90 -->
+    <g>
+      <rect x="10" y="90" width="116" height="52" fill="#0F6E56" />
+      <rect x="126" y="90" width="464" height="52" fill="#854F0B" />
+      <rect x="10" y="90" width="580" height="52" fill="none" stroke="#1A1A18" stroke-width="1" />
+      <text x="68" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF">
+        20%
+      </text>
+      <text x="358" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF">
+        80% human-speed overhead
+      </text>
+    </g>
+    <text x="600" y="120" font-family="JetBrains Mono, monospace" font-size="12" fill="#854F0B" font-weight="700">
+      ~5× ceiling
+    </text>
+
+    <!-- Platform B label -->
+    <text x="10" y="178" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#1A1A18">
+      Platform B — agent-native
+    </text>
+    <!-- Platform B bar: 70% teal, 30% amber -->
+    <g>
+      <rect x="10" y="190" width="406" height="52" fill="#0F6E56" />
+      <rect x="416" y="190" width="174" height="52" fill="#854F0B" />
+      <rect x="10" y="190" width="580" height="52" fill="none" stroke="#1A1A18" stroke-width="1" />
+      <text x="213" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF">
+        70% model reasoning
+      </text>
+      <text x="503" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF">
+        30%
+      </text>
+    </g>
+    <text x="600" y="220" font-family="JetBrains Mono, monospace" font-size="12" fill="#0F6E56" font-weight="700">
+      higher ceiling
+    </text>
+
+    <!-- Legend -->
+    <g font-family="Inter, sans-serif" font-size="12" fill="#2C2C2A">
+      <rect x="10" y="270" width="12" height="12" fill="#0F6E56" />
+      <text x="28" y="281">Model reasoning (fast)</text>
+
+      <rect x="220" y="270" width="12" height="12" fill="#854F0B" />
+      <text x="238" y="281">Tool interaction / human-speed overhead</text>
+    </g>
+  </svg>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    Amdahl's Law, applied to platforms: the binding constraint is whatever
+    fraction of the integration is not the model.
+  </figcaption>
+</figure>

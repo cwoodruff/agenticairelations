@@ -1,0 +1,84 @@
+---
+// Diagram 7 — The 37 Patterns Bifurcation Map
+// Three columns of patterns. Rendered in HTML for layout responsiveness rather than SVG,
+// since SVG wrap-text is fragile. Styled to match the diagram spec precisely.
+
+const gainsLayer = [
+  'Article', 'Blog Post', 'Book', 'Guide', 'Newsletter',
+  'Reference Documentation', 'Sample / Example', 'SDK', 'Social Media',
+  'Tutorial', 'Forum', 'Open-Source Project', 'Survey',
+  'Technical Support', 'Recorded Video',
+];
+const requiresRewrite = [
+  'Ambassadors → Agent Champion',
+  'Hackathon → Agentic Hackathon',
+  'Office Hours → Integration Debug Sessions',
+  'Training → Agent Direction Training',
+  'Code Review',
+  'Live Playground',
+  'Case Study',
+  'Workshop',
+];
+const moreValuable = [
+  'Conference', 'Conference Session', 'User Group Network', 'Parties',
+  'Live Streaming', 'Customer Check-In', 'Customer Pre-Sale', 'Sponsorship',
+  'Webinar', 'Podcast', 'Partnerships', 'Swag',
+  'Community Newsletter', 'Boot Camp',
+];
+---
+
+<figure
+  class="my-10"
+  role="img"
+  aria-label="The 37 DevRel activity patterns divided into three categories — gains an agent layer, requires substantive rewrite, and remains human and grows more valuable."
+>
+  <div class="grid md:grid-cols-3 gap-4">
+    <div class="border border-border rounded-xl overflow-hidden bg-surface">
+      <header class="bg-primary text-white px-4 py-3">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-90">{gainsLayer.length} patterns</p>
+        <h3 class="font-bold text-base text-white leading-tight">Gains an agent layer</h3>
+        <p class="text-xs text-white/80 mt-1">Human variant remains; add an agent-facing one.</p>
+      </header>
+      <div class="p-4 flex flex-wrap gap-2">
+        {gainsLayer.map((p) => (
+          <span class="text-xs bg-primary-surface text-primary rounded-full px-2.5 py-1 font-medium">
+            {p}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div class="border border-border rounded-xl overflow-hidden bg-surface">
+      <header class="bg-amber text-white px-4 py-3">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-90">{requiresRewrite.length} patterns</p>
+        <h3 class="font-bold text-base text-white leading-tight">Requires substantive rewrite</h3>
+        <p class="text-xs text-white/80 mt-1">Intent survives; implementation and metrics change.</p>
+      </header>
+      <div class="p-4 flex flex-wrap gap-2">
+        {requiresRewrite.map((p) => (
+          <span class="text-xs bg-amber-surface text-amber rounded-full px-2.5 py-1 font-medium">
+            {p}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div class="border border-border rounded-xl overflow-hidden bg-surface">
+      <header class="bg-purple text-white px-4 py-3">
+        <p class="font-mono text-xs uppercase tracking-widest opacity-90">{moreValuable.length} patterns</p>
+        <h3 class="font-bold text-base text-white leading-tight">Grows more valuable</h3>
+        <p class="text-xs text-white/80 mt-1">Irreducibly human; scarcer in an AI-saturated ecosystem.</p>
+      </header>
+      <div class="p-4 flex flex-wrap gap-2">
+        {moreValuable.map((p) => (
+          <span class="text-xs bg-purple-surface text-purple rounded-full px-2.5 py-1 font-medium">
+            {p}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    The 37 patterns of Developer Relations, mapped against the Agentic Relations shift.
+  </figcaption>
+</figure>

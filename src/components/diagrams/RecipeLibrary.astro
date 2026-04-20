@@ -1,0 +1,130 @@
+---
+// Diagram 8 — Recipe Library as Institutional Memory
+---
+
+<figure class="my-10">
+  <svg
+    role="img"
+    aria-labelledby="recipeTitle recipeDesc"
+    viewBox="0 0 680 400"
+    class="w-full h-auto max-w-3xl mx-auto"
+  >
+    <title id="recipeTitle">Recipe Library as Institutional Memory</title>
+    <desc id="recipeDesc">
+      Left side: four practitioner figures each holding fragmented knowledge,
+      with an arrow showing one leaving and decay labeled "knowledge walks
+      out the door." Right side: a structured versioned repository that
+      compounds. In the middle, an Agent Champion encodes judgment.
+    </desc>
+
+    <defs>
+      <marker id="recipe-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="#1A1A18" />
+      </marker>
+    </defs>
+
+    <!-- Left header -->
+    <text x="130" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#1A1A18">
+      Before: knowledge in heads
+    </text>
+
+    <!-- Four human silhouettes with thought bubbles -->
+    <g font-family="Inter, sans-serif" font-size="10" fill="#1A1A18">
+      <!-- figure 1 -->
+      <g transform="translate(30,60)">
+        <circle cx="20" cy="20" r="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+        <rect x="6" y="36" width="28" height="34" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+        <ellipse cx="70" cy="28" rx="30" ry="16" fill="#FFFFFF" stroke="#D3D1C7" />
+        <text x="70" y="32" text-anchor="middle" font-size="9">auth quirks</text>
+      </g>
+      <!-- figure 2 -->
+      <g transform="translate(30,150)">
+        <circle cx="20" cy="20" r="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+        <rect x="6" y="36" width="28" height="34" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+        <ellipse cx="70" cy="28" rx="30" ry="16" fill="#FFFFFF" stroke="#D3D1C7" />
+        <text x="70" y="32" text-anchor="middle" font-size="9">webhook tips</text>
+      </g>
+      <!-- figure 3 -->
+      <g transform="translate(30,240)">
+        <circle cx="20" cy="20" r="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+        <rect x="6" y="36" width="28" height="34" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5" />
+        <ellipse cx="70" cy="28" rx="30" ry="16" fill="#FFFFFF" stroke="#D3D1C7" />
+        <text x="70" y="32" text-anchor="middle" font-size="9">retry patterns</text>
+      </g>
+      <!-- figure 4 leaving (faded, with arrow) -->
+      <g transform="translate(160,150)" opacity="0.55">
+        <circle cx="20" cy="20" r="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5" />
+        <rect x="6" y="36" width="28" height="34" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5" />
+      </g>
+      <g stroke="#854F0B" stroke-width="1.5" fill="none" marker-end="url(#recipe-arrow)">
+        <line x1="200" y1="170" x2="240" y2="170" />
+      </g>
+      <text x="218" y="162" text-anchor="middle" font-size="10" fill="#854F0B" font-style="italic">
+        walks out
+      </text>
+    </g>
+
+    <!-- Decay label on left -->
+    <text x="130" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#854F0B" font-style="italic">
+      Knowledge decays. Restarts with each hire.
+    </text>
+
+    <!-- Center: Agent Champion transformation -->
+    <g>
+      <rect x="260" y="160" width="160" height="80" rx="12" fill="#0F6E56" />
+      <text x="340" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="13" fill="#FFFFFF">
+        Agent Champion
+      </text>
+      <text x="340" y="212" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#E1F5EE">
+        encodes judgment
+      </text>
+      <text x="340" y="228" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#E1F5EE">
+        into the corpus
+      </text>
+    </g>
+
+    <!-- arrow left to center -->
+    <g stroke="#1A1A18" stroke-width="1.5" fill="none" marker-end="url(#recipe-arrow)">
+      <line x1="240" y1="200" x2="260" y2="200" />
+      <line x1="420" y1="200" x2="440" y2="200" />
+    </g>
+
+    <!-- Right header -->
+    <text x="550" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#1A1A18">
+      After: recipe library
+    </text>
+
+    <!-- Right: structured repository -->
+    <g>
+      <rect x="450" y="60" width="210" height="250" rx="14" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="555" y="92" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="13" fill="#3C3489">
+        Versioned recipe corpus
+      </text>
+
+      <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+        <rect x="470" y="108" width="170" height="36" rx="6" fill="#FFFFFF" stroke="#3C3489" />
+        <text x="480" y="131">Validated recipes</text>
+
+        <rect x="470" y="152" width="170" height="36" rx="6" fill="#FFFFFF" stroke="#3C3489" />
+        <text x="480" y="175">Versioned with API</text>
+
+        <rect x="470" y="196" width="170" height="36" rx="6" fill="#FFFFFF" stroke="#3C3489" />
+        <text x="480" y="219">Machine-consumable</text>
+
+        <rect x="470" y="240" width="170" height="36" rx="6" fill="#FFFFFF" stroke="#3C3489" />
+        <text x="480" y="263">Community-maintained</text>
+      </g>
+    </g>
+
+    <!-- Upward compounding arrow on right -->
+    <g stroke="#3C3489" stroke-width="1.5" fill="none" marker-end="url(#recipe-arrow)">
+      <line x1="555" y1="370" x2="555" y2="325" />
+    </g>
+    <text x="555" y="386" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3C3489" font-style="italic">
+      Compounds over time.
+    </text>
+  </svg>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    Tacit knowledge walks out the door. Encoded knowledge compounds.
+  </figcaption>
+</figure>

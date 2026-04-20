@@ -1,0 +1,39 @@
+---
+interface Row {
+  left: string;
+  right: string;
+}
+
+interface Props {
+  leftHeading: string;
+  rightHeading: string;
+  rows: Row[];
+}
+
+const { leftHeading, rightHeading, rows } = Astro.props;
+---
+
+<div class="overflow-x-auto my-8">
+  <table class="w-full border-collapse text-left">
+    <thead>
+      <tr class="bg-primary-surface">
+        <th class="p-4 text-sm font-semibold text-heading border border-border align-top">
+          {leftHeading}
+        </th>
+        <th class="p-4 text-sm font-semibold text-heading border border-border align-top">
+          {rightHeading}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((row) => (
+          <tr class="align-top">
+            <td class="p-4 text-sm text-body border border-border">{row.left}</td>
+            <td class="p-4 text-sm text-body border border-border">{row.right}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,122 @@
+---
+// Diagram 5 — Agent Champion Day-in-the-Life Flow
+// Three columns: Monitoring, Maintenance, Feedback — with a Platform Engineering node receiving the loop.
+---
+
+<figure class="my-10">
+  <svg
+    role="img"
+    aria-labelledby="championTitle championDesc"
+    viewBox="0 0 680 520"
+    class="w-full h-auto max-w-3xl mx-auto"
+  >
+    <title id="championTitle">The Agent Champion's Weekly Rhythm</title>
+    <desc id="championDesc">
+      Three columns — Monitoring, Maintenance, Feedback — each with four
+      representative activities. Arrows flow left-to-right across the columns
+      and feed into a Platform Engineering node that closes the loop.
+    </desc>
+
+    <!-- Column headers -->
+    <g font-family="Inter, sans-serif" font-weight="700" font-size="14" text-anchor="middle" fill="#FFFFFF">
+      <rect x="20" y="20" width="200" height="44" rx="8" fill="#0F6E56" />
+      <text x="120" y="47">Monitoring</text>
+
+      <rect x="240" y="20" width="200" height="44" rx="8" fill="#0F6E56" />
+      <text x="340" y="47">Maintenance</text>
+
+      <rect x="460" y="20" width="200" height="44" rx="8" fill="#0F6E56" />
+      <text x="560" y="47">Feedback</text>
+    </g>
+
+    <!-- Monitoring activities -->
+    <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+      <rect x="20" y="90" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="35" y="114" font-weight="600">Run FAISR test suite</text>
+      <text x="35" y="132">weekly, all tools in scope</text>
+
+      <rect x="20" y="160" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="35" y="184" font-weight="600">Score outputs</text>
+      <text x="35" y="202">compile, auth, errors, taste</text>
+
+      <rect x="20" y="230" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="35" y="254" font-weight="600">Track drift</text>
+      <text x="35" y="272">time series by tool &amp; task</text>
+
+      <rect x="20" y="300" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="35" y="324" font-weight="600">Log anomalies</text>
+      <text x="35" y="342">deprecated endpoint bursts</text>
+    </g>
+
+    <!-- Maintenance activities -->
+    <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+      <rect x="240" y="90" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="255" y="114" font-weight="600">Update recipes</text>
+      <text x="255" y="132">before API versions deprecate</text>
+
+      <rect x="240" y="160" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="255" y="184" font-weight="600">Publish corrective recipe</text>
+      <text x="255" y="202">for each recurring failure</text>
+
+      <rect x="240" y="230" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="255" y="254" font-weight="600">Version alongside API</text>
+      <text x="255" y="272">changelog, semver, MCP schema</text>
+
+      <rect x="240" y="300" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="255" y="324" font-weight="600">Curate the library</text>
+      <text x="255" y="342">prune, merge, re-test</text>
+    </g>
+
+    <!-- Feedback activities -->
+    <g font-family="Inter, sans-serif" font-size="11" fill="#1A1A18">
+      <rect x="460" y="90" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="475" y="114" font-weight="600">File doc gaps</text>
+      <text x="475" y="132">tie each to a specific failure</text>
+
+      <rect x="460" y="160" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="475" y="184" font-weight="600">File API complaints</text>
+      <text x="475" y="202">quantified against the Amdahl ceiling</text>
+
+      <rect x="460" y="230" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="475" y="254" font-weight="600">Share FAISR snapshot</text>
+      <text x="475" y="272">weekly, to platform &amp; leadership</text>
+
+      <rect x="460" y="300" width="200" height="58" rx="8" fill="#FFFFFF" stroke="#D3D1C7" />
+      <text x="475" y="324" font-weight="600">Quarterly roadmap input</text>
+      <text x="475" y="342">Amdahl tax line-item</text>
+    </g>
+
+    <!-- Flow arrows between columns -->
+    <defs>
+      <marker id="champion-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+        <path d="M0,0 L10,5 L0,10 Z" fill="#0F6E56" />
+      </marker>
+    </defs>
+    <g stroke="#0F6E56" stroke-width="2" fill="none" marker-end="url(#champion-arrow)">
+      <line x1="220" y1="390" x2="240" y2="390" />
+      <line x1="440" y1="390" x2="460" y2="390" />
+    </g>
+    <g font-family="Inter, sans-serif" font-size="11" fill="#0F6E56" font-weight="600">
+      <text x="120" y="385" text-anchor="middle">weekly</text>
+      <text x="340" y="385" text-anchor="middle">triggered</text>
+      <text x="560" y="385" text-anchor="middle">continuous</text>
+    </g>
+
+    <!-- Platform Engineering box at bottom -->
+    <g>
+      <rect x="180" y="430" width="320" height="70" rx="12" fill="#EEEDFE" stroke="#3C3489" stroke-width="2" />
+      <text x="340" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#3C3489">
+        Platform Engineering
+      </text>
+      <text x="340" y="482" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3C3489">
+        receives quantified signals, closes the loop
+      </text>
+    </g>
+    <g stroke="#3C3489" stroke-width="1.5" stroke-dasharray="6 4" fill="none" marker-end="url(#champion-arrow)">
+      <line x1="560" y1="400" x2="440" y2="430" />
+    </g>
+  </svg>
+  <figcaption class="text-sm text-muted text-center mt-3 italic">
+    Monitor. Maintain. Feed back. A weekly rhythm that turns agent failures into platform improvement.
+  </figcaption>
+</figure>

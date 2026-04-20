@@ -1,0 +1,100 @@
+---
+title: "The Amdahl Tax on Developer Relations"
+subtitle: "Why the entire DevRel stack is being rebuilt whether you participate or not."
+description: "The METR and Jellyfish data are not about AI capability. They are about environment. DevRel owns the environment."
+publishDate: 2026-04-05
+series: measurement
+seriesOrder: 1
+tags: [amdahl, measurement, infrastructure, agent-native]
+draft: false
+---
+
+Here is a finding that should stop every DevRel leader cold.
+
+In a rigorous randomized controlled trial, sixteen experienced engineers
+working on their own open-source repositories with AI coding tools were
+**19% slower** than they were without the tools — while estimating that
+they were **20% faster**. The discrepancy was not small. It was not
+noise. It persisted after controlling for task type, tool choice, and
+developer experience.
+
+The same models, deployed at companies that had invested in rebuilding
+their internal tooling for agent-speed consumption, drove pull requests
+per engineer from **1.36 to 2.9**. Not because the models were
+different. Because the *environment* was different.
+
+Jeff Dean put the frame on it at GTC. If you could make the model
+infinitely fast, you would only get a 2–3× end-to-end improvement in a
+typical software development task. The other 47× is eaten by the tools,
+APIs, auth flows, and documentation the model has to touch — all designed
+for human hands.
+
+This is Amdahl's Law applied to software integration.
+
+## The binding constraint
+
+If 80% of the time an AI agent spends integrating with your platform is
+consumed by human-speed tool interactions — navigating pagination
+designed for a human scroller, interpreting error messages written for a
+human reader, waiting on auth flows designed for browser-based session
+login — then your theoretical ceiling is 5× improvement. Regardless of
+how capable the underlying model becomes.
+
+A competitor who has rebuilt their integration surface for agent-native
+consumption has a structurally higher ceiling. The gap between the two
+platforms will widen as the models improve, because the agent-native
+platform gets more of the improvement and the human-speed platform gets
+less.
+
+This is not a hypothetical. It is the current state of the field. It
+is visible in the Jellyfish data. It is the explanation for the METR
+result.
+
+## DevRel owns the environment
+
+Your documentation, your API surface, your auth flows, your error
+model, your code examples — these are the environment that every
+developer integrating with your platform using AI tools experiences.
+
+DevRel has always been responsible for the developer experience. The
+Agentic Relations era is the recognition that the developer experience
+now flows through agent-consumable infrastructure, whether or not the
+DevRel team is measuring it.
+
+Three concrete implications:
+
+**One.** The Amdahl tax is measurable. The Agent Champion's controlled
+test suite produces a number. The number is comparable over time and
+against competitors. It connects DevRel work directly to a platform
+investment argument backed by data.
+
+**Two.** MCP is the starting point, not the finish line. Shipping an
+MCP server makes the platform agent-accessible. It does not make it
+agent-native. Most MCP servers are wrappers on human-speed APIs. The
+wrapper hides the tax; it does not eliminate it.
+
+**Three.** The recipe library is where DevRel moves the ceiling. Every
+validated recipe reduces the overhead an AI tool incurs to solve a
+given integration task. Every recipe is a small, compounding piece of
+institutional capital that raises the platform's effective ceiling.
+
+## What to do in the next sixty days
+
+Measure. Pick ten canonical integration tasks. Write the median prompt
+for each. Run each prompt through two AI tools. Score the outputs.
+
+That's your Amdahl tax baseline. It is more information about your
+platform's agent ecosystem health than you have ever had.
+
+The rest of Agentic Relations — the recipe library, the API Experience
+Designer role, the structured MCP investment plan — builds outward from
+that baseline. But the baseline is where it starts. And the cost of
+producing it is a single afternoon.
+
+Do it.
+
+---
+
+*See [The Amdahl Tax](/the-amdahl-tax/) for the full infrastructure
+argument, or [Measurement](/measurement/) for the four-layer Agent
+Ecosystem Health Dashboard.*
