@@ -56,12 +56,15 @@ const isInverted = tone === 'primary' || tone === 'purple' || tone === 'amber';
       .section-inverted .eyebrow::before {
         background-color: rgb(255 255 255 / 0.92);
       }
-      .section-inverted a {
+      /* Force prose links to inherit the section's inverted foreground,
+       * but leave button-styled anchors alone — any anchor with its own
+       * bg-* class defines its own color scheme. */
+      .section-inverted a:not([class*="bg-"]) {
         color: inherit;
         text-decoration-color: currentColor;
         opacity: 0.95;
       }
-      .section-inverted a:hover {
+      .section-inverted a:not([class*="bg-"]):hover {
         opacity: 1;
       }
       .section-inverted .text-body,
