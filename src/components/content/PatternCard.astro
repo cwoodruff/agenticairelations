@@ -12,10 +12,19 @@ const badge = {
   rewrite: { label: 'Requires rewrite', class: 'bg-amber-surface text-amber' },
   'more-valuable': { label: 'Grows more valuable', class: 'bg-purple-surface text-purple' },
 };
+
+const accentBorder = {
+  'gains-layer': 'hover:border-primary',
+  rewrite: 'hover:border-amber',
+  'more-valuable': 'hover:border-purple',
+};
 ---
 
 <div
-  class="flex items-start gap-3 p-3 border border-border rounded-lg hover:border-primary transition-colors bg-surface"
+  class:list={[
+    'flex items-start gap-3 p-3.5 border border-border rounded-lg transition-colors bg-surface',
+    accentBorder[status],
+  ]}
 >
   {
     chapterRef && (
@@ -24,10 +33,10 @@ const badge = {
       </span>
     )
   }
-  <div class="flex-1">
+  <div class="flex-1 min-w-0">
     <p class="font-medium text-heading text-sm">{name}</p>
     <span
-      class={`inline-block mt-1.5 text-xs px-2 py-0.5 rounded-full font-medium ${badge[status].class}`}
+      class={`inline-block mt-2 text-[0.65rem] px-2 py-0.5 rounded-full font-mono font-bold uppercase tracking-wider ${badge[status].class}`}
     >
       {badge[status].label}
     </span>

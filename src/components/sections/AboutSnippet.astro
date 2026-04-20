@@ -1,13 +1,15 @@
 ---
+import AgenticMark from '../ui/AgenticMark.astro';
 ---
 
 <section class="container-site section">
-  <div class="grid md:grid-cols-5 gap-10 items-start">
+  <div class="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
     <div class="md:col-span-2">
-      <p class="eyebrow mb-3">About the author</p>
-      <h2 class="text-heading">Chris Woodruff</h2>
+      <p class="eyebrow mb-4">About the author</p>
+      <h2 class="mb-6">Chris Woodruff</h2>
+      <AgenticMark size="lg" tone="primary" />
     </div>
-    <div class="md:col-span-3 text-body leading-relaxed">
+    <div class="md:col-span-3 text-body leading-relaxed text-[1.02rem]">
       <p>
         Chris Woodruff co-authored <em>Developer Relations Activity Patterns</em>
         (Apress, 2026) — the field's first systematic catalog of DevRel activity
@@ -20,8 +22,8 @@
       <p class="mt-6">
         <a
           href="/about/"
-          class="font-semibold no-underline hover:underline"
-        >Read the full bio →</a
+          class="font-semibold no-underline hover:underline inline-flex items-center gap-2"
+        >Read the full bio <span aria-hidden="true">→</span></a
         >
       </p>
     </div>

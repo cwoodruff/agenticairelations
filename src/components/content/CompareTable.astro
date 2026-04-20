@@ -13,24 +13,24 @@ interface Props {
 const { leftHeading, rightHeading, rows } = Astro.props;
 ---
 
-<div class="overflow-x-auto my-8">
+<div class="overflow-x-auto my-10 rounded-xl border border-border bg-surface">
   <table class="w-full border-collapse text-left">
     <thead>
-      <tr class="bg-primary-surface">
-        <th class="p-4 text-sm font-semibold text-heading border border-border align-top">
+      <tr>
+        <th class="p-5 text-sm font-mono font-bold uppercase tracking-[0.18em] text-muted border-b border-border align-top">
           {leftHeading}
         </th>
-        <th class="p-4 text-sm font-semibold text-heading border border-border align-top">
+        <th class="p-5 text-sm font-mono font-bold uppercase tracking-[0.18em] text-primary border-b border-border border-l align-top">
           {rightHeading}
         </th>
       </tr>
     </thead>
     <tbody>
       {
-        rows.map((row) => (
-          <tr class="align-top">
-            <td class="p-4 text-sm text-body border border-border">{row.left}</td>
-            <td class="p-4 text-sm text-body border border-border">{row.right}</td>
+        rows.map((row, i) => (
+          <tr class:list={['align-top', i % 2 === 1 && 'bg-bg/50']}>
+            <td class="p-5 text-sm text-body border-b border-border last:border-b-0">{row.left}</td>
+            <td class="p-5 text-sm text-body border-b border-border border-l last:border-b-0">{row.right}</td>
           </tr>
         ))
       }

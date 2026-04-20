@@ -1,10 +1,13 @@
 ---
+import AgenticMark from '../ui/AgenticMark.astro';
+
 interface Props {
   type?: 'primary' | 'amber' | 'purple';
   label?: string;
+  showMark?: boolean;
 }
 
-const { type = 'primary', label } = Astro.props;
+const { type = 'primary', label, showMark = false } = Astro.props;
 
 const styles = {
   primary: 'border-primary bg-primary-surface',
@@ -19,10 +22,17 @@ const labelStyles = {
 };
 ---
 
-<aside class={`border-l-4 ${styles[type]} rounded-r-lg p-5 my-6`}>
+<aside class={`relative border-l-4 ${styles[type]} rounded-r-lg p-6 my-6`}>
+  {
+    showMark && (
+      <div class="absolute right-5 top-5 opacity-50" aria-hidden="true">
+        <AgenticMark size="sm" tone={type} />
+      </div>
+    )
+  }
   {
     label && (
-      <p class={`font-mono font-bold text-xs uppercase tracking-widest mb-2 ${labelStyles[type]}`}>
+      <p class={`font-mono font-bold text-xs uppercase tracking-[0.2em] mb-3 ${labelStyles[type]}`}>
         {label}
       </p>
     )

@@ -1,4 +1,6 @@
 ---
+import AgenticMark from '../ui/AgenticMark.astro';
+
 interface Props {
   term: string;
 }
@@ -6,12 +8,17 @@ interface Props {
 const { term } = Astro.props;
 ---
 
-<div class="border-2 border-primary rounded-xl p-8 my-8 bg-primary-surface">
-  <p class="text-primary font-mono text-sm font-bold mb-3 uppercase tracking-widest">
-    Definition
-  </p>
-  <h2 class="text-heading text-2xl font-bold mb-4">{term}</h2>
-  <div class="text-body text-lg leading-relaxed">
-    <slot />
+<div class="relative border-2 border-primary rounded-2xl p-8 md:p-10 my-10 bg-primary-surface overflow-hidden">
+  <div class="absolute -right-6 -top-6 opacity-20 pointer-events-none" aria-hidden="true">
+    <AgenticMark size="lg" tone="primary" />
+  </div>
+  <div class="relative">
+    <p class="text-primary font-mono text-xs font-bold mb-4 uppercase tracking-[0.22em]">
+      Canonical Definition
+    </p>
+    <h2 class="text-heading text-2xl md:text-3xl font-bold mb-5 max-w-[20ch]">{term}</h2>
+    <div class="text-body text-lg leading-relaxed max-w-[60ch]">
+      <slot />
+    </div>
   </div>
 </div>

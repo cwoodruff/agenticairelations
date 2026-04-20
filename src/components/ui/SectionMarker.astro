@@ -1,0 +1,41 @@
+---
+import AgenticMark from './AgenticMark.astro';
+
+interface Props {
+  numeral: string;
+  eyebrow: string;
+  tone?: 'primary' | 'purple' | 'amber' | 'onDark';
+}
+
+const { numeral, eyebrow, tone = 'primary' } = Astro.props;
+
+const eyebrowColor = {
+  primary: 'text-primary',
+  purple: 'text-purple',
+  amber: 'text-amber',
+  onDark: 'text-white/85',
+}[tone];
+
+const numeralColor = {
+  primary: 'text-primary',
+  purple: 'text-purple',
+  amber: 'text-amber',
+  onDark: 'text-white',
+}[tone];
+---
+
+<div class="flex items-start gap-5 mb-6">
+  <AgenticMark size="md" tone={tone} class="shrink-0 mt-1" />
+  <div>
+    <p
+      class:list={[
+        'font-mono font-bold text-xs uppercase mb-1',
+        eyebrowColor,
+      ]}
+      style="letter-spacing: 0.22em;"
+    >
+      {eyebrow}
+    </p>
+    <p class:list={['display-numeral', numeralColor]}>{numeral}</p>
+  </div>
+</div>

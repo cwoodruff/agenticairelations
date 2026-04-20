@@ -1,33 +1,40 @@
 ---
+import AgenticMark from '../ui/AgenticMark.astro';
+
 interface Props {
   variant?: 'default' | 'compact';
 }
 
 const { variant = 'default' } = Astro.props;
-
 const compact = variant === 'compact';
 ---
 
 <section
   class:list={[
-    'border border-border rounded-xl bg-surface',
-    compact ? 'p-6' : 'p-8 md:p-10',
+    'relative border border-border rounded-2xl bg-surface shadow-card overflow-hidden',
+    compact ? 'p-6' : 'p-8 md:p-12',
   ]}
 >
-  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+  <div
+    class="absolute -right-10 -bottom-10 opacity-[0.06] pointer-events-none"
+    aria-hidden="true"
+  >
+    <AgenticMark size="xl" tone="primary" />
+  </div>
+  <div class="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
     <div class="max-w-xl">
-      <p class="eyebrow mb-2">The Agentic Relations Brief</p>
-      <h2 class:list={['text-heading font-bold', compact ? 'text-xl' : 'text-2xl md:text-3xl']}>
+      <p class="eyebrow mb-3">The Agentic Relations Brief</p>
+      <h2 class:list={['font-bold leading-tight', compact ? 'text-xl' : 'text-2xl md:text-3xl']}>
         New frameworks, delivered twice a month.
       </h2>
-      <p class="text-muted mt-3">
+      <p class="text-muted mt-3 leading-relaxed">
         One original observation, one annotated link, one action item —
         for DevRel practitioners working through the agent era.
       </p>
     </div>
     <a
       href="/newsletter/"
-      class="inline-flex items-center justify-center px-6 py-3 font-semibold rounded-md bg-primary text-white hover:bg-primary-light no-underline transition-colors self-start md:self-auto whitespace-nowrap"
+      class="inline-flex items-center justify-center px-6 py-3.5 font-semibold rounded-md bg-primary text-primary-ink hover:bg-primary-light no-underline transition-colors self-start md:self-auto whitespace-nowrap shadow-card"
     >
       Subscribe →
     </a>

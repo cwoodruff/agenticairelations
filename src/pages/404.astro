@@ -1,33 +1,42 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import AgenticMark from '../components/ui/AgenticMark.astro';
 ---
 
 <PageLayout
   title="Page Not Found"
   description="The page you were looking for does not exist on agenticairelations.com."
 >
-  <section class="container-site py-32 text-center">
-    <p class="font-mono text-primary font-bold text-sm uppercase tracking-widest mb-4">
-      404
-    </p>
-    <h1 class="max-w-2xl mx-auto">We couldn't find that page.</h1>
-    <p class="text-muted mt-5 max-w-xl mx-auto">
-      It may have moved. Start from the canonical definition of the
-      discipline — or browse the essay archive.
-    </p>
-    <div class="mt-8 flex gap-3 justify-center flex-wrap">
-      <a
-        href="/what-is-agentic-relations/"
-        class="inline-flex items-center px-6 py-3 font-semibold rounded-md bg-primary text-white hover:bg-primary-light no-underline"
-      >
-        What is Agentic Relations?
-      </a>
-      <a
-        href="/essays/"
-        class="inline-flex items-center px-6 py-3 font-semibold rounded-md border border-primary text-primary bg-surface hover:bg-primary-surface no-underline"
-      >
-        Read essays
-      </a>
+  <section class="container-site py-32 text-center relative overflow-hidden">
+    <div
+      class="absolute left-1/2 top-16 -translate-x-1/2 opacity-[0.08] pointer-events-none"
+      aria-hidden="true"
+    >
+      <AgenticMark size="xl" tone="primary" />
+    </div>
+    <div class="relative">
+      <p class="font-mono text-primary font-bold text-xs uppercase tracking-[0.22em] mb-4">
+        Error 404
+      </p>
+      <h1 class="max-w-2xl mx-auto">We couldn't find that page.</h1>
+      <p class="text-muted mt-6 max-w-xl mx-auto text-lg">
+        It may have moved. Start from the canonical definition of the
+        discipline — or browse the essay archive.
+      </p>
+      <div class="mt-10 flex gap-3 justify-center flex-wrap">
+        <a
+          href="/what-is-agentic-relations/"
+          class="inline-flex items-center px-6 py-3.5 font-semibold rounded-md bg-primary text-primary-ink hover:bg-primary-light no-underline shadow-card"
+        >
+          What is Agentic Relations?
+        </a>
+        <a
+          href="/essays/"
+          class="inline-flex items-center px-6 py-3.5 font-semibold rounded-md border border-primary text-primary bg-surface hover:bg-primary-surface no-underline"
+        >
+          Read essays
+        </a>
+      </div>
     </div>
   </section>
 </PageLayout>

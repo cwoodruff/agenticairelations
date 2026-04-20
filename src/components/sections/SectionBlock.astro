@@ -1,0 +1,77 @@
+---
+/**
+ * SectionBlock — a full-bleed section with accent color.
+ *
+ * tone="primary"|"purple"|"amber"  → block background, inverted foreground
+ * tone="surface"                   → neutral raised surface
+ * tone="bg"                        → page background (default)
+ *
+ * Children get the appropriate readable text color by default.
+ */
+interface Props {
+  tone?: 'primary' | 'purple' | 'amber' | 'surface' | 'bg';
+  class?: string;
+  id?: string;
+}
+
+const { tone = 'bg', class: klass = '', id } = Astro.props;
+
+const bgMap = {
+  primary: 'bg-primary text-primary-ink',
+  purple: 'bg-purple text-purple-ink',
+  amber: 'bg-amber text-amber-ink',
+  surface: 'bg-surface-raised',
+  bg: 'bg-bg',
+};
+
+const isInverted = tone === 'primary' || tone === 'purple' || tone === 'amber';
+---
+
+<section
+  id={id}
+  class:list={[
+    'relative w-full',
+    bgMap[tone],
+    isInverted && 'section-inverted',
+    klass,
+  ]}
+  data-tone={tone}
+>
+  <slot />
+</section>
+
+{
+  isInverted && (
+    <style is:global>
+      .section-inverted h1,
+      .section-inverted h2,
+      .section-inverted h3,
+      .section-inverted h4,
+      .section-inverted strong {
+        color: inherit;
+      }
+      .section-inverted .eyebrow {
+        color: rgb(255 255 255 / 0.92);
+      }
+      .section-inverted .eyebrow::before {
+        background-color: rgb(255 255 255 / 0.92);
+      }
+      .section-inverted a {
+        color: inherit;
+        text-decoration-color: currentColor;
+        opacity: 0.95;
+      }
+      .section-inverted a:hover {
+        opacity: 1;
+      }
+      .section-inverted .text-body,
+      .section-inverted .text-muted {
+        color: inherit;
+        opacity: 0.88;
+      }
+      .section-inverted .text-heading {
+        color: inherit;
+      }
+    </style>
+  )
+}

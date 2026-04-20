@@ -12,13 +12,23 @@ const borderColor = {
   purple: 'border-t-purple',
   amber: 'border-t-amber',
 };
+
+const titleColor = {
+  primary: 'text-primary',
+  purple: 'text-purple',
+  amber: 'text-amber',
+};
 ---
 
 <article
-  class={`border-t-4 ${borderColor[color]} border-x border-b border-border rounded-lg bg-surface p-6 shadow-sm h-full`}
+  class:list={[
+    'group border-t-4',
+    borderColor[color],
+    'border-x border-b border-border rounded-lg bg-surface p-6 shadow-card hover:shadow-card-hover transition-shadow h-full',
+  ]}
 >
-  {also && <p class="text-muted text-xs font-mono uppercase tracking-wide mb-2">{also}</p>}
-  <h3 class="text-heading text-xl font-bold mb-4">{title}</h3>
+  {also && <p class="text-muted text-[0.7rem] font-mono uppercase tracking-[0.18em] mb-3">{also}</p>}
+  <h3 class:list={['text-xl font-bold mb-4 leading-snug', titleColor[color]]}>{title}</h3>
   <div class="text-body leading-relaxed">
     <slot />
   </div>

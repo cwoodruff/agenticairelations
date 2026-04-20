@@ -1,0 +1,67 @@
+---
+/**
+ * AgenticMark — the site's signature visual mark.
+ *
+ * Three concentric elements:
+ *   1. inner filled dot         → the agent
+ *   2. ring (outlined circle)   → the platform / community
+ *   3. open 270° outer arc      → the ecosystem, open and evolving
+ *
+ * The asymmetry of the outer arc is intentional: it signals that the
+ * ecosystem is being shaped, not sealed.
+ */
+interface Props {
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  tone?: 'primary' | 'purple' | 'amber' | 'onDark';
+  animated?: boolean;
+  class?: string;
+}
+
+const { size = 'md', tone = 'primary', animated = false, class: klass = '' } = Astro.props;
+
+const px = {
+  xs: 20,
+  sm: 28,
+  md: 48,
+  lg: 96,
+  xl: 240,
+}[size];
+
+// Color semantics — inner dot and ring share the primary tone; the outer arc
+// uses the complement (purple vs primary, etc.). On a dark block surface we
+// invert to the "ink" variant to keep contrast.
+const toneMap = {
+  primary: { inner: 'rgb(var(--color-primary))', ring: 'rgb(var(--color-primary))', arc: 'rgb(var(--color-purple))' },
+  purple: { inner: 'rgb(var(--color-purple))', ring: 'rgb(var(--color-purple))', arc: 'rgb(var(--color-primary))' },
+  amber: { inner: 'rgb(var(--color-amber))', ring: 'rgb(var(--color-amber))', arc: 'rgb(var(--color-primary))' },
+  onDark: { inner: 'rgb(255 255 255)', ring: 'rgb(255 255 255 / 0.75)', arc: 'rgb(255 255 255 / 0.5)' },
+}[tone];
+---
+
+<svg
+  viewBox="0 0 100 100"
+  width={px}
+  height={px}
+  aria-hidden="true"
+  class:list={[klass, animated && 'glyph-pulse']}
+>
+  <!-- outer open arc (≈270°, missing a notch in the upper-right) -->
+  <path
+    d="M 50 8 A 42 42 0 1 0 85.7 70.7"
+    fill="none"
+    stroke={toneMap.arc}
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <!-- middle ring -->
+  <circle
+    cx="50"
+    cy="50"
+    r="26"
+    fill="none"
+    stroke={toneMap.ring}
+    stroke-width="2.5"
+  />
+  <!-- inner filled dot -->
+  <circle cx="50" cy="50" r="8" fill={toneMap.inner} />
+</svg>

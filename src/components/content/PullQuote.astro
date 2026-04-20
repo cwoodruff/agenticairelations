@@ -1,0 +1,25 @@
+---
+interface Props {
+  attribution?: string;
+  tone?: 'primary' | 'purple' | 'amber';
+}
+
+const { attribution, tone = 'primary' } = Astro.props;
+
+const borderColor = {
+  primary: 'border-primary',
+  purple: 'border-purple',
+  amber: 'border-amber',
+}[tone];
+---
+
+<blockquote class:list={['pullquote', borderColor]}>
+  <slot />
+  {
+    attribution && (
+      <footer class="text-base font-normal text-muted mt-4 not-italic">
+        — {attribution}
+      </footer>
+    )
+  }
+</blockquote>

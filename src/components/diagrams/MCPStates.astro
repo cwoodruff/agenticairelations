@@ -23,7 +23,7 @@
     </defs>
 
     <!-- State 1: Not Accessible (gray / muted) -->
-    <g>
+    <g class="reveal reveal-1">
       <rect x="20" y="40" width="200" height="220" rx="12" fill="#FAFAF8" stroke="#D3D1C7" stroke-width="2" />
       <text x="120" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#5F5E5A">
         Not accessible
@@ -43,7 +43,7 @@
     </g>
 
     <!-- State 2: Agent-Accessible (amber) -->
-    <g>
+    <g class="reveal reveal-2">
       <rect x="240" y="40" width="200" height="220" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="2" />
       <text x="340" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#854F0B">
         Agent-accessible
@@ -63,7 +63,7 @@
     </g>
 
     <!-- State 3: Agent-Native (teal) -->
-    <g>
+    <g class="reveal reveal-3">
       <rect x="460" y="40" width="200" height="220" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2" />
       <text x="560" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#0F6E56">
         Agent-native
@@ -84,7 +84,7 @@
 
     <!-- Progress arrow across bottom -->
     <g stroke="#1A1A18" stroke-width="1.5" fill="none" marker-end="url(#mcp-arrow)">
-      <line x1="40" y1="300" x2="640" y2="300" />
+      <line x1="40" y1="300" x2="640" y2="300" class="stroke-draw" style="animation-delay: 0.5s" />
     </g>
     <text x="340" y="324" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1A1A18" font-weight="600">
       Investment required →

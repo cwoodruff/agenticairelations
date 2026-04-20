@@ -1,4 +1,7 @@
 ---
+import AgenticMark from '../ui/AgenticMark.astro';
+import Wordmark from '../ui/Wordmark.astro';
+
 const year = new Date().getFullYear();
 
 const groups = [
@@ -33,35 +36,34 @@ const groups = [
 ];
 ---
 
-<footer class="border-t border-border bg-surface mt-24">
-  <div class="container-site py-14">
+<footer class="relative border-t border-border bg-surface mt-24 overflow-hidden">
+  <!-- Faint backdrop glyph — sits behind content, decorative only. -->
+  <div class="absolute -right-16 -bottom-24 opacity-[0.05] pointer-events-none" aria-hidden="true">
+    <AgenticMark size="xl" tone="primary" />
+  </div>
+
+  <div class="container-site py-16 relative">
     <div class="grid md:grid-cols-4 gap-10">
       <div class="md:col-span-1">
-        <a href="/" class="flex items-center gap-2 no-underline">
-          <span
-            class="inline-flex items-center justify-center h-9 w-9 rounded-md bg-primary text-white font-bold font-mono text-sm"
-            >AR</span
-          >
-          <span class="text-heading font-semibold tracking-tight">Agentic Relations</span>
-        </a>
-        <p class="text-muted text-sm mt-4 leading-relaxed">
-          The canonical reference for the discipline of Agentic Relations — where
-          Developer Relations meets the AI-agent era.
+        <Wordmark />
+        <p class="text-muted text-sm mt-5 leading-relaxed">
+          The canonical reference for the discipline of Agentic Relations —
+          where Developer Relations meets the AI-agent era.
         </p>
       </div>
 
       {
         groups.map((g) => (
           <div>
-            <h3 class="text-heading text-sm font-semibold uppercase tracking-wider mb-4">
+            <h3 class="text-heading text-xs font-mono font-bold uppercase tracking-widest mb-4">
               {g.heading}
             </h3>
-            <ul class="space-y-2">
+            <ul class="space-y-2.5">
               {g.links.map((l) => (
                 <li>
                   <a
                     href={l.href}
-                    class="text-body hover:text-primary text-sm no-underline"
+                    class="text-body hover:text-primary text-[0.92rem] no-underline transition-colors"
                     {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}
                   >
                     {l.label}
@@ -74,11 +76,9 @@ const groups = [
       }
     </div>
 
-    <div class="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm text-muted">
+    <div class="mt-14 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm text-muted">
       <p>&copy; {year} Chris Woodruff. All rights reserved.</p>
-      <p class="font-mono text-xs">
-        agenticairelations.com
-      </p>
+      <p class="font-mono text-xs">agenticairelations.com</p>
     </div>
   </div>
 </footer>

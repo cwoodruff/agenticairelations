@@ -11,32 +11,38 @@ const fmt = (d: Date) =>
 ---
 
 <section class="container-site section">
-  <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+  <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
     <div>
-      <p class="eyebrow mb-2">Essays</p>
-      <h2 class="text-heading">Read the argument, one essay at a time.</h2>
+      <p class="eyebrow mb-4">Essays</p>
+      <h2 class="max-w-2xl">Read the argument, one essay at a time.</h2>
     </div>
     <a
       href="/essays/"
-      class="text-primary font-semibold hover:underline">View all essays →</a
+      class="text-primary font-semibold hover:underline no-underline inline-flex items-center gap-2"
+      >View all essays <span aria-hidden="true">→</span></a
     >
   </div>
 
   <div class="grid md:grid-cols-3 gap-6">
     {
-      essays.map((e) => (
+      essays.map((e, i) => (
         <a
           href={`/essays/${e.slug}/`}
-          class="group block border border-border rounded-xl p-6 bg-surface hover:border-primary transition-colors no-underline"
+          class:list={[
+            'group block border border-border rounded-2xl p-7 bg-surface hover:border-primary transition-all no-underline shadow-card hover:shadow-card-hover hover:-translate-y-0.5',
+          ]}
         >
-          <p class="text-xs text-muted font-mono mb-3">
+          <p class="text-xs text-muted font-mono uppercase tracking-widest mb-4">
+            <span class="text-primary font-bold mr-3">{String(i + 1).padStart(2, '0')}</span>
             {fmt(e.data.publishDate)}
           </p>
           <h3 class="text-heading text-lg font-bold leading-snug mb-3 group-hover:text-primary transition-colors">
             {e.data.title}
           </h3>
           <p class="text-muted text-sm leading-relaxed">{e.data.description}</p>
-          <p class="text-primary font-semibold text-sm mt-4">Read essay →</p>
+          <p class="text-primary font-semibold text-sm mt-5 inline-flex items-center gap-2">
+            Read essay <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+          </p>
         </a>
       ))
     }

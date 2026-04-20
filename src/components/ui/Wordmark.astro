@@ -1,0 +1,24 @@
+---
+import AgenticMark from './AgenticMark.astro';
+
+interface Props {
+  /** If true, render the full "Agentic Relations" text; else just the mark + "AR". */
+  full?: boolean;
+  size?: 'sm' | 'md';
+}
+
+const { full = true, size = 'sm' } = Astro.props;
+---
+
+<a href="/" class="inline-flex items-center gap-2.5 no-underline group" aria-label="Agentic Relations home">
+  <AgenticMark size={size === 'sm' ? 'sm' : 'md'} tone="primary" class="transition-transform duration-500 group-hover:rotate-45" />
+  {
+    full ? (
+      <span class="font-semibold text-heading tracking-tight text-[0.98rem]">
+        Agentic&nbsp;Relations
+      </span>
+    ) : (
+      <span class="font-mono font-bold text-heading text-sm">AR</span>
+    )
+  }
+</a>

@@ -4,19 +4,27 @@ interface Props {
   label: string;
   delta?: string;
   deltaDirection?: 'up' | 'down' | 'neutral';
+  tone?: 'primary' | 'amber' | 'purple' | 'neutral';
 }
 
-const { value, label, delta, deltaDirection = 'neutral' } = Astro.props;
+const { value, label, delta, deltaDirection = 'neutral', tone = 'primary' } = Astro.props;
+
+const toneMap = {
+  primary: 'text-primary',
+  amber: 'text-amber',
+  purple: 'text-purple',
+  neutral: 'text-heading',
+};
 
 const deltaColor = {
   up: 'text-primary',
-  down: 'text-red-600',
+  down: 'text-amber',
   neutral: 'text-muted',
 };
 ---
 
-<div class="bg-surface border border-border rounded-xl p-6 text-center">
-  <p class="text-4xl font-bold text-heading font-mono">{value}</p>
-  {delta && <p class={`text-sm mt-1 ${deltaColor[deltaDirection]}`}>{delta}</p>}
-  <p class="text-sm text-muted mt-2">{label}</p>
+<div class="bg-surface border border-border rounded-2xl p-7 text-center shadow-card hover:shadow-card-hover transition-shadow">
+  <p class={`text-5xl font-bold font-mono tracking-tight ${toneMap[tone]}`}>{value}</p>
+  {delta && <p class={`text-sm mt-2 font-mono ${deltaColor[deltaDirection]}`}>{delta}</p>}
+  <p class="text-sm text-muted mt-3 leading-snug">{label}</p>
 </div>
