@@ -1,6 +1,6 @@
 # agenticairelations.com
 
-The canonical reference site for **Agentic Relations** — the discipline
+The canonical reference site for **Agentic Developer Relations** — the discipline
 inside Developer Relations responsible for the AI agent layer of every
 developer platform.
 

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Agentic Relations">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Agentic Developer Relations">
   <rect width="1200" height="630" fill="#FAFAF8"/>
   <rect x="0" y="0" width="12" height="630" fill="#0F6E56"/>
   <text
@@ -9,7 +9,7 @@
     font-size="86"
     fill="#1A1A18"
     letter-spacing="-2"
-  >Agentic Relations</text>
+  >Agentic Developer Relations</text>
   <text
     x="80"
     y="340"

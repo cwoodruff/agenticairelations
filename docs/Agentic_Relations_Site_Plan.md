@@ -1,9 +1,9 @@
-# Agentic Relations — Astro Website Build Plan
+# Agentic Developer Relations — Astro Website Build Plan
 
 **Author:** Chris Woodruff  
 **Domain target:** agenticrelations.dev (or agenticrelations.com)  
 **Framework:** Astro 4.x — static output, zero JS by default  
-**Purpose:** Establish Chris Woodruff as the defining voice in Agentic Relations; educate the DevRel community; generate speaking, consulting, and EcoSynt pipeline  
+**Purpose:** Establish Chris Woodruff as the defining voice in Agentic Developer Relations; educate the DevRel community; generate speaking, consulting, and EcoSynt pipeline  
 **Status:** Build-ready specification  
 
 ---
@@ -22,7 +22,7 @@
 10. [SEO and Metadata Strategy](#10-seo-and-metadata-strategy)
 11. [Launch Sequence](#11-launch-sequence)
 12. [Full Page Copy — Home](#12-full-page-copy--home)
-13. [Full Page Copy — What Is Agentic Relations](#13-full-page-copy--what-is-agentic-relations)
+13. [Full Page Copy — What Is Agentic Developer Relations](#13-full-page-copy--what-is-agentic-relations)
 14. [Full Page Copy — The 37 Patterns Reframed](#14-full-page-copy--the-37-patterns-reframed)
 15. [Full Page Copy — New Roles](#15-full-page-copy--new-roles)
 16. [Full Page Copy — Measurement Framework](#16-full-page-copy--measurement-framework)
@@ -37,13 +37,13 @@
 
 ### What this site is
 
-Agentic Relations is a new discipline inside Developer Relations. No authoritative resource exists for it. This site occupies that vacuum deliberately and permanently. It is the canonical reference point for the concept — the place a journalist, conference program committee, or DevRel leader goes when they need to understand what Agentic Relations is and who defined it.
+Agentic Developer Relations is a new discipline inside Developer Relations. No authoritative resource exists for it. This site occupies that vacuum deliberately and permanently. It is the canonical reference point for the concept — the place a journalist, conference program committee, or DevRel leader goes when they need to understand what Agentic Developer Relations is and who defined it.
 
 The site serves three concurrent purposes:
 
 **Authority establishment.** Chris Woodruff co-authored the definitive book on DevRel activity patterns. This site extends that intellectual lineage into the AI-agent era. Every page reinforces the same framing: the field has changed, the change has been named, and it was named here.
 
-**Community hub.** DevRel practitioners are already discovering that their work is bifurcating — some of it is still human community work, some of it is now agent ecosystem work. This site gives that bifurcation a name, a framework, and a community to join. It is where the emerging Agentic Relations practice coalesces.
+**Community hub.** DevRel practitioners are already discovering that their work is bifurcating — some of it is still human community work, some of it is now agent ecosystem work. This site gives that bifurcation a name, a framework, and a community to join. It is where the emerging Agentic Developer Relations practice coalesces.
 
 **Pipeline.** Speaking invitations, consulting engagements, EcoSynt leads, and book opportunities flow from authority. The site converts authority into pipeline without ever reading like a marketing site. It earns trust by being genuinely useful, then lets the contact form and essay subscription do the rest.
 
@@ -85,7 +85,7 @@ agenticrelations.dev/
 │
 ├── /about                          Chris Woodruff — bio, book, EcoSynt, speaking
 │
-└── /newsletter                     Subscribe to the Agentic Relations newsletter
+└── /newsletter                     Subscribe to the Agentic Developer Relations newsletter
 ```
 
 ### Navigation structure
@@ -174,7 +174,7 @@ Purple surface:       #EEEDFE    --color-purple-surface
 
 ---
 
-### What Is Agentic Relations `/what-is-agentic-relations`
+### What Is Agentic Developer Relations `/what-is-agentic-relations`
 
 **Purpose:** The canonical definitional page. This is the page that gets linked from everywhere else.
 
@@ -208,12 +208,12 @@ Purple surface:       #EEEDFE    --color-purple-surface
 
 ### The 37 Patterns Reframed `/devrel-patterns-reframed`
 
-**Purpose:** Connect Agentic Relations to the existing DevRel canon. This page speaks directly to practitioners who know the book.
+**Purpose:** Connect Agentic Developer Relations to the existing DevRel canon. This page speaks directly to practitioners who know the book.
 
 **Sections:**
 1. Brief intro — the patterns don't become obsolete, they bifurcate
 2. The three categories (gains agent layer / requires rewrite / grows more valuable)
-3. Pattern-by-pattern reference table (all 37, with Agentic Relations status for each)
+3. Pattern-by-pattern reference table (all 37, with Agentic Developer Relations status for each)
 4. Deep dive: Reference Documentation reframed
 5. Deep dive: Ambassador → Agent Champion
 6. Deep dive: Hackathon → Agentic Hackathon
@@ -257,7 +257,7 @@ Purple surface:       #EEEDFE    --color-purple-surface
 
 ### For DevRel Teams `/for-devrel-teams`
 
-**Purpose:** The practitioner conversion page. Convince a practicing DevRel professional that Agentic Relations is real, urgent, and something they should own.
+**Purpose:** The practitioner conversion page. Convince a practicing DevRel professional that Agentic Developer Relations is real, urgent, and something they should own.
 
 **Sections:**
 1. The relevance crisis — what practitioners are feeling but can't name
@@ -271,7 +271,7 @@ Purple surface:       #EEEDFE    --color-purple-surface
 
 ### For Companies `/for-companies`
 
-**Purpose:** The executive conversion page. Convince a VP of DevRel, Head of Platform, or CTO that Agentic Relations deserves investment.
+**Purpose:** The executive conversion page. Convince a VP of DevRel, Head of Platform, or CTO that Agentic Developer Relations deserves investment.
 
 **Sections:**
 1. The executive frame — FAISR as a causal metric
@@ -304,7 +304,7 @@ Purple surface:       #EEEDFE    --color-purple-surface
 
 **Initial series:** Three essays (full text in Section 20)
 
-**Ongoing cadence:** One essay per month minimum. Each essay addresses one aspect of Agentic Relations in depth, with the same practitioner-to-practitioner voice.
+**Ongoing cadence:** One essay per month minimum. Each essay addresses one aspect of Agentic Developer Relations in depth, with the same practitioner-to-practitioner voice.
 
 ---
 
@@ -318,7 +318,7 @@ Every diagram is built as inline SVG using the site's design tokens. No external
 
 **Page:** Home, /what-is-agentic-relations  
 **Type:** Structural — two concentric triangles  
-**Concept:** The original Triad (Community, Company, Customer) as an inner triangle; the Agentic Relations extensions as an outer ring around each vertex.
+**Concept:** The original Triad (Community, Company, Customer) as an inner triangle; the Agentic Developer Relations extensions as an outer ring around each vertex.
 
 **Layout description:**
 - Inner equilateral triangle, vertices labeled Community / Company / Customer, teal fill (#E1F5EE), teal border (#0F6E56)
@@ -326,7 +326,7 @@ Every diagram is built as inline SVG using the site's design tokens. No external
   - Community → Agent Ecosystem
   - Company → Signal Loss / New Metrics
   - Customer → AI-Assisted Buyer
-- Center label: "Fundamental Triad" in teal, "Extended for Agentic Relations" in muted
+- Center label: "Fundamental Triad" in teal, "Extended for Agentic Developer Relations" in muted
 - ViewBox: 0 0 680 520
 - Arrow heads on dashed extension lines
 
@@ -687,8 +687,8 @@ export const collections = { essays };
 ```yaml
 ---
 title: "Your Developer Community Now Has Members Who Can't Read"
-subtitle: "Introducing Agentic Relations — the discipline DevRel must develop before it realizes it needed to"
-description: "AI coding agents are integrating with your platform on behalf of developers. Agentic Relations is the discipline for managing that relationship."
+subtitle: "Introducing Agentic Developer Relations — the discipline DevRel must develop before it realizes it needed to"
+description: "AI coding agents are integrating with your platform on behalf of developers. Agentic Developer Relations is the discipline for managing that relationship."
 publishDate: 2026-05-01
 series: agentic-relations-introduction
 seriesOrder: 1
@@ -875,7 +875,7 @@ const deltaColor = { up: 'text-primary', down: 'text-red-600', neutral: 'text-mu
 
 ```astro
 <!-- In BaseLayout.astro -->
-<title>{title} — Agentic Relations</title>
+<title>{title} — Agentic Developer Relations</title>
 <meta name="description" content={description} />
 <meta name="author" content="Chris Woodruff" />
 
@@ -885,7 +885,7 @@ const deltaColor = { up: 'text-primary', down: 'text-red-600', neutral: 'text-mu
 <meta property="og:type" content={type ?? 'website'} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:site_name" content="Agentic Relations" />
+<meta property="og:site_name" content="Agentic Developer Relations" />
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -909,7 +909,7 @@ Each essay gets `Article` schema. The About page gets `Person` schema. The home 
   "name": "Chris Woodruff",
   "url": "https://agenticrelations.dev/about",
   "jobTitle": "Developer Relations Practitioner & Author",
-  "knowsAbout": ["Developer Relations", "Agentic Relations", "AI Agents", "Software Architecture"],
+  "knowsAbout": ["Developer Relations", "Agentic Developer Relations", "AI Agents", "Software Architecture"],
   "sameAs": [
     "https://www.linkedin.com/in/woodruff",
     "https://twitter.com/woodruff",
@@ -972,10 +972,10 @@ Each essay gets `Article` schema. The About page gets `Person` schema. The home 
 ```
 headline:     When a developer asks AI to integrate with your platform,
               does it work?
-subheadline:  Most DevRel programs don't know. Agentic Relations is the
+subheadline:  Most DevRel programs don't know. Agentic Developer Relations is the
               discipline that makes the answer knowable — and then
               systematically improves it.
-cta-primary:  What is Agentic Relations?
+cta-primary:  What is Agentic Developer Relations?
 cta-secondary: Read the essays
 ```
 
@@ -989,7 +989,7 @@ It doesn't attend your conferences. It doesn't read your blog posts. It doesn't 
 
 That member is the AI coding agent. And Developer Relations, as a field, has no framework for serving it.
 
-**Agentic Relations** is that framework.
+**Agentic Developer Relations** is that framework.
 
 ---
 
@@ -1003,7 +1003,7 @@ The result: most platforms have a silent, growing failure rate in AI-assisted in
 
 ### Three things this site will give you
 
-**A definition.** Agentic Relations is a named discipline now. The canonical definition lives here, grounded in the Fundamental Triad of Developer Relations Activity Patterns and extended for the AI-agent era.
+**A definition.** Agentic Developer Relations is a named discipline now. The canonical definition lives here, grounded in the Fundamental Triad of Developer Relations Activity Patterns and extended for the AI-agent era.
 
 **A framework.** The 37 patterns of DevRel bifurcate in the agentic era. New roles emerge. New metrics apply. The framework for all of it is documented here in operational depth.
 
@@ -1013,7 +1013,7 @@ The result: most platforms have a silent, growing failure rate in AI-assisted in
 
 ### Five pages worth reading first
 
-[What Is Agentic Relations] — The canonical definition, three principles, and how it extends the Fundamental Triad.
+[What Is Agentic Developer Relations] — The canonical definition, three principles, and how it extends the Fundamental Triad.
 
 [The Amdahl Tax] — Why the environment is the binding constraint, and what DevRel can do about it.
 
@@ -1027,17 +1027,17 @@ The result: most platforms have a silent, growing failure rate in AI-assisted in
 
 ### About Chris Woodruff
 
-Chris Woodruff co-authored *Developer Relations Activity Patterns* (Apress, 2026) — the field's first systematic catalog of DevRel activity patterns. He is the founder of EcoSynt, an agent ecosystem health and observability platform, and has been working at the intersection of DevRel and AI systems since the earliest multi-agent frameworks reached production. He coined the term Agentic Relations and maintains this site as the canonical resource for the discipline.
+Chris Woodruff co-authored *Developer Relations Activity Patterns* (Apress, 2026) — the field's first systematic catalog of DevRel activity patterns. He is the founder of EcoSynt, an agent ecosystem health and observability platform, and has been working at the intersection of DevRel and AI systems since the earliest multi-agent frameworks reached production. He coined the term Agentic Developer Relations and maintains this site as the canonical resource for the discipline.
 
 [Read the full bio →]
 
 ---
 
-## 13. Full Page Copy — What Is Agentic Relations
+## 13. Full Page Copy — What Is Agentic Developer Relations
 
 ```
-title:        What Is Agentic Relations?
-description:  The canonical definition of Agentic Relations — the discipline
+title:        What Is Agentic Developer Relations?
+description:  The canonical definition of Agentic Developer Relations — the discipline
               within Developer Relations responsible for the AI agent layer
               of every developer platform.
 ```
@@ -1046,9 +1046,9 @@ description:  The canonical definition of Agentic Relations — the discipline
 
 ### The canonical definition
 
-> **Agentic Relations (AR):** The discipline within Developer Relations responsible for ensuring that AI coding agents and autonomous AI systems can successfully integrate with, consume, and represent a platform accurately — through deliberate cultivation of agent-consumable documentation, validated prompt recipes, machine-readable schemas, and the ongoing measurement of agent ecosystem health.
+> **Agentic Developer Relations (AR):** The discipline within Developer Relations responsible for ensuring that AI coding agents and autonomous AI systems can successfully integrate with, consume, and represent a platform accurately — through deliberate cultivation of agent-consumable documentation, validated prompt recipes, machine-readable schemas, and the ongoing measurement of agent ecosystem health.
 
-Agentic Relations does not replace Developer Relations. It is the next structural layer of the discipline — required because the audience for every developer platform now includes a non-human member: the AI coding agent that an increasing fraction of developers use to generate integration code before they write a single line themselves.
+Agentic Developer Relations does not replace Developer Relations. It is the next structural layer of the discipline — required because the audience for every developer platform now includes a non-human member: the AI coding agent that an increasing fraction of developers use to generate integration code before they write a single line themselves.
 
 ---
 
@@ -1058,7 +1058,7 @@ Every developer platform has always had one audience: human developers. Document
 
 That has changed. When a developer asks GitHub Copilot, Cursor, or Claude Code to write an integration with your platform, there are now two parties making decisions: the developer, who evaluates the output, and the AI agent, who generates it. The agent doesn't navigate your documentation. It retrieves specific sections as context for generation tasks. It doesn't tolerate ambiguity. It amplifies every imprecision in your API surface and every gap in your documentation into integration failures at scale.
 
-The developer experience of your platform is now partly determined by how well AI agents can work with it. DevRel has always been responsible for the developer experience. Agentic Relations is the recognition that this responsibility now extends to the non-human member of the development partnership.
+The developer experience of your platform is now partly determined by how well AI agents can work with it. DevRel has always been responsible for the developer experience. Agentic Developer Relations is the recognition that this responsibility now extends to the non-human member of the development partnership.
 
 ---
 
@@ -1092,19 +1092,19 @@ DevRel's role in raising that ceiling: identify where it's binding, make it visi
 
 ### The primary metric: First-Attempt Integration Success Rate
 
-Traditional DevRel has always struggled to produce metrics that connect directly to adoption. Agentic Relations changes this.
+Traditional DevRel has always struggled to produce metrics that connect directly to adoption. Agentic Developer Relations changes this.
 
 **First-Attempt Integration Success Rate (FAISR):** Of all integrations generated by AI coding tools using a platform's published materials as context, what percentage produce working code without manual correction on the first attempt?
 
 This metric is measurable through controlled testing. It is approximable through API log analysis. It is validatable through developer surveys. And it connects directly to adoption: developers who experience successful AI-assisted integrations adopt platforms. Developers who experience systematic AI-generated integration failures choose alternatives.
 
-Most DevRel programs today cannot answer the FAISR question for their platform. Agentic Relations exists to change that.
+Most DevRel programs today cannot answer the FAISR question for their platform. Agentic Developer Relations exists to change that.
 
 ---
 
 ### What changes, what stays the same
 
-| Traditional DevRel — unchanged | Agentic Relations — new layer required |
+| Traditional DevRel — unchanged | Agentic Developer Relations — new layer required |
 |---|---|
 | Human community remains the primary trust mechanism | Agent ecosystem operates on corpus quality, not relationship |
 | Ambassadors earn trust through presence and authentic voice | Agent Champions earn relevance through validated configurations |
@@ -1120,7 +1120,7 @@ Most DevRel programs today cannot answer the FAISR question for their platform. 
 ## 14. Full Page Copy — The 37 Patterns Reframed
 
 ```
-title:        The 37 DevRel Patterns, Reframed for Agentic Relations
+title:        The 37 DevRel Patterns, Reframed for Agentic Developer Relations
 description:  How every activity pattern in Developer Relations Activity
               Patterns bifurcates in the AI-agent era — what changes,
               what stays, and what needs a complete rewrite.
@@ -1128,9 +1128,9 @@ description:  How every activity pattern in Developer Relations Activity
 
 ---
 
-Every activity pattern in *Developer Relations Activity Patterns* was documented for a human audience. None of the 37 patterns become obsolete in the Agentic Relations era. But every one of them bifurcates — some requiring only the addition of an agent-facing variant, some requiring substantive rewriting, and some growing more valuable precisely because they are irreducibly human.
+Every activity pattern in *Developer Relations Activity Patterns* was documented for a human audience. None of the 37 patterns become obsolete in the Agentic Developer Relations era. But every one of them bifurcates — some requiring only the addition of an agent-facing variant, some requiring substantive rewriting, and some growing more valuable precisely because they are irreducibly human.
 
-Understanding which category a pattern falls into is the first step in adapting a DevRel program for the two-layer operating environment that Agentic Relations requires.
+Understanding which category a pattern falls into is the first step in adapting a DevRel program for the two-layer operating environment that Agentic Developer Relations requires.
 
 ---
 
@@ -1150,7 +1150,7 @@ Understanding which category a pattern falls into is the first step in adapting 
 
 The Reference Documentation pattern in the book exists to give developers the complete technical information they need to use a platform correctly. The implementation assumes a human reader: navigating a hierarchy, reading progressively, resolving ambiguity through context and prior knowledge.
 
-In the Agentic Relations context, Reference Documentation must serve two readers simultaneously.
+In the Agentic Developer Relations context, Reference Documentation must serve two readers simultaneously.
 
 The human reader still navigates, still uses context, still exercises judgment. For this reader, nothing fundamental changes — the pattern's existing guidance applies.
 
@@ -1162,7 +1162,7 @@ The practical implication: every Reference Documentation page should be audited 
 
 ### Deep dive: Ambassador → Agent Champion
 
-The Ambassador pattern is perhaps the clearest example of a pattern that requires rewriting for the Agentic Relations context — not because Ambassadors become less valuable, but because the agent ecosystem requires a different practitioner with a different operating model.
+The Ambassador pattern is perhaps the clearest example of a pattern that requires rewriting for the Agentic Developer Relations context — not because Ambassadors become less valuable, but because the agent ecosystem requires a different practitioner with a different operating model.
 
 The Ambassador earns trust through authentic community presence. The relationship is the mechanism. Human developers trust Ambassadors because they know them, have seen them speak honestly, have observed them using the platform in real contexts.
 
@@ -1192,15 +1192,15 @@ The Agentic Hackathon rewrite addresses five changes:
 
 5. **Platform monitors instead of just mentors.** Agent Champions observe team-AI interactions throughout the event, cataloging where the platform's agent-consumable infrastructure is failing. The event is simultaneously a community experience and an agent ecosystem intelligence operation.
 
-**[View full pattern reference: All 37 patterns with Agentic Relations status →]**
+**[View full pattern reference: All 37 patterns with Agentic Developer Relations status →]**
 
 ---
 
 ## 15. Full Page Copy — New Roles
 
 ```
-title:        New Roles for Agentic Relations
-description:  Three new practitioner roles that Agentic Relations requires —
+title:        New Roles for Agentic Developer Relations
+description:  Three new practitioner roles that Agentic Developer Relations requires —
               the Agent Champion, the Documentation Architect for agent
               consumption, and the API Experience Designer.
 ```
@@ -1211,11 +1211,11 @@ description:  Three new practitioner roles that Agentic Relations requires —
 
 In the traditional DevRel model, value was created through production: writing tutorials, giving talks, building demos, running events. These activities required skill, but the skill was primarily in execution.
 
-Agentic Relations changes where value concentrates. As AI tools accelerate the production of content, documentation, and integration examples, the binding constraint shifts from production to judgment. Deciding whether an AI-generated tutorial encodes the right pattern, meets the trust standard that a developer audience expects, and doesn't teach an architectural shortcut that fails under real load — that is now the expensive operation. The production is cheap. The judgment is not.
+Agentic Developer Relations changes where value concentrates. As AI tools accelerate the production of content, documentation, and integration examples, the binding constraint shifts from production to judgment. Deciding whether an AI-generated tutorial encodes the right pattern, meets the trust standard that a developer audience expects, and doesn't teach an architectural shortcut that fails under real load — that is now the expensive operation. The production is cheap. The judgment is not.
 
 This is Amdahl's Law applied to DevRel work itself. Scarcity migrates upstream: from execution to review, from review to evaluation of approaches, from evaluation to framing problems, from framing to encoded institutional standards that everything else gets evaluated against.
 
-The three new roles Agentic Relations requires each operate primarily at this upstream layer.
+The three new roles Agentic Developer Relations requires each operate primarily at this upstream layer.
 
 ---
 
@@ -1424,8 +1424,8 @@ The temptation is to wait until full instrumentation is in place. Don't. The man
 ## 17. Full Page Copy — For DevRel Teams
 
 ```
-title:        Agentic Relations for DevRel Practitioners
-description:  What Agentic Relations means for practicing DevRel professionals —
+title:        Agentic Developer Relations for DevRel Practitioners
+description:  What Agentic Developer Relations means for practicing DevRel professionals —
               five talking points, the objections you'll face, and what to
               do in week one.
 ```
@@ -1440,19 +1440,19 @@ AI tools are flooding every content channel. Documentation that took days to wri
 
 This doesn't make DevRel obsolete. But it does change where DevRel's value concentrates. The execution layer is being automated. The judgment layer is not. And a new layer has appeared that most DevRel programs aren't serving at all: the agent ecosystem layer, where AI coding tools either produce correct integrations with a platform or don't — silently, at scale, without generating any of the traditional feedback signals.
 
-Agentic Relations names the work that DevRel needs to do at that layer.
+Agentic Developer Relations names the work that DevRel needs to do at that layer.
 
 ---
 
 ### Five talking points for your team and your leadership
 
-**1. Agentic Relations produces a direct causal metric.**
+**1. Agentic Developer Relations produces a direct causal metric.**
 
 The First-Attempt Integration Success Rate connects DevRel work directly to adoption outcomes. When the Agent Champion program improves FAISR by ten percentage points, you can show that AI-assisted developers are succeeding with the platform at a higher rate. This is not reach, engagement, or pipeline influence. It is a number that directly predicts adoption. The conversation with leadership changes.
 
 **2. The Amdahl Tax argument wins the engineering conversation.**
 
-When the Agent Champion can show that 70% of the time an AI agent spends integrating with the platform is consumed by human-speed tool interactions — and that a competitor has lowered that fraction through agent-native API design — DevRel has an engineering argument backed by measurable data. The feedback loop from agent integration failures to platform improvement has always existed informally. Agentic Relations makes it formal and quantified.
+When the Agent Champion can show that 70% of the time an AI agent spends integrating with the platform is consumed by human-speed tool interactions — and that a competitor has lowered that fraction through agent-native API design — DevRel has an engineering argument backed by measurable data. The feedback loop from agent integration failures to platform improvement has always existed informally. Agentic Developer Relations makes it formal and quantified.
 
 **3. The recipe library is the encoded institutional memory the field has always needed.**
 
@@ -1460,11 +1460,11 @@ Senior DevRel practitioners carry enormous tacit knowledge. That knowledge walks
 
 **4. Human community patterns become more valuable, not less.**
 
-As AI floods every content channel, the patterns that require genuine human presence — conference sessions, office hours, community events, ambassador relationships — become the scarcest signal in the ecosystem. Agentic Relations doesn't compete with these patterns. It creates a separate layer for agent-specific work, freeing human-facing programs to invest in the things only humans can provide.
+As AI floods every content channel, the patterns that require genuine human presence — conference sessions, office hours, community events, ambassador relationships — become the scarcest signal in the ecosystem. Agentic Developer Relations doesn't compete with these patterns. It creates a separate layer for agent-specific work, freeing human-facing programs to invest in the things only humans can provide.
 
-**5. The field is splitting, and Agentic Relations names the split.**
+**5. The field is splitting, and Agentic Developer Relations names the split.**
 
-DevRel teams everywhere are discovering that some of their work has shifted toward AI-adjacent tasks: maintaining MCP definitions, testing how AI tools handle the platform's API, reviewing AI-generated documentation. This work exists without a name, without a career path, and without measurement frameworks. Agentic Relations names it, structures it, and gives practitioners who are already doing this work a vocabulary and a professional community.
+DevRel teams everywhere are discovering that some of their work has shifted toward AI-adjacent tasks: maintaining MCP definitions, testing how AI tools handle the platform's API, reviewing AI-generated documentation. This work exists without a name, without a career path, and without measurement frameworks. Agentic Developer Relations names it, structures it, and gives practitioners who are already doing this work a vocabulary and a professional community.
 
 ---
 
@@ -1480,7 +1480,7 @@ Start with one day per week from an existing practitioner, dedicated explicitly 
 The silent majority is the measurement problem. Developers who use AI tools to integrate and fail don't generate support tickets — they leave. Run one controlled test suite against your top five integration tasks and measure what you find. The number is almost always surprising.
 
 **"This is an engineering problem, not a DevRel problem."**
-DevRel has always influenced documentation and integration design. Agentic Relations formalizes that influence and backs it with measurement. The Agent Champion's feedback loop to engineering is the same feedback loop DevRel has always run — with better data.
+DevRel has always influenced documentation and integration design. Agentic Developer Relations formalizes that influence and backs it with measurement. The Agent Champion's feedback loop to engineering is the same feedback loop DevRel has always run — with better data.
 
 ---
 
@@ -1501,8 +1501,8 @@ That's your baseline. You now have more signal about agent ecosystem health than
 ## 18. Full Page Copy — For Companies
 
 ```
-title:        Agentic Relations for Organizations Evaluating DevRel Investment
-description:  The business case for Agentic Relations — four arguments,
+title:        Agentic Developer Relations for Organizations Evaluating DevRel Investment
+description:  The business case for Agentic Developer Relations — four arguments,
               the competitive data, and the investment tiers.
 ```
 
@@ -1514,11 +1514,11 @@ Every executive evaluating DevRel investment has one question beneath all the ot
 
 The traditional answer involves reach, engagement, pipeline influence, and brand sentiment — metrics that are real but notoriously difficult to connect to adoption numbers. DevRel teams have spent years developing increasingly sophisticated attribution models to answer a question that the metrics were never designed to answer directly.
 
-Agentic Relations changes this.
+Agentic Developer Relations changes this.
 
 The First-Attempt Integration Success Rate is a metric that directly predicts adoption. Developers who experience successful AI-assisted integrations on the first attempt adopt platforms. Developers who experience systematic AI-generated integration failures choose alternatives — and they do it silently, without generating the support tickets or community posts that would give the company a chance to respond.
 
-Agentic Relations is the practice of measuring and improving that rate. It produces a DevRel program that can answer the executive question with data, not proxies.
+Agentic Developer Relations is the practice of measuring and improving that rate. It produces a DevRel program that can answer the executive question with data, not proxies.
 
 ---
 
@@ -1528,7 +1528,7 @@ A rigorous randomized controlled trial found that experienced software engineers
 
 The model wasn't the variable. The environment was.
 
-Your documentation, your API surface, your auth flows, your error model, and your integration examples are the environment for every developer integrating with your platform using AI tools. Agentic Relations is the discipline of managing that environment deliberately.
+Your documentation, your API surface, your auth flows, your error model, and your integration examples are the environment for every developer integrating with your platform using AI tools. Agentic Developer Relations is the discipline of managing that environment deliberately.
 
 ---
 
@@ -1540,11 +1540,11 @@ A technical evaluator choosing between platforms in 2024 ran a proof-of-concept 
 
 **2. Agent ecosystem failures are invisible until they are catastrophic.**
 
-When an AI tool produces a broken integration, the developer may debug silently, find a workaround, or abandon the platform. They are unlikely to file a support ticket. The signal never reaches the product team. The documentation team doesn't know its documentation is ambiguous. The company's metrics look stable while adoption degrades. Agentic Relations creates the measurement infrastructure that makes this degradation visible before it compounds.
+When an AI tool produces a broken integration, the developer may debug silently, find a workaround, or abandon the platform. They are unlikely to file a support ticket. The signal never reaches the product team. The documentation team doesn't know its documentation is ambiguous. The company's metrics look stable while adoption degrades. Agentic Developer Relations creates the measurement infrastructure that makes this degradation visible before it compounds.
 
 **3. Encoded judgment compounds; talent mobility does not.**
 
-The most valuable asset in a mature DevRel program is accumulated institutional judgment. It currently lives in senior practitioners' heads and walks out the door when they leave. The recipe library maintained by an Agentic Relations program encodes that judgment into versioned, machine-accessible artifacts that compound over time. This is a durable competitive advantage that does not depend on the tenure of specific individuals.
+The most valuable asset in a mature DevRel program is accumulated institutional judgment. It currently lives in senior practitioners' heads and walks out the door when they leave. The recipe library maintained by an Agentic Developer Relations program encodes that judgment into versioned, machine-accessible artifacts that compound over time. This is a durable competitive advantage that does not depend on the tenure of specific individuals.
 
 **4. The Amdahl ceiling is a product roadmap argument.**
 
@@ -1569,7 +1569,7 @@ When the Agent Champion can show that 70% of integration time is consumed by hum
 | FAISR | First-attempt integration success rate across AI coding tools | Direct predictor of AI-assisted developer adoption |
 | Amdahl ceiling | Fraction of integration time consumed by human-speed overhead | Product roadmap argument — quantifies the engineering investment needed to compete |
 | Recipe coverage | Percentage of common tasks with a validated AI prompt recipe | Measures completeness of agent ecosystem infrastructure |
-| Recipe freshness | Lag between API changes and recipe updates | Measures operational health of the Agentic Relations program |
+| Recipe freshness | Lag between API changes and recipe updates | Measures operational health of the Agentic Developer Relations program |
 | Competitive FAISR delta | Your FAISR vs. competitors on equivalent tasks | The board metric — are we winning or losing the AI-assisted developer experience? |
 
 ---
@@ -1578,7 +1578,7 @@ When the Agent Champion can show that 70% of integration time is consumed by hum
 
 When a developer asks an AI coding tool to integrate with your platform, does it work?
 
-If you don't know the answer, your DevRel program is not measuring the most consequential dimension of your developer experience. Agentic Relations is the discipline that makes the answer knowable — and then systematically improves it.
+If you don't know the answer, your DevRel program is not measuring the most consequential dimension of your developer experience. Agentic Developer Relations is the discipline that makes the answer knowable — and then systematically improves it.
 
 [Get in touch about speaking or advisory work →]
 
@@ -1590,18 +1590,18 @@ If you don't know the answer, your DevRel program is not measuring the most cons
 title:        About Chris Woodruff
 description:  DevRel practitioner, co-author of Developer Relations Activity
               Patterns, founder of EcoSynt, and the practitioner who coined
-              Agentic Relations.
+              Agentic Developer Relations.
 ```
 
 ---
 
-### Why Agentic Relations, why now
+### Why Agentic Developer Relations, why now
 
 I've spent twenty years at the intersection of developer communities and the platforms they build on. I've been a developer advocate, a community manager, a DevRel leader, and — in the process of writing *Developer Relations Activity Patterns* with Ted Neward, Scott McAllister, and David Neal — one of the practitioners who tried to put the entire field on systematic ground.
 
 When we wrote the book, we documented 37 activity patterns for a field that had been operating on institutional knowledge and instinct for thirty years. The response from the community was what it always is when you name things that people have been experiencing without vocabulary: recognition. This is the thing I've been doing. Now I have a name for it.
 
-Agentic Relations happened the same way. I started noticing that a significant fraction of the questions being asked about developer platform integrations were coming from developers who weren't writing the code themselves — they were asking AI tools to write it, and the AI tools were producing broken integrations. The failures were silent. The documentation was unchanged. The API hadn't changed. But something had changed: the audience.
+Agentic Developer Relations happened the same way. I started noticing that a significant fraction of the questions being asked about developer platform integrations were coming from developers who weren't writing the code themselves — they were asking AI tools to write it, and the AI tools were producing broken integrations. The failures were silent. The documentation was unchanged. The API hadn't changed. But something had changed: the audience.
 
 I named it. I built the framework. And I built this site to make the framework available to the field.
 
@@ -1619,9 +1619,9 @@ Published by Apress in 2026. Available wherever technical books are sold.
 
 ### EcoSynt
 
-EcoSynt is an agent ecosystem health and observability platform — the infrastructure that makes the Agent Ecosystem Health Dashboard real at production scale. It instruments multi-agent AI systems using OpenTelemetry GenAI semantic conventions, produces AgentScore health metrics, and gives DevRel teams the measurement layer that Agentic Relations requires.
+EcoSynt is an agent ecosystem health and observability platform — the infrastructure that makes the Agent Ecosystem Health Dashboard real at production scale. It instruments multi-agent AI systems using OpenTelemetry GenAI semantic conventions, produces AgentScore health metrics, and gives DevRel teams the measurement layer that Agentic Developer Relations requires.
 
-EcoSynt is where I am applying the Agentic Relations framework in practice. It is not the subject of this site — Agentic Relations is — but it is the proof of concept.
+EcoSynt is where I am applying the Agentic Developer Relations framework in practice. It is not the subject of this site — Agentic Developer Relations is — but it is the proof of concept.
 
 [Learn more about EcoSynt →]
 
@@ -1629,7 +1629,7 @@ EcoSynt is where I am applying the Agentic Relations framework in practice. It i
 
 ### Speaking
 
-I speak on Agentic Relations, DevRel evolution in the AI era, agent ecosystem health, and the pattern-based approach to DevRel program design. Recent and upcoming engagements include developer conferences, DevRel community events, and enterprise engineering leadership summits.
+I speak on Agentic Developer Relations, DevRel evolution in the AI era, agent ecosystem health, and the pattern-based approach to DevRel program design. Recent and upcoming engagements include developer conferences, DevRel community events, and enterprise engineering leadership summits.
 
 If you're building a program on the topic of DevRel in the AI era — a conference track, a corporate training series, a community event — I'd welcome the conversation.
 
@@ -1654,11 +1654,11 @@ These three essays launch the site and establish the intellectual framework. The
 
 **Essay 1: Your Developer Community Now Has Members Who Can't Read**
 
-*Subtitle:* Introducing Agentic Relations — the discipline DevRel must develop before it realizes it needed to
+*Subtitle:* Introducing Agentic Developer Relations — the discipline DevRel must develop before it realizes it needed to
 
 *Hook:* "When my co-authors and I documented the 37 activity patterns that make up the practice of Developer Relations, we made an assumption so foundational we never stated it explicitly: the audience is human."
 
-*Argument:* The developer community has bifurcated. AI coding agents are now a meaningful fraction of the entities integrating with developer platforms. DevRel has no framework for serving them. Agentic Relations names and provides that framework.
+*Argument:* The developer community has bifurcated. AI coding agents are now a meaningful fraction of the entities integrating with developer platforms. DevRel has no framework for serving them. Agentic Developer Relations names and provides that framework.
 
 *Target reader:* DevRel practitioners. The angle is professional identity — this is about what DevRel is becoming, and whether practitioners will shape that becoming or have it happen to them.
 
@@ -1717,7 +1717,7 @@ One essay per month minimum. Suggested topics for months 4–12:
 
 ### Newsletter strategy
 
-The newsletter is called *The Agentic Relations Brief*. It publishes when there is something worth saying — approximately twice per month. Each issue contains:
+The newsletter is called *The Agentic Developer Relations Brief*. It publishes when there is something worth saying — approximately twice per month. Each issue contains:
 
 - One original observation or framework fragment (100–300 words)
 - One relevant external link with annotation

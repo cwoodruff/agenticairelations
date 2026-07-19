@@ -8,9 +8,9 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: 'Agentic Relations — Essays',
+    title: 'Agentic Developer Relations — Essays',
     description:
-      'Long-form essays on Agentic Relations, the discipline inside DevRel responsible for the AI agent layer of every developer platform. By Chris Woodruff.',
+      'Long-form essays on Agentic Developer Relations, the discipline inside DevRel responsible for the AI agent layer of every developer platform. By Chris Woodruff.',
     site: context.site ?? 'https://agenticairelations.com',
     items: essays.map((essay) => ({
       title: essay.data.title,
