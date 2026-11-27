@@ -37,12 +37,20 @@ export function validateTask(task, dir) {
   }
   for (const g of graders) {
     if (!g.id || !g.run) throw new Error(`${where}: each grader needs \`id\` and \`run\`.`);
+    if (g.timeout_seconds !== undefined && !(Number.isFinite(g.timeout_seconds) && g.timeout_seconds > 0)) {
+      throw new Error(`${where}: grader ${g.id}: \`timeout_seconds\` must be a positive number.`);
+    }
+  }
+  const budget = { max_minutes: 20, max_turns: null, ...(task.budget ?? {}) };
+  // A zero, negative or missing time budget would let the agent run forever.
+  if (!(Number.isFinite(budget.max_minutes) && budget.max_minutes > 0)) {
+    throw new Error(`${where}: \`budget.max_minutes\` must be a positive number.`);
   }
   return {
     ...task,
     dir,
     graders,
-    budget: { max_minutes: 20, max_turns: null, ...(task.budget ?? {}) },
+    budget,
     interventions_allowed: task.interventions_allowed ?? 0,
   };
 }
