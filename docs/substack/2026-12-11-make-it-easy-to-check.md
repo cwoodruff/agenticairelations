@@ -1,0 +1,67 @@
+<!--
+Title:        Make It Easy to Check
+Subtitle:     The second constraint on what agents can do for your developers.
+Email preview: A faster model cannot recover the time an agent spends on your tools. It cannot recover the time a developer spends checking the result either. Platforms can reduce both.
+Publish on:   2026-12-11
+Canonical URL: https://agenticairelations.com/essays/make-it-easy-to-check/   (Substack: Settings for the post > SEO > Canonical URL)
+Tags:         review, verification, amdahl, developer-experience
+Everything below this comment is the post body.
+-->
+
+My essay on the Amdahl tax opened with "a finding that should stop every DevRel leader cold," and then drew a conclusion the finding did not support. I also misquoted Jeff Dean and got the arithmetic backwards. The corrections are on that essay. The argument that survived them is narrower, and I think more useful.
+
+## What survived
+
+Dean's actual point, made at NVIDIA GTC in March 2026 and [reported by OfficeChai](https://officechai.com/ai/will-need-to-re-engineer-tools-so-that-they-can-keep-up-with-the-speeds-of-ai-agents-googles-jeff-dean/), was about latency. Once an agent works far faster than a person, the start-up time of its tools becomes "an Amdahl's Law-like bottleneck."
+
+The arithmetic is simple. If 80% of the time an agent spends on an integration goes to tools, sign-in, and waiting, then no model, however fast, can make the whole more than 1.25 times faster. The gain is in the 80%.
+
+That much holds. But it describes one constraint, and I wrote as if it were the only one.
+
+## The one I missed
+
+When the agent finishes, a person has to decide whether to trust what it made.
+
+A [Harvard study of engineering data, as reported by InfoQ](https://www.infoq.com/news/2026/10/jellyfish-ai-productivity/), looked at what changed in companies that adopted coding agents. Lines of code rose about 30%. Issues resolved rose about 12%. Time spent reviewing pull requests rose 49%, and the share of pull requests that needed changes doubled.
+
+That comes from a news report, not the paper itself, and longer reviews do not prove that review is what holds any particular team back. Lines of code and resolved issues are also different things, so the gap between them is not a measure of anything by itself. What the figures do is point at something worth measuring: how long it takes a person to check what an agent produced.
+
+So there are two constraints on what an agent can do for your developer. One is the time the agent spends on your platform. The other is the time the developer spends making sure the agent got it right.
+
+## What a platform can do about the second
+
+More than I first assumed. Whether a result is easy to verify is largely a property of the platform it was built on.
+
+**A place to try it safely.** A test mode or sandbox, so that checking an integration does not mean risking real data or real money.
+
+**Dry runs.** A way to ask what a call would do before it does it.
+
+**Validators.** For configuration and for requests, so a mistake is caught by a tool and not by a person reading a diff.
+
+**A clear success signal.** "It worked" should be a fact the developer can observe. If the only way to know is to read the code and reason about it, the platform has left the hard part to the reviewer.
+
+**Examples that check themselves.** A sample that ends with a test teaches the agent, and the developer, what done looks like.
+
+None of this is new. Good platforms have offered most of it for years, for human developers. What has changed is the cost of not having it. When a person wrote the integration, they understood it as they went. When an agent wrote it, the understanding has to be rebuilt afterward, and every one of these features makes that cheaper.
+
+## Why this is DevRel's argument to make
+
+Engineering builds sandboxes and validators. DevRel is where the evidence for them turns up.
+
+Run your evaluation and watch where a person has to step in. Count the interventions. Note the tasks where the output looks plausible and is wrong, because those are the ones that will pass a tired reviewer. That list is a product roadmap argument, and nobody else in the company is collecting it.
+
+There is a measurement point here too. Strict grading changes the picture. [Stripe reports](https://stripe.dev/blog/stripe-integration-evals-methodology) that when every necessary criterion has to pass, the average score in its integration evaluations falls from 78.1% to 29.4%. Agents get close far more often than they get there. Close is exactly what costs a reviewer time.
+
+## One exercise
+
+Take a task your platform is known for. Have an agent do it. Then give the result to a colleague who did not watch, and time how long it takes them to be confident it is correct.
+
+That number is not on any dashboard you have. It may be the one your developers feel most.
+
+---
+
+*See [The Environment Agents Work In](https://agenticairelations.com/the-amdahl-tax/) for both constraints. The April essay this one revises is [The Amdahl Tax on Developer Relations](https://agenticairelations.com/essays/the-amdahl-tax-on-devrel/).*
+
+---
+
+*This essay first appeared at [agenticairelations.com](https://agenticairelations.com/essays/make-it-easy-to-check/). The measurement specification and harness it refers to are open: [github.com/cwoodruff/agenticairelations](https://github.com/cwoodruff/agenticairelations).*

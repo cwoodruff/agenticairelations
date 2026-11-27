@@ -1,11 +1,9 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { publishedEssays } from '../lib/essays';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const essays = (await getCollection('essays', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-  );
+  const essays = await publishedEssays();
 
   return rss({
     title: 'Agentic Developer Relations — Essays',
