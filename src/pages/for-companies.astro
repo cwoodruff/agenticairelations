@@ -26,7 +26,7 @@ const businessArgs = [
     n: '04',
     title: 'The Amdahl ceiling is a product roadmap argument.',
     body:
-      'When the Agent Champion can show that 70% of integration time is consumed by human-speed tool interactions — and a competitor has lowered that fraction through agent-native design — DevRel has produced a product investment argument backed by competitive data. This connects DevRel measurement directly to engineering investment decisions.',
+      'When the Agent Champion can show what share of integration time is consumed by human-speed tool interactions — and a competitor has lowered that fraction through agent-native design — DevRel has produced a product investment argument backed by competitive data. This connects DevRel measurement directly to engineering investment decisions.',
   },
 ];
 ---
@@ -62,16 +62,19 @@ const businessArgs = [
       Agentic Developer Relations changes this.
     </p>
     <p class="mt-5">
-      The First-Attempt Integration Success Rate is a metric that directly
-      predicts adoption. Developers who experience successful AI-assisted
-      integrations on the first attempt adopt platforms. Developers who
-      experience systematic AI-generated integration failures choose
+      The First-Attempt Integration Success Rate measures something
+      closer to adoption than any of those: whether a developer's
+      AI-assisted integration works. The hypothesis is simple. Developers
+      whose integrations succeed tend to adopt. Developers who meet
+      systematic AI-generated integration failures tend to choose
       alternatives — silently, without generating the support tickets or
       community posts that would give the company a chance to respond.
+      The rate is measurable today. Its link to adoption is something to
+      test against your own activation data.
     </p>
     <p class="mt-5">
       Agentic Developer Relations is the practice of measuring and improving that rate.
-      It produces a DevRel program that can answer the executive question
+      It gives a DevRel program a way to test the executive question
       with data, not proxies.
     </p>
   </section>
@@ -155,7 +158,7 @@ const businessArgs = [
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">Small (1–5 DevRel)</td>
               <td class="p-4 border border-border text-sm">One practitioner owns Agent Champion function 1 day/week. Manual test suite of 10 tasks. Recipes in docs.</td>
-              <td class="p-4 border border-border text-sm">Grow suite and library. Hire dedicated Agent Champion at 20% AI tool adoption threshold.</td>
+              <td class="p-4 border border-border text-sm">Grow suite and library. Hire a dedicated Agent Champion when your own data justifies it: the agent share of your docs traffic, and the gap your first test runs reveal.</td>
             </tr>
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">Mid-size (6–15)</td>
@@ -189,7 +192,7 @@ const businessArgs = [
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">FAISR</td>
               <td class="p-4 border border-border text-sm">First-attempt integration success rate across AI coding tools</td>
-              <td class="p-4 border border-border text-sm">Direct predictor of AI-assisted developer adoption</td>
+              <td class="p-4 border border-border text-sm">Proposed leading indicator of AI-assisted developer adoption; validate against your own activation data</td>
             </tr>
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">Amdahl ceiling</td>
