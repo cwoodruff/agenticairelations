@@ -4,65 +4,112 @@ import DefinitionBox from '../components/content/DefinitionBox.astro';
 import Callout from '../components/content/Callout.astro';
 import CompareTable from '../components/content/CompareTable.astro';
 import FundamentalTriad from '../components/diagrams/FundamentalTriad.astro';
-import AmdahlBar from '../components/diagrams/AmdahlBar.astro';
+
+const principles = [
+  {
+    n: '01',
+    tone: 'primary',
+    title: 'Two audiences, one platform, one accountable human.',
+    body: 'Agents act. A developer approves the work and answers for the result. Serve both, and remember who carries the consequences.',
+  },
+  {
+    n: '02',
+    tone: 'amber',
+    title: 'Agents choose before they build.',
+    body: 'Measure what agents choose when nobody names a platform. The working hypothesis is that public documentation, code, and discussion influence that choice.',
+  },
+  {
+    n: '03',
+    tone: 'purple',
+    title: 'Failures are silent until instrumented.',
+    body: 'A developer whose AI tool produces a broken integration rarely files a ticket. Evaluations, agent traffic analytics, and a reporting channel make those failures visible.',
+  },
+  {
+    n: '04',
+    tone: 'primary',
+    title: 'Give everything you publish for agents a purpose and a test.',
+    body: 'Recipes, skills, instruction files, and servers do not help by existing. Run the evaluation with and without each one. Keep what serves its purpose. Fix or remove what harms.',
+  },
+  {
+    n: '05',
+    tone: 'amber',
+    title: 'Make agent work easy to verify.',
+    body: 'A person still has to check what the agent produced, and that checking can become the constraint. Test modes, dry runs, validators, and clear success signals reduce it.',
+  },
+  {
+    n: '06',
+    tone: 'purple',
+    title: 'Agent-facing content is a supply chain.',
+    body: 'Review changes, record where content came from, and assume someone will try to poison it.',
+  },
+  {
+    n: '07',
+    tone: 'primary',
+    title: 'Do not tax the humans.',
+    body: 'Agent programs must not add load to open-source maintainers or fill community spaces with generated content.',
+  },
+];
+
+const toneBorder: Record<string, string> = { primary: 'border-primary', amber: 'border-amber', purple: 'border-purple' };
+const toneText: Record<string, string> = { primary: '', amber: 'text-amber', purple: 'text-purple' };
 
 const comparisonRows = [
   {
     left: 'Human community remains the primary trust mechanism',
-    right: 'Agent ecosystem operates on corpus quality, not relationship',
+    right: 'Agents work from what they can read and call: documentation, code, schemas, tools',
   },
   {
-    left: 'Ambassadors earn trust through presence and authentic voice',
-    right: 'Agent Champions earn relevance through validated configurations',
+    left: 'Feedback arrives through forums, tickets, and conversations',
+    right: 'Agent failures stay silent until instrumented: evaluations, agent traffic, a reporting channel',
   },
   {
     left: 'Documentation written for human navigation',
-    right: 'Documentation must also serve agent retrieval with semantic precision',
+    right: 'Documentation also delivered in a form agents can fetch, and tested for whether it helps',
   },
   {
-    left: 'SDK designed for developer ergonomics',
-    right: 'SDK also needs agent-parseable error models and structured schemas',
+    left: 'SDK and API designed for developer ergonomics',
+    right: 'Errors that name the remedy, sign-in that works without a browser, a safe place to test',
   },
   {
     left: 'Metrics: reach, engagement, community health',
-    right: 'Metrics: FAISR, Amdahl ceiling, recipe freshness, MCP adoption tier',
+    right: 'Metrics: selection, completion (FAISR), cost, artifact lift, agent reach, outcome link',
   },
   {
-    left: 'Human community patterns grow more valuable as AI proliferates',
-    right: 'Agent ecosystem layer is where AI-assisted development wins or loses',
+    left: 'Human community work keeps its value as generated content spreads',
+    right: 'The two are linked: what people say in public may influence what agents choose',
   },
 ];
 ---
 
 <PageLayout
   title="What Is Agentic Developer Relations?"
-  description="The definition of Agentic Developer Relations — the discipline within Developer Relations responsible for the AI agent layer of every developer platform."
+  description="The definition of Agentic Developer Relations — the practice within Developer Relations that represents developers who work through AI agents — with the agent journey, the seven principles, and how it is measured."
 >
   <section class="container-site pt-16 pb-4">
     <p class="eyebrow mb-4">Definition</p>
     <h1 class="max-w-3xl">What is Agentic Developer Relations?</h1>
     <p class="lead text-muted mt-5 max-w-2xl">
-      The definition, the three principles, the primary metric,
-      and the way it extends the Fundamental Triad.
+      The definition, the agent journey, the seven principles, and how it
+      is measured.
     </p>
   </section>
 
   <section class="container-prose pb-16">
     <DefinitionBox term="Agentic Developer Relations (AR)">
-      The discipline within Developer Relations responsible for ensuring that
-      AI coding agents and autonomous AI systems can successfully integrate
-      with, consume, and represent a platform accurately — through deliberate
-      cultivation of agent-consumable documentation, validated prompt recipes,
-      machine-readable schemas, and the ongoing measurement of agent
-      ecosystem health.
+      The practice within Developer Relations that represents developers who
+      work through AI agents. It measures how well agents choose, understand,
+      build on, and operate a platform; turns what it finds into changes in
+      the product, the documentation, and the public record; and keeps the
+      human community healthy as agent activity grows.
     </DefinitionBox>
 
     <p class="mt-6">
-      Agentic Developer Relations does not replace Developer Relations. It is the next
-      structural layer of the discipline — required because the audience for
-      every developer platform now includes a non-human member: the AI coding
-      agent that an increasing fraction of developers use to generate
-      integration code before they write a single line themselves.
+      Agentic Developer Relations does not replace Developer Relations. It
+      extends it, because a growing share of developers now reach a platform
+      through an AI agent: asking it which product to use, having it write
+      the integration, and increasingly letting it operate the product for
+      them. A person still approves the work and answers for the result.
+      The practice serves that person by paying attention to their agent.
     </p>
   </section>
 
@@ -80,8 +127,8 @@ const comparisonRows = [
         two parties making decisions: the developer, who evaluates the output,
         and the AI agent, who generates it. The agent doesn't navigate your
         documentation. It retrieves specific sections as context for
-        generation tasks. It doesn't tolerate ambiguity. It amplifies every
-        imprecision in your API surface and every gap in your documentation
+        generation tasks. It handles ambiguity badly, and can turn an
+        imprecision in your API surface or a gap in your documentation
         into integration failures at scale.
       </p>
       <p class="mt-5">
@@ -142,88 +189,194 @@ const comparisonRows = [
 
   <section class="section container-site">
     <div class="container-prose px-0">
-      <h2>The three principles</h2>
-    </div>
-
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="border-t-4 border-primary border-x border-b border-border rounded-lg bg-surface p-6">
-        <p class="eyebrow mb-2">Principle 01</p>
-        <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
-          Shaped by deliberate choices or by neglect.
-        </h3>
-        <p class="text-body text-sm leading-relaxed">
-          When an AI tool is pointed at your platform, it draws on whatever is
-          in its context: public docs, GitHub code, Stack Overflow, MCP server
-          definitions. That corpus is being shaped right now. The only
-          question is whether it is being shaped intentionally.
-        </p>
+      <h2>The agent journey</h2>
+      <p class="mt-5">
+        An agent's dealings with a platform run through five stages. Most
+        attention so far, including earlier versions of this site, has gone
+        to the second and third.
+      </p>
+      <div class="overflow-x-auto mt-6">
+        <table class="w-full border-collapse text-left">
+          <thead>
+            <tr class="bg-primary-surface">
+              <th class="p-4 border border-border text-sm font-semibold">Stage</th>
+              <th class="p-4 border border-border text-sm font-semibold">The question</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">1. Select</td>
+              <td class="p-4 border border-border text-sm">When a developer asks an agent for a solution, does it choose this platform, a competitor, or build its own?</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">2. Understand</td>
+              <td class="p-4 border border-border text-sm">Can the agent get correct, current context, cheaply?</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">3. Complete</td>
+              <td class="p-4 border border-border text-sm">Does it reach a working integration the developer can verify? At what cost, and with how much human help?</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">4. Operate</td>
+              <td class="p-4 border border-border text-sm">Can an agent act on the platform at runtime, within limits its user has set?</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">5. Report</td>
+              <td class="p-4 border border-border text-sm">When something fails, does the company find out?</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="border-t-4 border-amber border-x border-b border-border rounded-lg bg-surface p-6">
-        <p class="eyebrow mb-2 text-amber">Principle 02</p>
-        <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
-          Agent failures are silent and systemic.
-        </h3>
-        <p class="text-body text-sm leading-relaxed">
-          A developer whose AI tool generates a broken integration may debug
-          silently, find a workaround, or abandon the platform. They are
-          unlikely to file a support ticket. The failure is invisible. The
-          traditional DevRel dashboard shows green.
-        </p>
-      </div>
-      <div class="border-t-4 border-purple border-x border-b border-border rounded-lg bg-surface p-6">
-        <p class="eyebrow mb-2 text-purple">Principle 03</p>
-        <h3 class="text-heading text-lg font-bold mb-3 leading-snug">
-          Encoded judgment is the moat.
-        </h3>
-        <p class="text-body text-sm leading-relaxed">
-          AI models are commodities. What is not commoditized is encoded
-          judgment — which error states need handling, which architectural
-          patterns hold under load, which edge cases the docs miss. That
-          judgment, encoded into machine-accessible artifacts, compounds.
-        </p>
-      </div>
+      <p class="mt-6">
+        <strong>Selection</strong> comes first because a platform that is
+        never chosen has no success rate to improve. In
+        <a href="https://amplifying.ai/research/claude-code-picks/report" target="_blank" rel="noopener">one study of Claude Code</a>, the agent built its own
+        solution in 12 of 20 product categories, and where it did pick a
+        product it converged on a small default set.
+      </p>
+      <p class="mt-5">
+        <strong>Operation</strong> is a different kind of problem, and one
+        shared with engineering. An agent acting for a user needs narrowly
+        scoped, delegated credentials, spending and rate limits, a way to
+        revoke access, an audit trail, operations that are safe to repeat,
+        and recovery from half-finished work. The aim is bounded,
+        observable risk.
+      </p>
+      <p class="mt-5">
+        <strong>Reporting</strong> needs a mechanism. Surveys and log
+        analysis are indirect. A further option, untested so far, is to
+        give agents a direct way to report a failure, such as a feedback
+        tool or a documented endpoint, with every report treated as
+        untrusted input.
+      </p>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="container-site">
-      <div class="container-prose px-0 mb-6">
-        <h2>The Amdahl Ceiling</h2>
-        <p class="mt-5">
-          At NVIDIA GTC in March 2026, Jeff Dean observed that once agents
-          work far faster than people, the start-up time of their tools
-          becomes "an Amdahl's Law-like bottleneck": make the model
-          infinitely fast and you get "a factor of two or three" reduction
-          in latency, if tools are a significant fraction of the work
-          (<a href="https://officechai.com/ai/will-need-to-re-engineer-tools-so-that-they-can-keep-up-with-the-speeds-of-ai-agents-googles-jeff-dean/" target="_blank" rel="noopener">as reported by OfficeChai</a>). The tools, APIs, auth
-          flows, and documentation the model touches — all designed for
-          human hands — are that fraction.
-        </p>
-        <p class="mt-5">
-          This is Amdahl's Law applied to platform integrations. If 80% of the
-          time an AI agent spends integrating with your platform is consumed
-          by human-speed tool interactions, then no model, however capable,
-          can make the whole integration more than 1.25× faster. Removing
-          that overhead is worth up to 5×. A
-          competitor who has rebuilt their integration surface for
-          agent-native consumption has a structurally higher ceiling.
-        </p>
+      <div class="container-prose px-0">
+        <h2>The seven principles</h2>
       </div>
-      <AmdahlBar />
-      <div class="container-prose px-0 mt-6">
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          principles.map((p) => (
+            <div class={`border-t-4 ${toneBorder[p.tone]} border-x border-b border-border rounded-lg bg-surface p-6`}>
+              <p class={`eyebrow mb-2 ${toneText[p.tone]}`}>Principle {p.n}</p>
+              <h3 class="text-heading text-lg font-bold mb-3 leading-snug">{p.title}</h3>
+              <p class="text-body text-sm leading-relaxed">{p.body}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="container-prose px-0 mt-10">
         <p>
-          DevRel's role in raising that ceiling: identify where it's binding,
-          make it visible to the platform engineering team, and build the
-          interim artifacts — structured schemas, semantic documentation,
-          validated recipes — that lower the agent tax while deeper platform
-          investment follows.
-        </p>
-        <p class="mt-4">
-          <a href="/the-amdahl-tax/" class="font-semibold">
-            Read the full Amdahl Tax argument →
-          </a>
+          Principle 4 replaces an earlier one, "Encoded judgment is the
+          moat." Judgment about what a correct integration looks like still
+          matters. What the evidence does not support is assuming that any
+          particular way of encoding it helps. In
+          <a href="https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals" target="_blank" rel="noopener">Vercel's evaluation of Next.js tasks</a>, a documentation
+          index in an AGENTS.md file lifted the pass rate from 53% to 100%,
+          while a skill left at its default behavior added nothing. Each
+          artifact has to be tested.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>How it is measured</h2>
+      <p class="mt-5">
+        One number is not enough. Agentic Developer Relations uses a small
+        scorecard.
+      </p>
+      <div class="overflow-x-auto mt-6">
+        <table class="w-full border-collapse text-left">
+          <thead>
+            <tr class="bg-primary-surface">
+              <th class="p-4 border border-border text-sm font-semibold">Measure</th>
+              <th class="p-4 border border-border text-sm font-semibold">What it answers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Selection rate</td>
+              <td class="p-4 border border-border text-sm">How often an agent chooses the platform for a neutral request in its category, and how often it builds its own.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Completion rate</td>
+              <td class="p-4 border border-border text-sm">Whether the agent reaches a working integration. Reported with no human intervention (FAISR) and with a stated number of interventions.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Cost</td>
+              <td class="p-4 border border-border text-sm">Turns, tokens, and time per run, including the runs that fail.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Artifact lift</td>
+              <td class="p-4 border border-border text-sm">Whether a given skill, server, file, or documentation change serves its purpose, tested with and without it.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Agent reach</td>
+              <td class="p-4 border border-border text-sm">Whether agents are arriving, and whether they use what is published for them.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Outcome link</td>
+              <td class="p-4 border border-border text-sm">Whether any of this moves adoption. A hypothesis, to be tested against activation and retention.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <Callout type="primary" label="FAISR">
+        <strong>First-Attempt Integration Success Rate:</strong> the share
+        of runs in which an agent, given one developer request, reaches an
+        integration that passes the graders with no further human input.
+        Within a run the agent may retry on its own.
+      </Callout>
+
+      <p class="mt-5">
+        FAISR was this site's original headline metric. It remains the
+        completion measure, alongside the others. Most DevRel programs
+        cannot yet answer the FAISR question for their platform, and that
+        is still the place to start.
+      </p>
+      <p class="mt-5">
+        <a href="/measurement/" class="font-semibold">
+          How to instrument FAISR for your platform →
+        </a>
+        <span class="text-sm text-muted">
+          (That page still describes the earlier single-metric approach and
+          is being revised.)
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>Two constraints: the environment and review</h2>
+      <p class="mt-5">
+        A faster model cannot recover the time an agent spends on slow
+        tools, human-only sign-in, and unclear errors. If 80% of an
+        integration is tool time, the most any model can do for the whole
+        is 1.25×. That is Amdahl's Law, and Jeff Dean made the same point
+        about agent tool latency at NVIDIA GTC in March 2026
+        (<a href="https://officechai.com/ai/will-need-to-re-engineer-tools-so-that-they-can-keep-up-with-the-speeds-of-ai-agents-googles-jeff-dean/" target="_blank" rel="noopener">as reported by OfficeChai</a>).
+      </p>
+      <p class="mt-5">
+        The second constraint is the developer's time spent checking what
+        the agent produced. <a href="https://www.infoq.com/news/2026/10/jellyfish-ai-productivity/" target="_blank" rel="noopener">A Harvard study of engineering data, as reported by InfoQ</a>,
+        found pull request review time up 49% where coding agents were
+        adopted. A platform eases the first constraint by being fast and
+        clear for agents, and the second by being easy to verify.
+      </p>
+      <p class="mt-5">
+        <a href="/the-amdahl-tax/" class="font-semibold">
+          Read the Amdahl Tax argument →
+        </a>
+      </p>
     </div>
   </section>
 
@@ -240,59 +393,23 @@ const comparisonRows = [
   </section>
 
   <section class="section section-alt">
-    <div class="container-prose">
-      <h2>The primary metric: First-Attempt Integration Success Rate</h2>
+    <div class="container-site">
+      <div class="container-prose px-0 mb-4">
+        <h2>What changes, what stays the same</h2>
+      </div>
+      <CompareTable
+        leftHeading="Traditional DevRel — unchanged"
+        rightHeading="Agentic Developer Relations — added"
+        rows={comparisonRows}
+      />
 
-      <p class="mt-5">
-        Traditional DevRel has always struggled to produce metrics that
-        connect directly to adoption. Agentic Developer Relations offers one
-        that is at least directly measurable.
-      </p>
-
-      <Callout type="primary" label="FAISR">
-        <strong>First-Attempt Integration Success Rate:</strong> Of all
-        integrations generated by AI coding tools using a platform's published
-        materials as context, what percentage produce working code without
-        manual correction on the first attempt?
-      </Callout>
-
-      <p class="mt-5">
-        This metric is measurable through controlled testing. It is
-        approximable through API log analysis. It is validatable through
-        developer surveys. The working hypothesis is that it connects to
-        adoption: developers whose AI-assisted integrations succeed are
-        more likely to adopt a platform, and developers who meet systematic
-        failures are more likely to choose an alternative. That link is
-        plausible. It has not yet been demonstrated.
-      </p>
-      <p class="mt-5">
-        Most DevRel programs today cannot answer the FAISR question for their
-        platform. Agentic Developer Relations exists to change that.
-      </p>
-      <p class="mt-5">
-        <a href="/measurement/" class="font-semibold">
-          How to instrument FAISR for your platform →
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <section class="section container-site">
-    <div class="container-prose px-0 mb-4">
-      <h2>What changes, what stays the same</h2>
-    </div>
-    <CompareTable
-      leftHeading="Traditional DevRel — unchanged"
-      rightHeading="Agentic Developer Relations — new layer required"
-      rows={comparisonRows}
-    />
-
-    <div class="container-prose px-0 mt-8">
-      <p>
-        <a href="/devrel-patterns-reframed/" class="font-semibold">
-          Continue to: The 37 Patterns Reframed →
-        </a>
-      </p>
+      <div class="container-prose px-0 mt-8">
+        <p>
+          <a href="/devrel-patterns-reframed/" class="font-semibold">
+            Continue to: The 37 Patterns Reframed →
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 </PageLayout>
