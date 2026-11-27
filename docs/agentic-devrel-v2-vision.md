@@ -73,7 +73,7 @@ Version 1 concentrates on stages 2 and 3.
 | 6 | **Agent-facing content is a supply chain.** Review changes, record where content came from, and assume someone will try to poison it. | New. |
 | 7 | **Do not tax the humans.** Agent programmes must not add load to maintainers or fill community spaces with generated content. | New. |
 
-**On principle 4.** The evidence is mixed in a specific way. Vendors report large gains from the right artifact delivered the right way, and no gain from the same content delivered badly [S8] [S9]. Independent benchmarks reportedly find little average effect [S22, relayed]. The practical rule is a paired test: run the evaluation with and without the artifact and publish the difference. Four outcomes are possible, and they call for different responses:
+**On principle 4.** The evidence is mixed in a specific way. Vendors report large gains from the right artifact delivered the right way, and no gain from the same content delivered badly [S8] [S9]. Independent results are split [S22, relayed]: one benchmark reports a substantial average gain from curated skills, another almost none, and a study of repository context files found no general gain at higher cost. The practical rule is a paired test: run the evaluation with and without the artifact and publish the difference. Four outcomes are possible, and they call for different responses:
 
 - **It helps.** Keep it.
 - **No clear effect.** An inconclusive result is not proof of no benefit. Keep it if it is cheap; otherwise test again with a larger sample.
@@ -203,7 +203,7 @@ Version 1 names three new DevRel roles. I found no adoption of the titles elsewh
 
 ## 10. The human layer
 
-Version 1's view that human work gains value is plausible, though I found no data either way. Its diagram already shows feedback between the layers, and its budget floors for community work are worth keeping. What changes is the staffing rule that the layers cannot share people. Three points:
+Version 1's view that human work gains value is plausible, though I found no data either way. Its diagram already shows feedback between the layers, and its budget floors for community work are worth keeping. What changes is the staffing rule that the two layers cannot be served by the same practitioners at full load: version 2 expects the people doing each kind of work to sit close together, and often to be the same people. Three points:
 
 - **The layers are probably linked through selection.** Models are trained on, and agents retrieve, what people write in public. If that influences what agents choose, then honest posts, talks, answers and comparisons from real developers are upstream of stage 1. This is a hypothesis. Tracking selection rate beside community activity is a first look, but model releases and product changes move both, so it will not settle cause. A stronger test is to compare selection before and after a specific body of public content appears, model version held fixed, for agents that search the web.
 - **A commitment against generated filler.** Content published under the programme's name is written or closely edited by a person who can stand behind it. State the policy.
@@ -272,7 +272,7 @@ A pattern can be yes on both, one or neither. The list follows the book's chapte
 | MCP tiers | Format-neutral portfolio; maturity by practice | Skills, AGENTS.md, CLIs; MCP redesigned |
 | Three new DevRel roles | Responsibilities with a proposed lead for each | No uptake found; two commonly have another owner |
 | 20% and 40% triggers | Triggers from the company's own data | No basis; not measurable as stated |
-| Two layers that cannot share staff | Two linked layers, budget floors kept | Public human discussion may influence agent choice; to be tested |
+| Two layers, not served by the same practitioners at full load | Two linked layers, worked by one team; budget floors kept | Public human discussion may influence agent choice; to be tested |
 | Three pattern buckets | Two independent questions per pattern, on the book's actual list | Mismatch and contradictions |
 | Selection argued but not measured | Selection rate, on unbranded prompts | Agents choose, and often build their own |
 | (absent) | Security, maintainer protection, verifiability, a direct failure-reporting channel | Developments since April |
