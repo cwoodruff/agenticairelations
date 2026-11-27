@@ -16,7 +16,7 @@ export async function GET(context: APIContext) {
       title: essay.data.title,
       description: essay.data.description,
       pubDate: essay.data.publishDate,
-      link: `/essays/${essay.slug}/`,
+      link: `/essays/${essay.id}/`,
       categories: essay.data.tags,
     })),
     customData: `<language>en-us</language>`,

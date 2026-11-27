@@ -4,7 +4,8 @@ The canonical reference site for **Agentic Developer Relations** — the discipl
 inside Developer Relations responsible for the AI agent layer of every
 developer platform.
 
-Built with [Astro](https://astro.build/) 4.x. Static output. Deployed to
+Built with [Astro](https://astro.build/) 7.x (Node.js 22.23.4 or newer).
+Static output. Deployed to
 GitHub Pages at [agenticairelations.com](https://agenticairelations.com).
 
 ## Local development
