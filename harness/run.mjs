@@ -50,11 +50,11 @@ function exec(command, args, { cwd, env, timeoutMs, shell = false }) {
     child.stdout.on('data', (d) => (stdout += d));
     child.stderr.on('data', (d) => (stderr += d));
     child.on('error', (err) => finish({ code: null, spawnError: String(err.message ?? err) }));
-    child.on('close', (code) => {
-      // Stop anything the command left running in the background.
-      killGroup();
-      finish({ code });
-    });
+    // When the command itself exits, stop anything it left running in the
+    // background. Those children may hold the output pipes open, and would
+    // otherwise delay `close` until the timeout and be mistaken for one.
+    child.on('exit', killGroup);
+    child.on('close', (code) => finish({ code }));
   });
 }
 
@@ -67,10 +67,15 @@ export function substitute(arg, values) {
 
 class InfrastructureError extends Error {}
 
-/** Run a harness-side command (setup, grader, classifier). Anything but a clean verdict is an error. */
-async function tool(label, script, opts) {
+/**
+ * Run a harness-side command (setup, grader, classifier). Anything but a clean
+ * verdict is an error, except that with `timeoutIsVerdict` a timeout is
+ * returned to the caller to judge.
+ */
+async function tool(label, script, opts, { timeoutIsVerdict = false } = {}) {
   const r = await sh(script, opts);
   if (r.spawnError) throw new InfrastructureError(`${label} could not start: ${r.spawnError}`);
+  if (r.timedOut && timeoutIsVerdict) return r;
   if (r.timedOut) throw new InfrastructureError(`${label} timed out`);
   if (r.code === 126 || r.code === 127) {
     throw new InfrastructureError(`${label} could not run (exit ${r.code}): ${r.stderr.trim().slice(-300)}`);
@@ -133,15 +138,17 @@ export async function runOnce({ suite, task, agent, arm, artifactDir, rep, keep 
     interventions: 0,
     error: null,
   };
-  let setupDone = false;
+  let reachedSetup = false;
   try {
     if (task.starting_state) {
       await cp(path.resolve(task.dir, task.starting_state), workdir, { recursive: true });
     }
     if (arm === 'with' && artifactDir) await cp(artifactDir, workdir, { recursive: true });
     await writeFile(promptFile, task.prompt);
+    // From here on the task may have created state outside the working
+    // directory, whether through setup or through the agent itself.
+    reachedSetup = true;
     if (task.setup) {
-      setupDone = true;
       const s = await tool('setup', task.setup, toolOpts);
       if (s.code !== 0) {
         throw new InfrastructureError(`setup failed (exit ${s.code}): ${(s.stderr || s.stdout).trim().slice(-300)}`);
@@ -177,8 +184,13 @@ export async function runOnce({ suite, task, agent, arm, artifactDir, rep, keep 
     } else {
       record.graders = [];
       for (const g of task.graders) {
-        const r = await tool(`grader ${g.id}`, g.run, toolOpts);
-        record.graders.push({ id: g.id, required: Boolean(g.required), pass: r.code === 0 });
+        // A grader usually runs the agent's code. If that code never
+        // returns, the check has failed; it is not a harness fault.
+        const timeoutMs = (g.timeout_seconds ?? 300) * 1000;
+        const r = await tool(`grader ${g.id}`, g.run, { ...toolOpts, timeoutMs }, { timeoutIsVerdict: true });
+        const verdict = { id: g.id, required: Boolean(g.required), pass: !r.timedOut && r.code === 0 };
+        if (r.timedOut) verdict.timed_out = true;
+        record.graders.push(verdict);
       }
       const required = record.graders.filter((g) => g.required);
       // Completion is binary: every required grader passes, within budget.
@@ -191,7 +203,7 @@ export async function runOnce({ suite, task, agent, arm, artifactDir, rep, keep 
     delete record.passed;
     delete record.selection;
   } finally {
-    if (task.teardown && setupDone) {
+    if (task.teardown && reachedSetup) {
       const t = await sh(task.teardown, toolOpts);
       if (t.code !== 0) record.teardown_error = `teardown exit ${t.code ?? 'none'}${t.timedOut ? ' (timed out)' : ''}`;
     }

@@ -57,7 +57,9 @@ The working directory, the home directory and the agent process are new for ever
 
 **Credentials.** Because the home directory is empty, an agent that keeps its login there will not be signed in. Pass credentials through environment variables. If that is impossible, set `"share_home": true` for the agent; the report then states that session isolation was not enforced.
 
-**Errors are not failures.** If the agent cannot be started, `setup` fails, or a grader or classifier cannot run, the run is recorded with an `error`. The report lists these runs and leaves them out of every figure. A failed `teardown` is counted and flagged, since later runs may have seen leftover state. An agent that starts but exits with an error code is graded normally, and the report says how many did.
+**Errors are not failures.** If the agent cannot be started, `setup` fails, or a grader or classifier cannot be run at all, the run is recorded with an `error`. The report lists these runs and leaves them out of every figure. A failed `teardown` is counted and flagged, since later runs may have seen leftover state. An agent that starts but exits with an error code is graded normally, and the report says how many did. A grader that times out counts as a failed check, because the usual cause is agent-written code that never returns; the report says how many runs this affected. Graders get 300 seconds unless the grader sets `timeout_seconds`.
+
+`teardown` runs after every run that got as far as setup, including tasks that have a `teardown` and no `setup`.
 
 Environment variables:
 
@@ -76,7 +78,7 @@ Environment variables:
 
 - **Interventions.** Runs are unattended, so every run has zero human interventions and the completion figure is FAISR. Assisted completion (the specification's *k* greater than zero) is not supported.
 - **Turns and tokens.** The runner measures wall-clock time itself. Turns, tokens and money are recorded only if the agent, or a wrapper script around it, writes them to `ADR_METRICS_FILE`. Otherwise the report says "not reported".
-- **Turn budgets.** Only the time budget is enforced. `max_turns` is passed to the agent and not checked.
+- **Turn budgets.** Only the time budget is enforced, and `budget.max_minutes` must be a positive number. `max_turns` is passed to the agent and not checked.
 - **Intervals.** Rates carry 95% Wilson intervals that treat runs as independent. Runs repeat the same tasks, so real uncertainty is wider. Cost figures are means with no interval. Artifact lift uses the task as the unit with a t interval, and gives no interval for fewer than three tasks or when every task shows the same difference.
 - **Artifact lift.** Reported on completion, wall-clock time and tokens. Judge an artifact on the one that matches its purpose. Lift on selection rate is not computed; compare the two arms' selection figures.
 - **Specification coverage.** The harness covers selection rate, FAISR, cost and artifact lift, and prints the run details section 6 of the specification asks for. It warns, but does not stop, if you ask for a single repetition.

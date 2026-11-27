@@ -109,7 +109,7 @@ graders:
 source: support-tickets-2026-q3   # why this task is in the suite
 ```
 
-A grader is a command that exits with zero for pass. The paths above follow the reference harness, which runs graders in the run's working directory and gives the task's own directory as `ADR_TASK_DIR`.
+A grader is a command that exits with zero for pass. A grader that does not finish within its time limit counts as a fail. The paths above follow the reference harness, which runs graders in the run's working directory and gives the task's own directory as `ADR_TASK_DIR`.
 
 A selection task has no graders. It carries a `classify` command that reads the agent's answer and prints one label for its first choice: the platform's label, `build-own`, or another product's name. Classifiers SHOULD be spot-checked against labels assigned by hand.
 

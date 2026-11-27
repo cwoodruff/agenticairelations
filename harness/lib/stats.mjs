@@ -39,7 +39,8 @@ export function pairedDifference(diffs) {
   if (n < MIN_TASKS_FOR_INTERVAL) return { diff: m, ...none, reason: `fewer than ${MIN_TASKS_FOR_INTERVAL} tasks` };
   const sd = Math.sqrt(diffs.reduce((a, d) => a + (d - m) ** 2, 0) / (n - 1));
   if (sd === 0) return { diff: m, ...none, reason: 'identical differences on every task' };
-  const t = n - 1 <= T975.length ? T975[n - 2] : Z;
+  // Past the table, the last tabulated value is slightly conservative.
+  const t = T975[Math.min(n - 1, T975.length) - 1];
   const half = (t * sd) / Math.sqrt(n);
   return { diff: m, low: m - half, high: m + half, n, reason: null };
 }

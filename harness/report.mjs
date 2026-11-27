@@ -29,6 +29,7 @@ function completion(runs) {
     // Diagnostic only. Never a completion rate and never used for cost.
     partial_credit: mean(runs.map((r) => r.required_share ?? 0)),
     timed_out: runs.filter((r) => r.timed_out).length,
+    grader_timeouts: runs.filter((r) => (r.graders ?? []).some((g) => g.timed_out)).length,
     agent_nonzero_exit: runs.filter((r) => !r.timed_out && r.agent_exit_code !== 0).length,
     optional_graders: {},
     cost: {},
@@ -89,9 +90,9 @@ export function buildReport(records, { platform = null } = {}) {
   if (!records.length) throw new Error('No run records to report on.');
   const report = { generated: new Date().toISOString(), agents: [] };
   // Agents are never pooled: a different model, tool, version, permission
-  // mode or suite version is a different entry.
+  // mode, home-directory setting or suite version is a different entry.
   const key = (r) =>
-    JSON.stringify([r.agent.id, r.agent.model, r.agent.harness, r.agent.version, r.agent.permission_mode, r.suite, r.suite_version]);
+    JSON.stringify([r.agent.id, r.agent.model, r.agent.harness, r.agent.version, r.agent.permission_mode, Boolean(r.agent.share_home), r.suite, r.suite_version]);
   for (const [, rs] of groupBy(records, key)) {
     const ok = rs.filter((r) => !r.error);
     const repsPerCell = [...groupBy(rs, (r) => `${r.task}|${r.arm}`).values()].map((x) => x.length);
@@ -182,6 +183,7 @@ export function toMarkdown(report) {
         L.push(`- Partial credit (diagnostic; mean share of required graders passed): ${pct(c.partial_credit)}`);
         for (const [id, w] of Object.entries(c.optional_graders)) L.push(`- Optional grader \`${id}\`: ${rate(w)}`);
         if (c.timed_out) L.push(`- Runs stopped at the time budget: ${c.timed_out}`);
+        if (c.grader_timeouts) L.push(`- Runs where a grader timed out, counted as a failed check: ${c.grader_timeouts}. Usually the agent's code did not terminate; check it is not a slow grader.`);
         if (c.agent_nonzero_exit) L.push(`- Runs where the agent exited with an error code: ${c.agent_nonzero_exit}. Check these are not a setup problem.`);
         L.push('', '**Cost** (all graded runs, failures included)', '');
         L.push(`- Wall-clock seconds: ${num(c.cost.wall_seconds.per_run, 2)} per run, ${num(c.cost.wall_seconds.per_success, 2)} per success`);
