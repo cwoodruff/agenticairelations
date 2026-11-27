@@ -53,6 +53,11 @@ import Metric from '../components/ui/Metric.astro';
           using the platform's published materials as context — produce
           working code on the first attempt without manual correction.
         </p>
+        <p class="mt-5 text-sm text-muted">
+          Disclosure: the author does advisory work and is building a
+          product in this area (see <a href="/about/">About</a>). The
+          measurement method will be published under an open license.
+        </p>
       </div>
 
       <FAISRFunnel />
@@ -127,7 +132,7 @@ import Metric from '../components/ui/Metric.astro';
         <h3 class="text-heading text-xl font-bold mb-3">Documentation effectiveness for agents</h3>
         <ul class="text-body text-sm space-y-2 leading-relaxed">
           <li><strong>Semantic coverage:</strong> % of common agent queries answered directly and unambiguously.</li>
-          <li><strong>Drift rate:</strong> lag between API changes and doc updates, in days. Target &lt; 7.</li>
+          <li><strong>Drift rate:</strong> lag between API changes and doc updates, in days. Set a target and track it.</li>
           <li><strong>Failure correlation:</strong> which pages, when retrieved as context, produce the most errors.</li>
         </ul>
       </div>

@@ -180,9 +180,10 @@ import Metric from '../components/ui/Metric.astro';
         <li>Measure, for each successful run, the wall-clock time spent in model reasoning versus tool interaction (approximate from observability or trace data).</li>
       </ol>
       <p class="mt-5">
-        The ratio is your Amdahl baseline. Above 70% tool-interaction
-        overhead, you have an agent-hostile environment. Below 40%, you
-        have an agent-friendly one.
+        The ratio is your Amdahl baseline. There is no established
+        benchmark for what counts as good. Track it over time, and compare
+        tasks against each other: the tasks with the highest share of tool
+        time are where engineering work will pay off most.
       </p>
       <p class="mt-5">
         <a href="/measurement/" class="font-semibold">
