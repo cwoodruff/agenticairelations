@@ -1,10 +1,12 @@
 # Agentic Developer Relations measurement specification
 
-Version 0.1 (draft), 27 November 2026. Author: Chris Woodruff.
+Version 0.2 (draft), 27 November 2026. Author: Chris Woodruff.
 
 This document defines how to measure how well AI agents fare on a developer platform. It is the method behind the [measurement page](https://agenticairelations.com/measurement/) of agenticairelations.com, written so that anyone can apply it and compare results.
 
-**Status.** This is a first draft. It has not yet been run end to end on a real platform, and the stage 4 measures in section 7 are untested proposals. Corrections and criticism are welcome through issues on this repository.
+**Status.** This is a draft. It has not yet been run on a real platform with a real agent, and the stage 4 measures in section 7 are untested proposals. A reference harness in [`harness/`](../harness/) implements sections 3 to 6 for selection, completion, cost and artifact lift, and has been exercised only against a mock agent. Corrections and criticism are welcome through issues on this repository.
+
+**Changes in 0.2.** Completion is binary, and partial credit is a separate diagnostic (3.2). Every run must start from a restored state with a fresh agent session (section 5). The task format gains `setup`, `teardown` and `classify`.
 
 **License.** This specification is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You may use, adapt and redistribute it, including commercially, provided you give credit. The rest of this repository is licensed separately; see the README.
 
@@ -42,12 +44,14 @@ Reports MUST also give the share of runs in which the agent built its own soluti
 
 ### 3.2 Completion rate
 
-The share of runs that pass the graders. Two figures MUST be reported:
+Completion is binary. A run **passes** if every grader marked `required` passes within the budget, and fails otherwise. Two figures MUST be reported:
 
 - **FAISR (First-Attempt Integration Success Rate):** the share of runs that pass with no human intervention.
 - **Assisted completion:** the share that pass with at most *k* human interventions, with *k* stated.
 
-Each figure MUST be reported under two grading rules: **strict** (every required criterion passes) and **lenient** (the mean share of criteria passed).
+Reports MAY also give **partial credit**: for each run, the share of required graders that passed, averaged over all runs. Partial credit is a diagnostic that shows how close failing runs came. It MUST NOT be called a completion rate, and MUST NOT be used as the count of successes for cost.
+
+Graders not marked `required` do not affect completion. Their pass rates SHOULD be reported one by one.
 
 ### 3.3 Cost
 
@@ -85,7 +89,9 @@ title: Create a hosted checkout for a one-time payment
 stage: complete            # select | complete | operate
 prompt: |
   Add a checkout page to this app so a customer can buy one item.
-starting_state: repos/starter-node   # code or account state the agent begins with
+starting_state: repos/starter-node   # code the agent begins with, copied fresh for each run
+setup: scripts/create_test_account.sh     # optional: prepare state outside the directory
+teardown: scripts/delete_test_account.sh  # optional: remove it afterwards
 budget:
   max_turns: 60
   max_minutes: 20
@@ -93,15 +99,19 @@ interventions_allowed: 0   # k, for assisted completion
 graders:
   - id: builds
     required: true
-    run: scripts/build.sh
+    run: sh "$ADR_TASK_DIR/graders/build.sh"
   - id: session-created
     required: true
-    run: scripts/check_session.py
+    run: python3 "$ADR_TASK_DIR/graders/check_session.py"
   - id: handles-declined-card
     required: false
-    run: scripts/check_decline.py
+    run: python3 "$ADR_TASK_DIR/graders/check_decline.py"
 source: support-tickets-2026-q3   # why this task is in the suite
 ```
+
+A grader is a command that exits with zero for pass. The paths above follow the reference harness, which runs graders in the run's working directory and gives the task's own directory as `ADR_TASK_DIR`.
+
+A selection task has no graders. It carries a `classify` command that reads the agent's answer and prints one label for its first choice: the platform's label, `build-own`, or another product's name. Classifiers SHOULD be spot-checked against labels assigned by hand.
 
 Prompts SHOULD be what a reasonably competent developer would type, not an optimised prompt. Selection tasks MUST NOT name the platform or its competitors.
 
@@ -109,11 +119,12 @@ Prompts SHOULD be what a reasonably competent developer would type, not an optim
 
 1. **Name the agent.** Every result MUST state the model, the harness and their versions. Results for different agents MUST be reported separately and MUST NOT be pooled without saying so.
 2. **Repeat.** Each task MUST be run more than once per agent, since results vary between runs.
-3. **Size from a pilot.** The number of tasks and repetitions SHOULD be chosen after a pilot that shows how much results vary between repetitions and between tasks. As a starting point, 30 tasks and three repetitions per agent is suggested; this is a judgment, not a derived figure.
-4. **Report uncertainty.** Every rate MUST be given with the number of runs and an interval. Reports SHOULD state that runs on the same task are not independent, and that the result describes the suite, not all possible tasks.
-5. **Automate grading.** Graders SHOULD inspect outcomes (resources created, tests passed) and SHOULD NOT rely on a person's scoring.
-6. **Re-run.** The suite SHOULD be run on each platform release and each new model version. A release that lowers a score is a regression.
-7. **Comparing platforms.** Comparisons between platforms MUST use a published task set that others can run.
+3. **Isolate.** Every run MUST begin from the task's starting state, restored afresh, with a new agent session that has no memory of earlier runs. This applies to code, to files, and to resources on the platform such as test accounts. It applies to each arm of an artifact comparison, so that nothing produced with the artifact is visible to a run without it.
+4. **Size from a pilot.** The number of tasks and repetitions SHOULD be chosen after a pilot that shows how much results vary between repetitions and between tasks. As a starting point, 30 tasks and three repetitions per agent is suggested; this is a judgment, not a derived figure.
+5. **Report uncertainty.** Every rate MUST be given with the number of runs and an interval. Reports SHOULD state that runs on the same task are not independent, and that the result describes the suite, not all possible tasks.
+6. **Automate grading.** Graders SHOULD inspect outcomes (resources created, tests passed) and SHOULD NOT rely on a person's scoring.
+7. **Re-run.** The suite SHOULD be run on each platform release and each new model version. A release that lowers a score is a regression.
+8. **Comparing platforms.** Comparisons between platforms MUST use a published task set that others can run.
 
 ## 6. Reporting
 

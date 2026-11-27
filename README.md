@@ -14,6 +14,13 @@ npm install
 npm run dev        # http://localhost:4321
 ```
 
+## Tests
+
+```bash
+npm test               # tests for the measurement harness
+npm run harness:demo   # run the example suite against a mock agent
+```
+
 ## Build
 
 ```bash
@@ -62,8 +69,12 @@ GitHub Actions**, and configure the custom domain.
 - **Current framework (version 2):** `docs/agentic-devrel-v2-vision.md`
 - **Measurement specification:** `docs/measurement-specification.md`
 - **Review of version 1:** `docs/agentic-devrel-critique.md`
-- **Original site plan (version 1, superseded):** `docs/Agentic_Relations_Site_Plan.md`
-- **Original framework document (version 1, superseded):** `docs/Agentic_Relations_Framework.docx`
+- **Reference harness for the specification:** `harness/` (see `harness/README.md`)
+- **Draft invitation to critique:** `docs/outreach-invitation.md`
+- **Version 1 documents (archived, not maintained):** `docs/archive/`
+
+Issue forms for critiques, results and case-study offers are in
+`.github/ISSUE_TEMPLATE/`, and the site's Get Involved page links to them.
 
 ## License
 
@@ -72,3 +83,4 @@ Woodruff, all rights reserved unless otherwise noted.
 
 The measurement specification (`docs/measurement-specification.md`) is
 licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+The harness (`harness/`) is MIT, like the site source.

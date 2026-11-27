@@ -1,0 +1,47 @@
+name: Results from running the specification
+description: You ran the measurement specification or the harness. Share what happened.
+title: "Results: "
+labels: ["results"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Results that went badly, or that showed the method does not work, are as useful as good ones. Do not post secrets, credentials, or anything your employer has not cleared.
+  - type: input
+    id: platform
+    attributes:
+      label: Platform (or "undisclosed")
+    validations:
+      required: true
+  - type: textarea
+    id: agents
+    attributes:
+      label: Agents
+      description: Model, coding tool, versions, and the permission mode for each.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Design
+      description: Number of tasks, repetitions, budgets, and whether you compared with and without an artifact.
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Results
+      description: Paste the report, or the figures with their intervals.
+    validations:
+      required: true
+  - type: textarea
+    id: problems
+    attributes:
+      label: What did not work?
+      description: In the specification, the harness, or the method.
+  - type: checkboxes
+    id: publish
+    attributes:
+      label: Publishing
+      options:
+        - label: These results may be cited on the site with credit.

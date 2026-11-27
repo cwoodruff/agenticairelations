@@ -116,7 +116,7 @@ These are my recommendations, set so that the numbers can bear the weight put on
 - **Say what the number generalises to.** A score describes this task suite on this model. Repetitions tell you how stable the agent is on those tasks. Only more, and more varied, tasks tell you about tasks you did not test.
 - **Size the suite from a pilot.** Run a small pilot, look at how much results vary between repetitions and between tasks, then choose the number of tasks and repetitions needed to see the difference you care about. For artifact lift, compare with and without on the same tasks; how much data that needs depends on how often the two disagree. I would not start below about 30 tasks and three repetitions per model, and that is a judgment, not a derived figure. For reference, Stripe's published design is 69 scenarios with two repetitions per arm [S7].
 - **Pin and name the model and harness.** Re-run on every model release. Report each model separately, and never pool across models without saying so.
-- **Publish the grading rule.** Stripe's average falls from 78.1% to 29.4% when every necessary criterion must pass [S7]. Report strict and lenient figures.
+- **Publish the grading rule.** Stripe's average falls from 78.1% to 29.4% when every necessary criterion must pass [S7]. Completion is binary (every required criterion passes); report partial credit separately, as a diagnostic.
 - **Automate the graders.** Check created resources and test results. Human scoring every week does not scale and drifts.
 - **Do not benchmark competitors on a private rubric.** If comparison matters, use a published task set others can run.
 - **Run the suite on your own releases.** A docs or API change that lowers the score is a regression.
@@ -315,9 +315,9 @@ Ordered by priority. No dates.
 | 1 to 7 | Done on the site. |
 | 8 to 12 | Done on the site. The pattern mapping (12) has not been checked against the book's text. |
 | 13 | Partly done: the controls and the division of work are published, and stage 4 measures are proposed in the measurement specification. None has been tested. |
-| 14 | Not started. Needs access to live platforms and agents. |
-| 15 | Partly done: the specification is published at `docs/measurement-specification.md` under CC BY 4.0, with a task format. No graders or harness exist yet. |
-| 16, 17 | Not started. These need other people. |
+| 14 | Not started. Needs accounts on live platforms and access to real agents. A reference harness now exists in `harness/` to do it with; it has only been run against a mock agent. |
+| 15 | Done: the specification (`docs/measurement-specification.md`, CC BY 4.0), a reference harness, an example suite with graders, and tests (`harness/`, MIT). |
+| 16, 17 | Channels opened: issue forms for critique, results and case studies, and a Get Involved page on the site. Nobody has been invited yet, and no response or case study exists. |
 | 18 | Done: the build writes a markdown copy of every page and an `llms.txt`. Whether agents use them has not been measured. |
 
 ## 14. Decisions

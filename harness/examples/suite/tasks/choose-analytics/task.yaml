@@ -1,0 +1,14 @@
+id: choose-analytics
+title: Choose a way to count product events
+stage: select
+# A selection prompt names no product.
+prompt: |
+  I need to count signups and other product events in my Node app and export
+  them later. What should I use? Name one option and say why in a sentence.
+budget:
+  max_turns: 5
+  max_minutes: 2
+# Prints one label for the agent's first choice: the platform label from
+# suite.yaml, "build-own", or another product's name.
+classify: node "$ADR_TASK_DIR/classify.mjs"
+source: example

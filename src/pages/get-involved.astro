@@ -1,0 +1,105 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Callout from '../components/content/Callout.astro';
+
+const repo = 'https://github.com/cwoodruff/agenticairelations';
+const issue = (template: string) => `${repo}/issues/new?template=${template}`;
+
+const asks = [
+  {
+    n: '01',
+    title: 'Tell me where it is wrong',
+    body: 'Disagree with the definition, the principles, who should own the work, or the evidence. Critiques from people who work under the Agent Experience label, or who think none of this belongs to DevRel, are especially welcome. With your permission I will publish them here, with my response.',
+    href: issue('critique.yml'),
+    cta: 'Open a critique',
+  },
+  {
+    n: '02',
+    title: 'Run the measurement on your platform',
+    body: 'The specification and a reference harness are open. Neither has been used on a real platform yet. If you try them, tell me what the numbers were and, more usefully, what did not work.',
+    href: issue('results.yml'),
+    cta: 'Share results',
+  },
+  {
+    n: '03',
+    title: 'Be a case study',
+    body: 'If your team already does this work, under any name, I would like to write up how it is organized and what you have learned, including what failed. Nothing is published without your approval.',
+    href: issue('case-study.yml'),
+    cta: 'Offer a case study',
+  },
+];
+---
+
+<PageLayout
+  title="Get Involved"
+  description="Agentic Developer Relations has not yet been tested by anyone but its author. Three ways to change that: critique it, run the measurement, or be a case study."
+>
+  <section class="container-site pt-16 pb-4">
+    <p class="eyebrow mb-4">Get involved</p>
+    <h1 class="max-w-3xl">Help test this</h1>
+    <p class="lead text-muted mt-5 max-w-2xl">
+      So far this framework is one practitioner's work. It needs
+      criticism, results from real platforms, and examples from teams
+      doing the job.
+    </p>
+  </section>
+
+  <section class="container-prose pb-12">
+    <Callout type="amber" label="Where things stand">
+      No one outside has reviewed the framework yet. The measurement
+      specification has not been run on a real platform, and its harness
+      has been tested only against a mock agent. There are no case
+      studies. This page exists to change that, and it will say so when
+      it does.
+    </Callout>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {
+          asks.map((a) => (
+            <div class="border border-border rounded-xl bg-surface p-6 flex flex-col">
+              <p class="font-mono text-primary font-bold text-sm mb-2">{a.n}</p>
+              <h2 class="text-heading text-lg font-bold mb-3 leading-snug">{a.title}</h2>
+              <p class="text-body text-sm leading-relaxed">{a.body}</p>
+              <p class="mt-auto pt-5">
+                <a href={a.href} target="_blank" rel="noopener" class="font-semibold">
+                  {a.cta} →
+                </a>
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>What you can use</h2>
+      <ul class="list-disc pl-6 mt-5 space-y-2">
+        <li>
+          <a href={`${repo}/blob/main/docs/measurement-specification.md`} target="_blank" rel="noopener">The measurement specification</a>,
+          under a Creative Commons Attribution license.
+        </li>
+        <li>
+          <a href={`${repo}/tree/main/harness`} target="_blank" rel="noopener">The reference harness</a>,
+          with an example suite and graders, under the MIT license.
+        </li>
+        <li>
+          <a href={`${repo}/blob/main/docs/agentic-devrel-critique.md`} target="_blank" rel="noopener">The review of version 1</a>,
+          which lists what was wrong with the first version of this site and the sources behind the changes.
+        </li>
+      </ul>
+      <p class="mt-6">
+        Prefer not to use GitHub? See the <a href="/about/#contact">contact details</a>.
+      </p>
+      <p class="mt-5 text-sm text-muted">
+        Disclosure: I do advisory work and am building a product in this
+        area (see <a href="/about/">About</a>). Nothing here requires
+        either.
+      </p>
+    </div>
+  </section>
+</PageLayout>
