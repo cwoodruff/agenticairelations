@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test",
-    "harness:demo": "node harness/run.mjs --suite harness/examples/suite --agents harness/examples/agents.mock.json --artifact harness/examples/suite/artifacts/guidance --out results/demo.jsonl && node harness/report.mjs --in results/demo.jsonl --platform tally"
+    "harness:demo": "node harness/run.mjs --suite harness/examples/suite --agents harness/examples/agents.mock.json --artifact harness/examples/suite/artifacts/guidance --out results/demo.jsonl && node harness/report.mjs --in results/demo.jsonl --platform tally",
+    "substack": "node scripts/substack.mjs --since 2026-11-01"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.6",

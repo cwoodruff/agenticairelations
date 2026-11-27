@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuild daily so essays with a future publishDate appear on their date.
+  schedule:
+    - cron: '0 9 * * *'
 
 permissions:
   contents: read

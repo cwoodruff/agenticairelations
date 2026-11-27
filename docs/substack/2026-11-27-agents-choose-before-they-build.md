@@ -1,0 +1,67 @@
+<!--
+Title:        Agents Choose Before They Build
+Subtitle:     The evaluation you never see, and what DevRel can do about it.
+Email preview: Before an AI agent integrates with your platform, it decides whether to use it at all. Most DevRel programs measure nothing about that decision.
+Publish on:   2026-11-27
+Canonical URL: https://agenticairelations.com/essays/agents-choose-before-they-build/   (Substack: Settings for the post > SEO > Canonical URL)
+Tags:         selection, ai-agents, devrel, measurement
+Everything below this comment is the post body.
+-->
+
+In April I wrote that the question for every platform was this: when a developer asks an AI tool to integrate with you, does it work?
+
+It is still a good question. It is also the second question. The first one is whether the agent picks you at all.
+
+## The evaluation you never see
+
+A developer types "add payments to this app" or "I need to send transactional email." They do not name a product. The agent chooses one, or decides to write the thing itself, and gets on with it. The developer may never learn what the alternatives were.
+
+That is a product evaluation, and it happens without a search, a landing page, a comparison post, or a conversation at a booth. Nothing in a DevRel dashboard records it.
+
+One study gives a sense of what goes on in there. [Amplifying](https://amplifying.ai/research/claude-code-picks/report) ran Claude Code through a couple of thousand of these open requests across twenty product categories. Two results stand out.
+
+First, in twelve of the twenty categories the agent often built its own solution instead of recommending a product. Asked for feature flags, it wrote a config file. Building it yourself was the most common single answer in the study.
+
+Second, where the agent did pick a product, it picked the same few. Stripe took about 91% of the payment picks. Vercel took every JavaScript deployment pick. And the defaults were not stable: the preferred ORM changed between one model version and the next.
+
+This is one study of one agent, and I would not build a strategy on its exact figures. The shape is what matters. Your competitor in this evaluation is sometimes another vendor and sometimes forty lines of code the agent writes on the spot.
+
+## A success rate of nothing
+
+My original metric, FAISR, measures whether an agent's integration works. It only starts counting once the agent is already integrating. A platform that is never chosen has a perfect record on zero attempts.
+
+So the scorecard now starts one step earlier, with **selection rate**. Write a fixed set of prompts that describe a need in your category without naming anyone. Run them through each agent you care about, several times. Record three things: how often you are the first choice, who else is chosen, and how often the agent builds its own.
+
+Run it again when a new model ships. If the defaults can move between versions, your position can too, and you will want to know before your signups tell you.
+
+## What moves it
+
+Here I have to be careful, because nobody outside the model companies knows for certain.
+
+My working hypothesis is that agents choose from what is public. Some of that is baked in during training, and some is fetched at the moment of the request: your documentation, your examples, code on GitHub that uses you, and what developers have written about you.
+
+If that is right, two things follow.
+
+The first is that the human side of DevRel is upstream of the agent side. An honest conference talk, a detailed answer in a forum, a blog post from a developer who used you in anger: these are part of what an agent learns from. I used to describe the human and agent layers as separate tracks. I now think they are one system.
+
+The second is that this is a hypothesis, and should be treated as one. Track your selection rate alongside what you publish and what your community writes. Do not expect a clean answer. Model releases and product changes move the number too.
+
+## Be worth choosing over a config file
+
+The build-it-yourself result deserves its own thought. An agent that can write a passable version of your product in a minute will do so unless there is a reason not to. The reason has to be visible to it: what you handle that the quick version does not, stated plainly, where an agent will read it.
+
+That is a positioning problem, and a documentation problem, and DevRel has always done both.
+
+## Start here
+
+Write ten prompts a developer might type when they need what you sell. Leave your name out. Run them through two agents, three times each. Count.
+
+You will have sixty answers, thirty from each agent, to a question you have never asked.
+
+---
+
+*See [What Is Agentic Developer Relations](https://agenticairelations.com/what-is-agentic-relations/) for the agent journey, and [Measurement](https://agenticairelations.com/measurement/) for the scorecard.*
+
+---
+
+*This essay first appeared at [agenticairelations.com](https://agenticairelations.com/essays/agents-choose-before-they-build/). The measurement specification and harness it refers to are open: [github.com/cwoodruff/agenticairelations](https://github.com/cwoodruff/agenticairelations).*
