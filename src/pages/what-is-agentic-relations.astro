@@ -144,16 +144,21 @@ const comparisonRows = [
       <div class="container-prose px-0 mb-6">
         <h2>The Amdahl Ceiling</h2>
         <p class="mt-5">
-          Jeff Dean observed at GTC that making a model infinitely fast would
-          only yield a 2–3× end-to-end improvement in software development
-          tasks. The other 47× is eaten by the tools, APIs, auth flows, and
-          documentation the model touches — all designed for human hands.
+          At NVIDIA GTC in March 2026, Jeff Dean observed that once agents
+          work far faster than people, the start-up time of their tools
+          becomes "an Amdahl's Law-like bottleneck": make the model
+          infinitely fast and you get "a factor of two or three" reduction
+          in latency, if tools are a significant fraction of the work
+          (<a href="https://officechai.com/ai/will-need-to-re-engineer-tools-so-that-they-can-keep-up-with-the-speeds-of-ai-agents-googles-jeff-dean/" target="_blank" rel="noopener">as reported by OfficeChai</a>). The tools, APIs, auth
+          flows, and documentation the model touches — all designed for
+          human hands — are that fraction.
         </p>
         <p class="mt-5">
           This is Amdahl's Law applied to platform integrations. If 80% of the
           time an AI agent spends integrating with your platform is consumed
-          by human-speed tool interactions, your theoretical ceiling is 5×
-          improvement regardless of how capable the model becomes. A
+          by human-speed tool interactions, then no model, however capable,
+          can make the whole integration more than 1.25× faster. Removing
+          that overhead is worth up to 5×. A
           competitor who has rebuilt their integration surface for
           agent-native consumption has a structurally higher ceiling.
         </p>

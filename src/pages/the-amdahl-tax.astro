@@ -20,17 +20,22 @@ import Metric from '../components/ui/Metric.astro';
   </section>
 
   <section class="container-prose pb-12 pt-6">
-    <h2>Jeff Dean's 47×</h2>
+    <h2>Jeff Dean's Amdahl bottleneck</h2>
     <p class="mt-5">
-      At GTC, Jeff Dean observed that making a model infinitely fast would
-      yield only a 2–3× end-to-end improvement in a typical software
-      development task. The other 47× is eaten by the environment: tools,
-      APIs, auth flows, documentation — all designed for human hands.
+      At NVIDIA GTC in March 2026, Jeff Dean described a world in which an
+      agent operates "50 times faster than a human", and said that the
+      start-up time of its tools then becomes "an Amdahl's Law-like
+      bottleneck". Make the model infinitely fast, he said, and you get
+      "a factor of two or three" reduction in latency, if tools are a
+      significant fraction of the work
+      (<a href="https://officechai.com/ai/will-need-to-re-engineer-tools-so-that-they-can-keep-up-with-the-speeds-of-ai-agents-googles-jeff-dean/" target="_blank" rel="noopener">as reported by OfficeChai</a>).
     </p>
     <p class="mt-5">
-      The implication is uncomfortable for anyone optimizing model quality
-      alone. If most of the gain is sitting in the environment, the
-      environment is where the work is.
+      His remark was about latency, and it was conditional. The arithmetic
+      behind it is general. Whatever share of an agent's time goes to
+      tools, APIs, auth flows, and documentation designed for human hands
+      is a share that a faster model cannot touch. That share is where the
+      work is.
     </p>
   </section>
 
@@ -41,23 +46,33 @@ import Metric from '../components/ui/Metric.astro';
       </div>
 
       <div class="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-10">
-        <Metric value="19%" label="Slower with AI tools (measured)" deltaDirection="down" />
-        <Metric value="20%" label="Faster with AI tools (estimated)" deltaDirection="up" />
+        <Metric value="19%" label="Slower with AI tools (measured, early 2025)" deltaDirection="down" />
+        <Metric value="20%" label="Faster with AI tools (developers' own estimate)" deltaDirection="up" />
         <Metric value="39 pts" label="Perception vs. reality gap" />
       </div>
 
       <div class="container-prose px-0">
         <p>
-          In a rigorous randomized controlled trial, sixteen experienced
-          engineers working on their own open-source repositories with AI
-          coding tools were 19% slower while estimating they were 20%
-          faster. The finding persisted after controlling for task type,
-          tool choice, and developer experience.
+          In <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">METR's randomized controlled trial</a> in early 2025,
+          sixteen experienced developers working on their own open-source
+          repositories took 19% longer on tasks when AI coding tools were
+          allowed, while believing the tools had made them about 20%
+          faster.
         </p>
-        <Callout type="amber" label="The uncomfortable read">
-          The model wasn't the variable. The environment was. The engineers
-          were experienced. The tools were capable. What was missing was an
-          environment built to be consumed at agent speed.
+        <p class="mt-5">
+          <a href="https://metr.org/blog/2026-02-24-uplift-update/" target="_blank" rel="noopener">METR's February 2026 follow-up</a> points the other way:
+          an estimated 18% less time for developers returning from the
+          first study and 4% less for new recruits, with intervals that
+          include no change. METR says developers are probably more sped
+          up now than in early 2025, and that its new data is only very
+          weak evidence of how much.
+        </p>
+        <Callout type="amber" label="What it does and doesn't show">
+          The trial did not vary the environment, so it cannot tell us
+          that the environment was the constraint. What it shows is that
+          developers' sense of how much AI helps them is unreliable. That
+          is the case for measuring how agents perform on your platform
+          instead of assuming it.
         </Callout>
       </div>
     </div>
@@ -65,19 +80,21 @@ import Metric from '../components/ui/Metric.astro';
 
   <section class="section container-site">
     <div class="container-prose px-0">
-      <h2>The Jellyfish contrast</h2>
+      <h2>The Jellyfish data</h2>
       <p class="mt-5">
-        At companies that had invested in rebuilding their internal
-        toolchains for agent-speed consumption, the same generation of AI
-        tools drove pull requests per engineer from <strong>1.36 to
-        2.9</strong>. Not because the models were different. Because the
-        environment was.
+        In 2025 <a href="https://jellyfish.co/blog/jellyfish-openai-team-up-to-measure-impact-of-ai-coding-tools/" target="_blank" rel="noopener">Jellyfish, working with OpenAI</a>, compared
+        companies by how regularly their engineers used AI tools. Going
+        from 0% to 100% adoption corresponded to an increase from
+        <strong>1.36 to 2.90</strong> pull requests per engineer. That is
+        an association across companies. It does not say why
+        high-adoption companies merge more, and it says nothing about
+        their toolchains.
       </p>
       <p class="mt-5">
-        The two data points together — METR's null/negative result in
-        unoptimized environments, Jellyfish's 2× lift in optimized ones —
-        are the clearest statement the field has produced about where the
-        value is: in the infrastructure the model has to touch.
+        Taken together, the evidence on AI and developer productivity is
+        unsettled. The argument on this page does not depend on it. It
+        depends on Amdahl's Law: the time an agent spends waiting on your
+        platform is time that no improvement in the model will recover.
       </p>
     </div>
   </section>

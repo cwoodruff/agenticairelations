@@ -1,7 +1,7 @@
 ---
 title: "The Amdahl Tax on Developer Relations"
 subtitle: "Why the entire DevRel stack is being rebuilt whether you participate or not."
-description: "The METR and Jellyfish data are not about AI capability. They are about environment. DevRel owns the environment."
+description: "Developers misjudge how much AI helps them, and the time an agent spends on your platform is time no model can recover. DevRel owns that environment."
 publishDate: 2026-04-05
 series: measurement
 seriesOrder: 1
@@ -11,23 +11,24 @@ draft: false
 
 Here is a finding that should stop every DevRel leader cold.
 
-In a rigorous randomized controlled trial, sixteen experienced engineers
-working on their own open-source repositories with AI coding tools were
-**19% slower** than they were without the tools, while estimating that
-they were **20% faster**. The discrepancy was not small. It was not
-noise. It persisted after controlling for task type, tool choice, and
-developer experience.
+In [METR's randomized controlled trial](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) in early 2025, sixteen
+experienced developers working on their own open-source repositories
+took **19% longer** on tasks when AI coding tools were allowed, while
+believing the tools had made them about **20% faster**.
 
-The same models, deployed at companies that had invested in rebuilding
-their internal tooling for agent-speed consumption, drove pull requests
-per engineer from **1.36 to 2.9**. Not because the models were
-different. Because the *environment* was different.
+The picture has moved since. [METR's 2026 follow-up](https://metr.org/blog/2026-02-24-uplift-update/) estimates a
+speedup, with wide intervals, on data METR itself calls weak.
+[Jellyfish](https://jellyfish.co/blog/jellyfish-openai-team-up-to-measure-impact-of-ai-coding-tools/) found that companies at 100% AI adoption merge 2.90
+pull requests per engineer against 1.36 at 0%, which is an association
+and not a cause. What survives all of it is the gap between what
+developers believe about AI assistance and what gets measured.
 
-Jeff Dean put the frame on it at GTC. If you could make the model
-infinitely fast, you would only get a 2–3× end-to-end improvement in a
-typical software development task. The other 47× is eaten by the tools,
-APIs, auth flows, and documentation the model has to touch, all designed
-for human hands.
+Jeff Dean put a frame on the part that can be reasoned about. At NVIDIA
+GTC in March 2026 he described agents operating "50 times faster than a
+human" and said the start-up time of their tools then becomes "an
+Amdahl's Law-like bottleneck": make the model infinitely fast and you
+get "a factor of two or three" reduction in latency, if tools are a
+significant fraction of the work ([as reported by OfficeChai](https://officechai.com/ai/will-need-to-re-engineer-tools-so-that-they-can-keep-up-with-the-speeds-of-ai-agents-googles-jeff-dean/)).
 
 This is Amdahl's Law applied to software integration.
 
@@ -37,8 +38,9 @@ If 80% of the time an AI agent spends integrating with your platform is
 consumed by human-speed tool interactions, navigating pagination
 designed for a human scroller, interpreting error messages written for a
 human reader, and waiting on auth flows designed for browser-based
-session login, then your theoretical ceiling is 5× improvement.
-Regardless of how capable the underlying model becomes.
+session login, then a faster model can speed the whole up by at most
+1.25×. Regardless of how capable the underlying model becomes. The
+larger prize, up to 5×, is in removing the overhead.
 
 A competitor who has rebuilt their integration surface for agent-native
 consumption has a structurally higher ceiling. The gap between the two
@@ -46,9 +48,8 @@ platforms will widen as the models improve, because the agent-native
 platform gets more of the improvement and the human-speed platform gets
 less.
 
-This is not a hypothetical. It is the current state of the field. It
-is visible in the Jellyfish data. It is the explanation for the METR
-result.
+This is not a hypothetical. It is arithmetic, and where your platform
+sits is something you can measure.
 
 ## DevRel owns the environment
 
@@ -98,3 +99,8 @@ Do it.
 *See [The Amdahl Tax](/the-amdahl-tax/) for the full infrastructure
 argument, or [Measurement](/measurement/) for the four-layer Agent
 Ecosystem Health Dashboard.*
+
+*Corrected 27 November 2026. An earlier version misquoted Jeff Dean,
+gave the Amdahl ceiling for an 80% tool share as 5× (it is 1.25×), and
+presented the METR and Jellyfish findings as evidence about
+environments, which neither study tested.*

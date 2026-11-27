@@ -79,30 +79,39 @@ const businessArgs = [
   <section class="section section-alt">
     <div class="container-site">
       <div class="container-prose px-0 mb-6">
-        <h2>The competitive data</h2>
+        <h2>What the data says</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-8">
-        <Metric value="19%" label="Slower with AI (measured)" deltaDirection="down" />
-        <Metric value="1.36 → 2.9" label="PRs/engineer at agent-native companies" deltaDirection="up" />
-        <Metric value="~47×" label="Gain eaten by the environment, not the model" />
+        <Metric value="19%" label="Slower with AI in METR's early-2025 trial" deltaDirection="down" />
+        <Metric value="1.36 → 2.9" label="PRs per engineer, 0% vs. 100% AI adoption (Jellyfish)" deltaDirection="up" />
+        <Metric value="1.25×" label="Most a faster model can gain if 80% of the time is tool overhead" />
       </div>
 
       <div class="container-prose px-0">
         <p>
-          A rigorous randomized controlled trial found that experienced
-          software engineers using AI tools in environments not designed for
-          agent consumption were <strong>19% slower</strong> while estimating
-          they were <strong>20% faster</strong>. The same models, at
-          companies that had rebuilt their toolchains for agent-speed
-          consumption, drove pull requests per engineer from
-          <strong>1.36 to 2.9</strong>.
+          In <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" target="_blank" rel="noopener">METR's early-2025 randomized controlled trial</a>,
+          experienced developers took <strong>19% longer</strong> with AI
+          tools while believing they were about <strong>20% faster</strong>.
+          <a href="https://metr.org/blog/2026-02-24-uplift-update/" target="_blank" rel="noopener">METR's 2026 follow-up</a> leans towards a speedup, on data
+          METR itself calls weak. <a href="https://jellyfish.co/blog/jellyfish-openai-team-up-to-measure-impact-of-ai-coding-tools/" target="_blank" rel="noopener">Jellyfish</a> found that companies
+          at 100% AI adoption merged <strong>2.90</strong> pull requests
+          per engineer against <strong>1.36</strong> at 0% — an
+          association, not a cause.
+        </p>
+        <p class="mt-5">
+          The productivity evidence is unsettled, and developers' own
+          impressions are a poor guide. The arithmetic is not in doubt: if
+          80% of the time an agent spends on your platform is tool
+          overhead, a better model can speed the whole up by at most 1.25×.
         </p>
         <Callout type="primary" label="The executive frame">
-          The model wasn't the variable. The environment was. Your
+          Your
           documentation, your API surface, your auth flows, your error model,
           and your integration examples are the environment for every
           developer integrating with your platform using AI tools.
+          Whether that environment helps or hinders is something you can
+          measure.
           <strong>Agentic Developer Relations is the discipline of managing that
           environment deliberately.</strong>
         </Callout>
