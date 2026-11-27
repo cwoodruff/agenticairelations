@@ -13,19 +13,19 @@ npm run build      # static output to ./dist
 npm run preview    # serve the production build locally
 ```
 
-`npm test` runs the measurement harness tests (`harness/test/`, Node's built-in runner). No linter or formatter is configured, and the site itself has no tests. `tsconfig.json` extends `astro/tsconfigs/strict`; type errors surface at build time (`astro build`) and in the editor.
+`npm test` runs the measurement harness tests (`harness/test/`, Node's built-in runner). No linter or formatter is configured, and the site itself has no tests. `tsconfig.json` extends `astro/tsconfigs/strict`.
 
 ## Deployment
 
-Push to `main` triggers `.github/workflows/deploy.yml`, which runs `npm ci && npm run build` and publishes `dist/` to GitHub Pages (Node 20). Custom domain `agenticairelations.com` is set by `public/CNAME`; `public/.nojekyll` stops GitHub Pages from processing the output as Jekyll. No manual deploy step.
+Push to `main` triggers `.github/workflows/deploy.yml`, which runs `npm ci && npm run build` and publishes `dist/` to GitHub Pages (Node 22.23.4). Custom domain `agenticairelations.com` is set by `public/CNAME`; `public/.nojekyll` stops GitHub Pages from processing the output as Jekyll. No manual deploy step.
 
 ## Architecture
 
-Astro 4, `output: 'static'`, integrations: Tailwind, MDX, sitemap (`astro.config.mjs`). `site` is set there and drives sitemap + RSS absolute URLs.
+Astro 7, `output: 'static'`, MDX and sitemap integrations, Tailwind through PostCSS (`astro.config.mjs`). `site` is set there and drives sitemap + RSS absolute URLs.
 
 **Theming is the load-bearing system.** All color lives as space-separated RGB triplets in CSS custom properties in `src/styles/global.css` (`:root` for light, `[data-theme="dark"]` block for dark). `tailwind.config.mjs` maps semantic color names (`primary`, `amber`, etc.) to `rgb(var(--color-x) / <alpha-value>)`, so dark mode flips the whole palette by toggling one `data-theme` attribute — never hardcode hex/rgb in components; add a token and reference the Tailwind semantic name. `ThemeToggle.astro` sets that attribute. `darkMode: ['class', '[data-theme="dark"]']`.
 
-**Essays are an Astro content collection.** `src/content/config.ts` defines the `essays` collection with a Zod schema (title, description, publishDate, optional `series`/`seriesOrder`, `tags`, `draft`, `ogImage`). Essay files are MDX in `src/content/essays/`. `src/pages/essays/[...slug].astro` generates one page per non-draft essay via `getStaticPaths`, rendering through `EssayLayout`. `series` must be one of the enum values in the schema — adding a new series means editing the enum. Set `draft: true` to keep an essay out of the build. `rss.xml.ts` builds the feed from the collection.
+**Essays are an Astro content collection.** `src/content.config.ts` defines the `essays` collection with a Zod schema (title, description, publishDate, optional `series`/`seriesOrder`, `tags`, `draft`, `ogImage`). Essay files are MDX in `src/content/essays/`. `src/pages/essays/[...slug].astro` generates one page per non-draft essay via `getStaticPaths`, rendering through `EssayLayout`. `series` must be one of the enum values in the schema — adding a new series means editing the enum. Set `draft: true` to keep an essay out of the build. `rss.xml.ts` builds the feed from the collection.
 
 **Layouts** (`src/layouts/`): `BaseLayout` (html shell, head, theme boot) → `PageLayout` (standard pages) and `EssayLayout` (essay chrome + metadata from frontmatter). Pages under `src/pages/` are one `.astro` file per route.
 
