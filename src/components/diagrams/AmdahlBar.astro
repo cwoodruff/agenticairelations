@@ -47,7 +47,7 @@
       </text>
     </g>
     <text x="600" y="120" font-family="JetBrains Mono, monospace" font-size="12" fill="#854F0B" font-weight="700">
-      ~5× ceiling
+      max 1.25×
     </text>
 
     <!-- Platform B label -->
@@ -67,7 +67,7 @@
       </text>
     </g>
     <text x="600" y="220" font-family="JetBrains Mono, monospace" font-size="12" fill="#0F6E56" font-weight="700">
-      higher ceiling
+      max 3.3×
     </text>
 
     <!-- Legend -->
@@ -81,6 +81,7 @@
   </svg>
   <figcaption class="text-sm text-muted text-center mt-3 italic">
     Amdahl's Law, applied to platforms: the binding constraint is whatever
-    fraction of the integration is not the model.
+    fraction of the integration is not the model. With an infinitely fast
+    model, the whole can improve by at most 1 ÷ that fraction.
   </figcaption>
 </figure>
