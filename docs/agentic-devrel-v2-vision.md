@@ -2,7 +2,7 @@
 
 Companion to `agentic-devrel-critique.md`, which gives the evidence and the source list. Source IDs such as [S7] refer to that list, and its caveat applies here: most sources were checked from page excerpts, not opened in full.
 
-Everything in this document is a proposal. Where a number is my recommendation and not a finding, it says so.
+This document is a proposal, except for the six decisions recorded in section 14, which the author made on 27 November 2026. Where a number is my recommendation and not a finding, it says so.
 
 ## 1. The vision in brief
 
@@ -20,7 +20,7 @@ Five shifts get from one to the other:
 
 ## 2. Name and positioning
 
-**Recommendation: keep the name, and define it against Agent Experience.**
+**Decided: keep the name, and define it against Agent Experience.**
 
 "Agent Experience (AX)" has been in use since January 2025 and appears in job titles [S15] [S16]. It names a property of a platform, as Developer Experience does. Developer Relations is the practice that, among other things, improves Developer Experience. The same relationship works one level down:
 
@@ -31,7 +31,7 @@ Five shifts get from one to the other:
 
 This keeps the name, the domain and the newsletter, places the framework inside a conversation that already exists, and removes the need to claim the whole field. It requires acknowledging AX explicitly and dropping "canonical". "Coined" can stay if it is limited to the phrase.
 
-The alternative is to adopt "Agent Relations" or "AgentRel". I would not: the only sustained use I found was a vendor's [S25, relayed], and it drops the link to the book.
+The alternative considered was to adopt "Agent Relations" or "AgentRel". It was rejected: the only sustained use I found was a vendor's [S25, relayed], and it drops the link to the book.
 
 ## 3. Definition
 
@@ -57,7 +57,7 @@ Version 1 concentrates on stages 2 and 3.
 
 **Stage 1** is the largest addition. In one study an agent built its own solution in 12 of 20 categories, and where it did pick a product it picked the same few [S10]. A platform that is never selected has no success rate to improve.
 
-**Stage 4** is a different kind of problem and overlaps most with engineering. Serving an agent that acts for a user needs, at minimum: delegated and narrowly scoped credentials, spending and rate limits, the ability to revoke access, an audit trail, operations that are safe to repeat, and recovery from half-finished work. The aim is bounded and observable risk, not none. Whether to take this on now is a decision for you (section 14). If it is deferred, say so on the site.
+**Stage 4** is a different kind of problem and overlaps most with engineering. Serving an agent that acts for a user needs, at minimum: delegated and narrowly scoped credentials, spending and rate limits, the ability to revoke access, an audit trail, operations that are safe to repeat, and recovery from half-finished work. The aim is bounded and observable risk, not none. This stage is in scope for version 2 (section 14). It has no measures in the scorecard yet and no worked guidance; both are roadmap item 13.
 
 **Stage 5** deserves a mechanism. **Proposal:** give agents a way to report failure, for example a feedback tool on the MCP server or CLI, or a documented endpoint that accepts a short structured report. This is untested. Reports must be treated as untrusted input: stripped of secrets and personal data, rate-limited against abuse, and never fed to another agent as instructions.
 
@@ -73,7 +73,7 @@ Version 1 concentrates on stages 2 and 3.
 | 6 | **Agent-facing content is a supply chain.** Review changes, record where content came from, and assume someone will try to poison it. | New. |
 | 7 | **Do not tax the humans.** Agent programmes must not add load to maintainers or fill community spaces with generated content. | New. |
 
-**On principle 4.** The evidence is mixed in a specific way. Vendors report large gains from the right artifact delivered the right way, and no gain from the same content delivered badly [S8] [S9]. Independent benchmarks reportedly find little average effect [S22, relayed]. The practical rule is a paired test: run the evaluation with and without the artifact and publish the difference. Four outcomes are possible, and they call for different responses:
+**On principle 4.** The evidence is mixed in a specific way. Vendors report large gains from the right artifact delivered the right way, and no gain from the same content delivered badly [S8] [S9]. Independent results are split [S22, relayed]: one benchmark reports a substantial average gain from curated skills, another almost none, and a study of repository context files found no general gain at higher cost. The practical rule is a paired test: run the evaluation with and without the artifact and publish the difference. Four outcomes are possible, and they call for different responses:
 
 - **It helps.** Keep it.
 - **No clear effect.** An inconclusive result is not proof of no benefit. Keep it if it is cheap; otherwise test again with a larger sample.
@@ -131,7 +131,7 @@ These are my recommendations, set so that the numbers can bear the weight put on
 
 ## 7. The bottleneck argument, corrected
 
-The "Amdahl Tax" is the most quotable part of version 1 and the least accurate. I recommend retiring it as a pillar and keeping a corrected, smaller version.
+The "Amdahl Tax" is the most quotable part of version 1 and the least accurate. It is retired as a pillar, and a corrected, smaller version is kept (section 14).
 
 **What can be said:**
 
@@ -203,7 +203,7 @@ Version 1 names three new DevRel roles. I found no adoption of the titles elsewh
 
 ## 10. The human layer
 
-Version 1's view that human work gains value is plausible, though I found no data either way. Its diagram already shows feedback between the layers, and its budget floors for community work are worth keeping. What changes is the staffing rule that the layers cannot share people. Three points:
+Version 1's view that human work gains value is plausible, though I found no data either way. Its diagram already shows feedback between the layers, and its budget floors for community work are worth keeping. What changes is the staffing rule that the two layers cannot be served by the same practitioners at full load: version 2 expects the people doing each kind of work to sit close together, and often to be the same people. Three points:
 
 - **The layers are probably linked through selection.** Models are trained on, and agents retrieve, what people write in public. If that influences what agents choose, then honest posts, talks, answers and comparisons from real developers are upstream of stage 1. This is a hypothesis. Tracking selection rate beside community activity is a first look, but model releases and product changes move both, so it will not settle cause. A stronger test is to compare selection before and after a specific body of public content appears, model version held fixed, for agents that search the web.
 - **A commitment against generated filler.** Content published under the programme's name is written or closely edited by a person who can stand behind it. State the policy.
@@ -216,7 +216,7 @@ Version 1 sorts the patterns into three boxes, and its list does not match the b
 - **Read:** does the pattern produce something agents read or use?
 - **Join:** can an agent take part in the activity itself?
 
-A pattern can be yes on both, one or neither. The list follows the book's chapter titles [S21]. I have the titles only, not the text, so every row needs the authors' correction, and "what changes" is a proposal, not a finding.
+A pattern can be yes on both, one or neither. The list follows the book's chapter titles [S21]. I have the titles only, not the text, so every row needs checking against the book's text, and "what changes" is a proposal, not a finding.
 
 | Pattern | Read | Join | What changes |
 |---|---|---|---|
@@ -272,7 +272,7 @@ A pattern can be yes on both, one or neither. The list follows the book's chapte
 | MCP tiers | Format-neutral portfolio; maturity by practice | Skills, AGENTS.md, CLIs; MCP redesigned |
 | Three new DevRel roles | Responsibilities with a proposed lead for each | No uptake found; two commonly have another owner |
 | 20% and 40% triggers | Triggers from the company's own data | No basis; not measurable as stated |
-| Two layers that cannot share staff | Two linked layers, budget floors kept | Public human discussion may influence agent choice; to be tested |
+| Two layers, not served by the same practitioners at full load | Two linked layers, worked by one team; budget floors kept | Public human discussion may influence agent choice; to be tested |
 | Three pattern buckets | Two independent questions per pattern, on the book's actual list | Mismatch and contradictions |
 | Selection argued but not measured | Selection rate, on unbranded prompts | Agents choose, and often build their own |
 | (absent) | Security, maintainer protection, verifiability, a direct failure-reporting channel | Developments since April |
@@ -297,24 +297,35 @@ Ordered by priority. No dates.
 9. The measurement specification, as an open document others can adopt and criticise (section 6).
 10. The portfolio and maturity levels (section 8).
 11. The responsibility table (section 9).
-12. The re-examined patterns, checked against the book's text and ideally reviewed by the co-authors (section 11).
+12. The re-examined patterns, checked by the author against the book's text (section 11).
+13. Stage 4, agents operating the product: the minimum controls, the measures to add to the scorecard, and the division of work with engineering (section 4).
 
 **Third: earn adoption.**
 
-13. Run the measurement specification on two or three public platforms and publish the method, the data and the limits. One worked example will persuade more than any page of argument.
-14. Release the task format and graders openly, separate from any commercial offer, so the metric is not proprietary.
-15. Invite named practitioners, including people who work under the AX label, to critique it, and publish the responses.
-16. Find one or two teams willing to be written up, including what did not work.
-17. Apply the framework to the site itself: markdown versions of each page, working source links, and a note on how agents use it.
+14. Run the measurement specification on two or three public platforms and publish the method, the data and the limits. One worked example will persuade more than any page of argument.
+15. Publish the measurement specification, task format and graders under an open licence, separate from any commercial offer, so the metric is not proprietary. The licence is still to be chosen; a Creative Commons Attribution licence would suit the specification, and a permissive software licence the graders.
+16. Invite named practitioners, including people who work under the AX label, to critique it, and publish the responses.
+17. Find one or two teams willing to be written up, including what did not work.
+18. Apply the framework to the site itself: markdown versions of each page, working source links, and a note on how agents use it.
 
-## 14. Decisions for you
+## 14. Decisions
 
-1. **Name.** Keep "Agentic Developer Relations" positioned under AX (my recommendation), or adopt a different term.
-2. **FAISR.** Keep the name for first-attempt completion inside the scorecard (my recommendation, since it is already published), or retire it.
-3. **Amdahl.** Retire as a pillar and keep the corrected diagnostic (my recommendation), or drop it entirely.
-4. **Openness.** Whether to publish the measurement specification under an open licence, separate from any advisory or product work. I think the framework's credibility depends on it.
-5. **Co-authors.** Whether to involve the book's other authors in the pattern mapping.
-6. **Runtime agents.** Whether stage 4 (agents operating the product) is in scope now, or noted and deferred. It widens the audience beyond coding tools and overlaps most with engineering.
+Made by the author on 27 November 2026.
+
+| # | Question | Decision |
+|---|---|---|
+| 1 | Name | Keep "Agentic Developer Relations", positioned as the DevRel practice that works on Agent Experience. |
+| 2 | FAISR | Keep the name, for completion with no human intervention, as one measure inside the scorecard. |
+| 3 | Amdahl | Retire as a pillar. Keep the corrected diagnostic. |
+| 4 | Openness | Publish the measurement specification under an open licence. |
+| 5 | Co-authors | The book's other authors are not involved in the pattern mapping. |
+| 6 | Runtime agents | Stage 4, agents operating the product, is in scope now. |
+
+**What follows from these:**
+
+- **Decision 4** leaves the choice of licence open (roadmap item 15).
+- **Decision 5** means the pattern table rests on one author's reading. Say so where it is published, since the book has four authors.
+- **Decision 6** widens the audience beyond coding tools and brings in work that engineering usually owns. Section 4 lists the minimum controls. The scorecard has no stage 4 measures yet (roadmap item 13).
 
 ## 15. What would show version 2 is wrong
 
