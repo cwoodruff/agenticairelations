@@ -44,11 +44,11 @@ const objections = [
   },
   {
     q: '"We don\'t have budget for new roles."',
-    a: 'Start with one day per week from an existing practitioner, dedicated to running the evaluation. The first controlled test suite run will surface findings that justify the investment. Expect the first run to surface failures nobody had seen, because nothing else in your dashboard looks for them.',
+    a: 'Start with one day per week from an existing practitioner, dedicated to running the evaluation. The first run tells you something you did not know, because nothing else in your dashboard looks for it. Whether it justifies more investment depends on what it finds.',
   },
   {
     q: '"Our developers don\'t use AI tools that heavily."',
-    a: 'The silent majority is the measurement problem. Developers who use AI tools to integrate and fail don\'t generate support tickets — they leave. Run one controlled test suite against your top five integration tasks and measure what you find. You will not know the number until you do.',
+    a: 'The silent majority is the measurement problem. Developers whose AI tools fail to integrate may never file a ticket, so you will not see it. Some will leave. Run one controlled test suite against your top five integration tasks and measure what you find. You will not know the number until you do.',
   },
   {
     q: '"This is an engineering problem, not a DevRel problem."',
@@ -175,9 +175,10 @@ const objections = [
       </Callout>
 
       <Callout type="primary" label="Step 3">
-        Run those prompts through <strong>two AI tools</strong>. Score the
-        outputs using the rubric from the Measurement page. Document the
-        scores.
+        Run those prompts through <strong>two AI tools</strong>. Grade each
+        output against the four checks under "Controlled evaluation" on
+        the <a href="/measurement/">Measurement page</a>, and record pass
+        or fail for each.
       </Callout>
 
       <p class="mt-6">

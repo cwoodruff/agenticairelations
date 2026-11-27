@@ -108,6 +108,9 @@ function readPage(html, pageUrl, siteName) {
     suffix && fullTitle.endsWith(suffix) ? fullTitle.slice(0, -suffix.length) : fullTitle;
 
   const main = doc.querySelector('main') ?? doc.querySelector('article') ?? doc.querySelector('body');
+  // Not a content page: no container (e.g. a site-verification file copied
+  // from public/) or a redirect stub.
+  if (!main || doc.querySelector('meta[http-equiv="refresh" i]')) return null;
   main.querySelectorAll('script, style, noscript, template, nav').forEach((el) => el.remove());
   replaceSvgs(main);
   // Purely decorative wrappers; aria-hidden elements that carry text
@@ -205,6 +208,10 @@ export default function agentReadable() {
             : file.slice(0, -'.html'.length);
           const pageUrl = new URL(rel, siteRoot);
           const page = readPage(await readFile(path.join(dist, file), 'utf8'), pageUrl);
+          if (!page) {
+            logger.warn(`Skipping ${file}: no page content to convert.`);
+            continue;
+          }
           const markdown = toMarkdown(td, page, pageUrl.href);
 
           const targets = [];

@@ -92,7 +92,7 @@ FAISR is retained as one component and no longer stands alone. Version 1 leaves 
 
 - A **run** is one developer request handed to one agent (a named model and harness), ending when the agent stops or a stated budget of time or turns runs out.
 - Inside a run the agent may **retry on its own** as often as the budget allows.
-- A **human intervention** is any further message or edit from the person.
+- A **human intervention** is any further message or edit from the person. Routine permission prompts from the harness do not count, but the permission mode is reported.
 - **FAISR** is then the share of runs that pass the graders with no human intervention. This is a proposed definition; the alternative, counting only the agent's first generated answer, is stricter and less like real use.
 
 | Measure | What it answers | How |

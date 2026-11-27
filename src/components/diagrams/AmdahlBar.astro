@@ -43,7 +43,7 @@
         20%
       </text>
       <text x="358" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF">
-        80% human-speed overhead
+        80% tool time
       </text>
     </g>
     <text x="600" y="120" font-family="JetBrains Mono, monospace" font-size="12" fill="#854F0B" font-weight="700">
@@ -76,13 +76,11 @@
       <text x="28" y="281">Model reasoning (fast)</text>
 
       <rect x="220" y="270" width="12" height="12" fill="#854F0B" />
-      <text x="238" y="281">Tool interaction / human-speed overhead</text>
+      <text x="238" y="281">Tool time</text>
     </g>
   </svg>
   <figcaption class="text-sm text-muted text-center mt-3 italic">
-    Amdahl's Law, applied to platforms: the binding constraint is whatever
-    fraction of the integration is not the model. With an infinitely fast
-    model, the whole can improve by at most 1 ÷ that fraction. Platforms A
-    and B are illustrative.
+    If tools take a share s of the time and are not sped up, a faster model
+    can improve the whole by at most 1 ÷ s. Platforms A and B are illustrative.
   </figcaption>
 </figure>

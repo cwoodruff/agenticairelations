@@ -20,7 +20,7 @@ The specification covers agents that act for a developer or user in relation to 
 | Understand | Can it get correct, current context? | Agent reach, artifact lift |
 | Complete | Does it reach a working integration? | Completion rate, cost |
 | Operate | Can it act at runtime within set limits? | Section 7 (proposed) |
-| Report | Does the company learn of failures? | Agent reach; guardrails |
+| Report | Does the company learn of failures? | None yet |
 
 ## 2. Terms
 
@@ -28,7 +28,7 @@ The specification covers agents that act for a developer or user in relation to 
 - **Task.** One realistic developer request, with a fixed prompt and graders.
 - **Run.** One task handed to one agent. A run ends when the agent stops, or when a stated budget of time or turns is exhausted.
 - **Autonomous retry.** Any further attempt the agent makes inside a run without input from a person. Retries are allowed up to the budget.
-- **Human intervention.** Any message, edit or approval from a person after the initial prompt.
+- **Human intervention.** Any further message or edit from a person after the initial prompt. Routine permission prompts from the harness (approving a command or a file write) are not interventions, but the permission mode MUST be reported, since it changes how much a person is involved.
 - **Grader.** An automated check that returns pass or fail for one criterion.
 - **Artifact.** Anything published to help agents: a documentation change, an instruction file, a skill, a plugin, a tool server.
 
@@ -117,7 +117,7 @@ Prompts SHOULD be what a reasonably competent developer would type, not an optim
 
 ## 6. Reporting
 
-A report MUST include, for each agent: the date, the suite version, the number of tasks and repetitions, each measure with its interval, the grading rule, the budget, and the value of *k*. It SHOULD include the tasks and graders themselves, or say why they are withheld.
+A report MUST include, for each agent: the date, the suite version, the number of tasks and repetitions, each measure with its interval, the grading rule, the budget, the harness's permission mode, and the value of *k*. It SHOULD include the tasks and graders themselves, or say why they are withheld.
 
 ## 7. Agents that operate the product (proposed)
 

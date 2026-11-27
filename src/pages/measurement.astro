@@ -46,8 +46,10 @@ import Callout from '../components/content/Callout.astro';
       <h2>The scorecard</h2>
       <p class="mt-5">
         No single number describes how agents fare on a platform. The
-        scorecard has six measures, one or more for each stage of the
-        <a href="/what-is-agentic-relations/">agent journey</a>.
+        scorecard has six measures, covering how agents select,
+        understand, and complete work on the
+        <a href="/what-is-agentic-relations/">agent journey</a>. Measures
+        for agents that operate the product are proposed further down.
       </p>
       <div class="overflow-x-auto mt-6">
         <table class="w-full border-collapse text-left">
@@ -114,7 +116,7 @@ import Callout from '../components/content/Callout.astro';
       <ul class="list-disc pl-6 mt-5 space-y-2">
         <li>A <strong>run</strong> is one developer request handed to one agent (a named model and harness). It ends when the agent stops, or when a stated budget of time or turns runs out.</li>
         <li>Inside a run the agent may <strong>retry on its own</strong> as often as the budget allows.</li>
-        <li>A <strong>human intervention</strong> is any further message or edit from the person.</li>
+        <li>A <strong>human intervention</strong> is any further message or edit from the person. Routine permission prompts from the harness do not count, but say which permission mode you ran in.</li>
       </ul>
       <Callout type="primary" label="FAISR">
         <strong>First-Attempt Integration Success Rate:</strong> the share
