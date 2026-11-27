@@ -9,10 +9,11 @@ import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 
-const arg = (name, fallback) => {
+const raw = (name) => {
   const i = process.argv.indexOf(`--${name}`);
-  return i >= 0 ? Number(process.argv[i + 1]) : fallback;
+  return i >= 0 ? process.argv[i + 1] : undefined;
 };
+const arg = (name, fallback) => (raw(name) === undefined ? fallback : Number(raw(name)));
 const skill = arg('skill', 0.5);
 const boost = arg('guidance-boost', 0.3);
 const pick = arg('pick', 0.4);
@@ -20,8 +21,10 @@ const pick = arg('pick', 0.4);
 const roll = (salt) =>
   createHash('sha256').update(`${process.env.ADR_SEED}|${salt}`).digest().readUInt32BE(0) / 2 ** 32;
 
+// A real agent must never be given the suite's location. The mock is told
+// where it is so that it can cheat on purpose.
 const task = process.env.ADR_TASK_ID;
-const taskDir = process.env.ADR_TASK_DIR;
+const taskDir = path.join(raw('suite'), 'tasks', task);
 const hasGuidance = existsSync('AGENTS.md');
 const turns = 3 + Math.floor(roll('turns') * 6);
 await writeFile(process.env.ADR_METRICS_FILE, JSON.stringify({ turns, tokens: turns * 1500 }));

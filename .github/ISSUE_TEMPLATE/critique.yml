@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Disagreement is welcome, including from people who work under the Agent Experience label or think this is not DevRel's job. Critiques may be quoted on the site with credit, unless you say otherwise below.
+        Disagreement is welcome, including from people who work under the Agent Experience label or think this is not DevRel's job. With your permission, given below, I may quote your critique on the site with credit and reply to it there.
   - type: dropdown
     id: area
     attributes:
@@ -49,4 +49,4 @@ body:
     attributes:
       label: Quoting
       options:
-        - label: Please do not quote this on the site.
+        - label: This may be quoted on the site with credit.

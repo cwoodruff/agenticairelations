@@ -4,7 +4,7 @@ Version 0.2 (draft), 27 November 2026. Author: Chris Woodruff.
 
 This document defines how to measure how well AI agents fare on a developer platform. It is the method behind the [measurement page](https://agenticairelations.com/measurement/) of agenticairelations.com, written so that anyone can apply it and compare results.
 
-**Status.** This is a draft. It has not yet been run on a real platform with a real agent, and the stage 4 measures in section 7 are untested proposals. A reference harness in [`harness/`](../harness/) implements sections 3 to 6 for selection, completion, cost and artifact lift, and has been exercised only against a mock agent. Corrections and criticism are welcome through issues on this repository.
+**Status.** This is a draft. It has not yet been run on a real platform with a real agent, and the stage 4 measures in section 7 are untested proposals. A reference harness in [`harness/`](../harness/) covers selection rate, FAISR, cost and artifact lift for unattended runs. It does not cover assisted completion, agent reach, the outcome link, or section 7, and it has been exercised only against a mock agent. Corrections and criticism are welcome through issues on this repository.
 
 **Changes in 0.2.** Completion is binary, and partial credit is a separate diagnostic (3.2). Every run must start from a restored state with a fresh agent session (section 5). The task format gains `setup`, `teardown` and `classify`.
 

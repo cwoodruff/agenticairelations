@@ -6,7 +6,7 @@
       "harness": "mock-agent",
       "version": "0.1",
       "permission_mode": "non-interactive",
-      "command": ["node", "{harness_dir}/examples/mock-agent.mjs", "--skill", "0.5"]
+      "command": ["node", "{harness_dir}/examples/mock-agent.mjs", "--suite", "{suite_dir}", "--skill", "0.5"]
     }
   ]
 }
