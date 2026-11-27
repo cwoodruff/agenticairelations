@@ -12,21 +12,38 @@ import FundamentalTriad from '../components/diagrams/FundamentalTriad.astro';
 const principles = [
   {
     n: '01',
-    title: 'The agent ecosystem is shaped by deliberate choices or by neglect.',
-    body:
-      'AI tools draw on whatever corpus is available — your docs, your open-source examples, your MCP servers. That corpus is being shaped right now. The only question is whether it is being shaped intentionally.',
+    title: 'Two audiences, one platform, one accountable human.',
+    body: 'Agents act. A developer approves the work and answers for the result. Serve both.',
   },
   {
     n: '02',
-    title: 'Agent failures are silent and systemic.',
-    body:
-      'A developer whose AI tool generates a broken integration may debug silently or abandon the platform. No support ticket. No forum question. The traditional DevRel dashboard shows green while adoption degrades.',
+    title: 'Agents choose before they build.',
+    body: 'Measure what agents choose when nobody names a platform, and how often they build their own.',
   },
   {
     n: '03',
-    title: 'Encoded judgment is the moat.',
-    body:
-      'AI models are commodities. What is not commoditized is encoded judgment about what a correct integration looks like. That judgment, maintained by practitioners with deep platform expertise, becomes institutional capital that compounds.',
+    title: 'Failures are silent until instrumented.',
+    body: 'A developer whose AI tool generates a broken integration rarely files a ticket. Evaluations and agent traffic make those failures visible.',
+  },
+  {
+    n: '04',
+    title: 'Give everything you publish for agents a purpose and a test.',
+    body: 'Recipes, skills, and servers do not help by existing. Test each one, keep what works, and fix or remove what harms.',
+  },
+  {
+    n: '05',
+    title: 'Make agent work easy to verify.',
+    body: 'A person still has to check what the agent produced. Test modes, validators, and clear success signals make that cheaper.',
+  },
+  {
+    n: '06',
+    title: 'Agent-facing content is a supply chain.',
+    body: 'Review changes, record where content came from, and assume someone will try to poison it.',
+  },
+  {
+    n: '07',
+    title: 'Do not tax the humans.',
+    body: 'Agent programs must not add load to maintainers or fill community spaces with generated content.',
   },
 ];
 
@@ -34,7 +51,7 @@ const pagesToRead = [
   {
     href: '/what-is-agentic-relations/',
     title: 'What Is Agentic Developer Relations',
-    body: 'The definition, three principles, and how it extends the Fundamental Triad.',
+    body: 'The definition, the agent journey, the seven principles, and how it is measured.',
     tone: 'primary',
   },
   {
@@ -136,19 +153,19 @@ const toneAccent: Record<string, string> = {
     <FundamentalTriad />
   </section>
 
-  <!-- Three principles — color-blocked purple -->
+  <!-- Seven principles — color-blocked purple -->
   <SectionBlock tone="purple">
     <div class="container-site py-20 md:py-28">
       <div class="max-w-2xl mb-14">
         <p class="font-mono text-xs font-bold uppercase mb-4 tracking-[0.2em] text-white/80 inline-flex items-center gap-3">
           <span class="w-4 h-[2px] bg-white/80" aria-hidden="true"></span>
-          02 · Three principles
+          02 · Seven principles
         </p>
         <h2 class="text-white text-3xl md:text-5xl font-bold leading-[1.08] tracking-tight">
           What Agentic Developer Relations assumes about the world.
         </h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           principles.map((p) => (
             <div class="rounded-2xl p-7 bg-white/10 backdrop-blur border border-white/15 text-white">
