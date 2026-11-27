@@ -1,0 +1,52 @@
+name: Critique of the framework
+description: Tell me where Agentic Developer Relations is wrong, weak, or missing something.
+title: "Critique: "
+labels: ["critique"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Disagreement is welcome, including from people who work under the Agent Experience label or think this is not DevRel's job. With your permission, given below, I may quote your critique on the site with credit and reply to it there.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part?
+      options:
+        - Definition and positioning
+        - The agent journey
+        - Principles
+        - Measurement and the specification
+        - Who does the work
+        - The patterns
+        - Evidence and sources
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What does the site claim?
+      description: Quote it, or link to the page.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong with it?
+      description: Evidence, a counter-example, or your own experience all help.
+    validations:
+      required: true
+  - type: textarea
+    id: instead
+    attributes:
+      label: What should it say instead?
+  - type: input
+    id: role
+    attributes:
+      label: Your role and where you work (optional)
+  - type: checkboxes
+    id: quote
+    attributes:
+      label: Quoting
+      options:
+        - label: This may be quoted on the site with credit.

@@ -1,0 +1,22 @@
+id: list-all-events
+title: Export every recorded event
+stage: complete
+prompt: |
+  In src/export.mjs, export an async function allEvents(client) that returns
+  every event recorded in Tally, using the client in src/tally-sdk.mjs.
+starting_state: starting_state
+budget:
+  max_turns: 20
+  max_minutes: 2
+interventions_allowed: 0
+graders:
+  - id: loads
+    required: true
+    run: node "$ADR_TASK_DIR/graders/loads.mjs"
+  - id: returns-all-pages
+    required: true
+    run: node "$ADR_TASK_DIR/graders/all-pages.mjs"
+  - id: stops-at-last-page
+    required: false
+    run: node "$ADR_TASK_DIR/graders/no-extra-calls.mjs"
+source: example

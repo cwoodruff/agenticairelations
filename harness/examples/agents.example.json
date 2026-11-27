@@ -1,0 +1,12 @@
+{
+  "agents": [
+    {
+      "id": "example-agent",
+      "model": "name-and-version-of-the-model",
+      "harness": "name-of-the-coding-tool",
+      "version": "version-of-the-coding-tool",
+      "permission_mode": "how the tool was allowed to act, e.g. auto-approve edits and commands",
+      "command": ["your-agent-cli", "--non-interactive", "--prompt-file", "{prompt_file}"]
+    }
+  ]
+}

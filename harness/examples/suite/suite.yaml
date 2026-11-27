@@ -1,0 +1,7 @@
+id: tally-example
+version: "0.1"
+# The label a select task's classifier prints when the agent chooses this platform.
+platform: tally
+description: >
+  A tiny suite for a fictional event-counting SDK called Tally. It exists to
+  show the task format and to test the harness. It measures nothing real.

@@ -13,7 +13,7 @@ npm run build      # static output to ./dist
 npm run preview    # serve the production build locally
 ```
 
-No test suite, linter, or formatter is configured. `tsconfig.json` extends `astro/tsconfigs/strict`; type errors surface at build time (`astro build`) and in the editor.
+`npm test` runs the measurement harness tests (`harness/test/`, Node's built-in runner). No linter or formatter is configured, and the site itself has no tests. `tsconfig.json` extends `astro/tsconfigs/strict`; type errors surface at build time (`astro build`) and in the editor.
 
 ## Deployment
 
@@ -35,4 +35,4 @@ Astro 4, `output: 'static'`, integrations: Tailwind, MDX, sitemap (`astro.config
 
 ## Content source
 
-Site plan and framework source live in `docs/` (`Agentic_Relations_Site_Plan.md`, `Agentic_Relations_Framework.docx`). Site source is MIT; essay/framework content is © Chris Woodruff, all rights reserved.
+The current framework is `docs/agentic-devrel-v2-vision.md`; site copy follows it. The measurement specification is `docs/measurement-specification.md` (CC BY 4.0), with a reference harness in `harness/` (`npm test`). Version 1 documents are in `docs/archive/` and must not be used as a source for copy. Site source is MIT; essay/framework content is © Chris Woodruff, all rights reserved.

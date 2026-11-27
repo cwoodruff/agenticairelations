@@ -140,7 +140,8 @@ import Callout from '../components/content/Callout.astro';
         <li><strong>Say what the number generalizes to.</strong> A score describes this task suite on this model. Repetitions show how stable the agent is on those tasks. Only more, and more varied, tasks say anything about the rest.</li>
         <li><strong>Size the suite from a pilot.</strong> Run a small pilot, see how much results vary between repetitions and between tasks, then choose the numbers needed to see the difference you care about. As a starting point I would not go below about 30 tasks and three repetitions per model. That is a judgment, not a derived figure.</li>
         <li><strong>Pin and name the model and harness.</strong> Re-run on every model release. Report each model separately.</li>
-        <li><strong>Publish the grading rule, strict and lenient.</strong> In <a href="https://stripe.dev/blog/stripe-integration-evals-methodology" target="_blank" rel="noopener">Stripe's integration evaluations</a>, requiring every necessary criterion to pass drops the average score from 78.1% to 29.4%.</li>
+        <li><strong>Start every run clean.</strong> Restore the starting code and any test accounts, and use a fresh agent session, so nothing carries over between runs or between the with and without arms.</li>
+        <li><strong>Keep completion binary, and publish the grading rule.</strong> A run passes only if every required check passes; report partial credit separately. In <a href="https://stripe.dev/blog/stripe-integration-evals-methodology" target="_blank" rel="noopener">Stripe's integration evaluations</a>, requiring every necessary criterion to pass drops the average score from 78.1% to 29.4%.</li>
         <li><strong>Automate the graders.</strong> Check the resources created and the tests passed. Hand scoring does not scale and drifts.</li>
         <li><strong>Do not benchmark competitors on a private rubric.</strong> If comparison matters, use a published task set others can run.</li>
         <li><strong>Run the suite on your own releases.</strong> A documentation or API change that lowers the score is a regression.</li>
@@ -296,6 +297,19 @@ import Callout from '../components/content/Callout.astro';
         The temptation is to wait until full instrumentation is in place.
         Don't. The first hand-scored run tells you something you did not
         know.
+      </p>
+
+      <h3 class="mt-10">A harness to start from</h3>
+      <p class="mt-4">
+        The repository includes a
+        <a href="https://github.com/cwoodruff/agenticairelations/tree/main/harness" target="_blank" rel="noopener">reference harness</a>:
+        a runner, a report generator, and a small example suite with
+        graders. Point it at your own tasks and your agent's command line
+        and it produces the selection, completion, cost, and artifact-lift
+        figures, with intervals on the rates. It has been tested against a mock
+        agent only. It has not yet been used on a real platform, and I
+        would like to hear from the first people who try
+        (<a href="/get-involved/">get involved</a>).
       </p>
     </div>
   </section>

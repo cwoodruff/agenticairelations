@@ -1,0 +1,38 @@
+name: Offer a case study
+description: Your team does this work and is willing to be written up, including what did not work.
+title: "Case study: "
+labels: ["case-study"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Leave out anything confidential; I will follow up privately before anything is written, and nothing is published without your approval.
+  - type: input
+    id: org
+    attributes:
+      label: Organization (or "undisclosed for now")
+    validations:
+      required: true
+  - type: textarea
+    id: who
+    attributes:
+      label: Who does the work?
+      description: Which team owns it (DevRel, docs, engineering, an Agent Experience team), and roughly how many people.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you do?
+      description: Evaluations, agent-facing docs or skills, traffic analysis, product changes for agents.
+    validations:
+      required: true
+  - type: textarea
+    id: learned
+    attributes:
+      label: What worked, and what did not?
+  - type: input
+    id: contact
+    attributes:
+      label: How to reach you
+      description: A public handle is fine. Do not post a private email address here.

@@ -1,0 +1,23 @@
+id: track-signup
+title: Record a signup event
+stage: complete
+prompt: |
+  In src/track.mjs, export an async function trackSignup(client, userId) that
+  records a "signup" event for the user with the Tally client in
+  src/tally-sdk.mjs. Calling it twice for the same user must not double count.
+starting_state: starting_state
+budget:
+  max_turns: 20
+  max_minutes: 2
+interventions_allowed: 0
+graders:
+  - id: loads
+    required: true
+    run: node "$ADR_TASK_DIR/graders/loads.mjs"
+  - id: records-signup
+    required: true
+    run: node "$ADR_TASK_DIR/graders/records.mjs"
+  - id: no-double-count
+    required: true
+    run: node "$ADR_TASK_DIR/graders/idempotent.mjs"
+source: example

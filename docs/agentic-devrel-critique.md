@@ -1,5 +1,7 @@
 # Agentic Developer Relations: a critical review
 
+> **Note.** This review describes the site as it stood at commit `9522c18`. The site has since been corrected and rewritten, and the two version 1 documents it refers to are now in `docs/archive/`.
+
 Reviewed: `cwoodruff/agenticairelations` at commit `9522c18` (all pages, the three essays, the site plan and the framework document). Review date: 27 November 2026. The framework's substance dates from April 2026; the July commits only renamed the site.
 
 Companion document: `agentic-devrel-v2-vision.md`.
