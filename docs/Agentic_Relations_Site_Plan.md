@@ -6,7 +6,7 @@
 **Purpose:** Establish Chris Woodruff as the defining voice in Agentic Developer Relations; educate the DevRel community; generate speaking, consulting, and EcoSynt pipeline  
 **Status:** Build-ready specification  
 
-> **Superseded in part (27 November 2026).** The page copy in this plan misquotes Jeff Dean, gives the Amdahl ceiling for an 80% tool share as 5× (it is 1.25×), misreads the METR and Jellyfish findings, and lists patterns that do not match the book. The site has been corrected; this plan has not. See `docs/agentic-devrel-critique.md`. Do not regenerate site copy from the sections below without applying those corrections.
+> **Superseded in part (27 November 2026).** The page copy in this plan misquotes Jeff Dean, gives the Amdahl ceiling for an 80% tool share as 5× (it is 1.25×), misreads the METR and Jellyfish findings, and lists patterns that do not match the book. The site has been corrected; this plan has not. See `docs/agentic-devrel-critique.md`. Since then the site has moved to version 2 of the framework (`docs/agentic-devrel-v2-vision.md`): a new definition, seven principles, a scorecard, shared responsibilities in place of three roles, and a two-question pattern mapping. Treat everything below as a historical record of version 1. Do not regenerate site copy from it.
 
 ---
 

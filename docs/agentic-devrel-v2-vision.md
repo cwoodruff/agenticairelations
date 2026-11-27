@@ -308,6 +308,18 @@ Ordered by priority. No dates.
 17. Find one or two teams willing to be written up, including what did not work.
 18. Apply the framework to the site itself: markdown versions of each page, working source links, and a note on how agents use it.
 
+### Status, 27 November 2026
+
+| Items | State |
+|---|---|
+| 1 to 7 | Done on the site. |
+| 8 to 12 | Done on the site. The pattern mapping (12) has not been checked against the book's text. |
+| 13 | Partly done: the controls and the division of work are published, and stage 4 measures are proposed in the measurement specification. None has been tested. |
+| 14 | Not started. Needs access to live platforms and agents. |
+| 15 | Partly done: the specification is published at `docs/measurement-specification.md` under CC BY 4.0, with a task format. No graders or harness exist yet. |
+| 16, 17 | Not started. These need other people. |
+| 18 | Done: the build writes a markdown copy of every page and an `llms.txt`. Whether agents use them has not been measured. |
+
 ## 14. Decisions
 
 Made by the author on 27 November 2026.

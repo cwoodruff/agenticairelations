@@ -7,44 +7,44 @@ import NewsletterCTA from '../components/sections/NewsletterCTA.astro';
 const talkingPoints = [
   {
     n: '01',
-    title: 'Agentic Developer Relations produces a metric leadership can act on.',
+    title: 'Agentic Developer Relations produces numbers leadership can act on.',
     body:
-      'The First-Attempt Integration Success Rate measures whether developers using AI tools succeed with the platform. The working hypothesis is that a higher rate leads to more adoption, and that link has to be shown with your own activation data. Even before it is, a number that moves when DevRel does its work changes the conversation with leadership.',
+      'The scorecard starts with the First-Attempt Integration Success Rate: whether developers using AI tools succeed with the platform. The working hypothesis is that a higher rate leads to more adoption, and that link has to be shown with your own activation data. Even before it is, a number that moves when DevRel does its work changes the conversation with leadership.',
   },
   {
     n: '02',
-    title: 'The Amdahl tax argument wins the engineering conversation.',
+    title: 'Evaluation evidence wins the engineering conversation.',
     body:
-      'When the Agent Champion can show what share of integration time is consumed by human-speed tool interactions — and a competitor has lowered that fraction — DevRel has an engineering argument backed by measurable data.',
+      'When DevRel can show where agents fail on the platform, how much of their time goes to tools, and where developers have to step in, it has an engineering argument backed by traces and failure cases instead of anecdote.',
   },
   {
     n: '03',
-    title: 'The recipe library is the encoded institutional memory the field has always needed.',
+    title: 'The evaluation suite is the institutional memory the field has needed.',
     body:
-      'Senior DevRel practitioners carry enormous tacit knowledge that walks out the door when they leave. The recipe library encodes that knowledge into compounding institutional capital — accessible to every AI tool a developer might use.',
+      'Senior DevRel practitioners carry enormous tacit knowledge about what a correct integration looks like, and it walks out the door when they leave. A suite of tasks and graders records it, and keeps working when tools and formats change.',
   },
   {
     n: '04',
-    title: 'Human community patterns become more valuable, not less.',
+    title: 'Human community work keeps its value, and may feed the agent side.',
     body:
-      'As AI floods every content channel, the patterns that require genuine human presence — conference sessions, office hours, community events — become the scarcest signal in the ecosystem. Agentic Developer Relations creates a separate layer, freeing human-facing programs to invest in the things only humans can provide.',
+      'As generated content fills every channel, the patterns that need real human presence — conference sessions, office hours, community events — are the hardest to imitate. What people say in public may also influence what agents choose. That is a hypothesis worth testing, and a reason to keep the two kinds of work close.',
   },
   {
     n: '05',
-    title: 'The field is splitting, and Agentic Developer Relations names the split.',
+    title: 'The work already exists. This gives it a name and a place.',
     body:
-      'DevRel teams everywhere are discovering that some of their work has shifted toward AI-adjacent tasks — without a name, career path, or measurement framework. Agentic Developer Relations names it, structures it, and gives practitioners a vocabulary and a professional community.',
+      'DevRel teams everywhere find some of their work has shifted toward AI tools, without a name, career path, or measurement framework. Engineering calls how agents fare on a platform Agent Experience. Agentic Developer Relations is the DevRel practice that works on it.',
   },
 ];
 
 const objections = [
   {
     q: '"We already ship an MCP server."',
-    a: 'MCP makes the platform accessible to agents. It does not make it fast enough — and it does not make it accurate enough. Measure the fraction of integration time that is tool interaction versus model reasoning. Measure the first-attempt success rate. The MCP server is the starting point, not the finish line.',
+    a: 'An MCP server gives agents a way in. It does not tell you whether they choose the platform, succeed with it, or what that costs. Measure the first-attempt success rate with and without the server. It is one of several things to build, and like the others it has to be shown to help.',
   },
   {
     q: '"We don\'t have budget for new roles."',
-    a: 'Start with one day per week from an existing practitioner, dedicated to the Agent Champion monitoring function. The first controlled test suite run will surface findings that justify the investment. Expect the first run to surface failures nobody had seen, because nothing else in your dashboard looks for them.',
+    a: 'Start with one day per week from an existing practitioner, dedicated to running the evaluation. The first controlled test suite run will surface findings that justify the investment. Expect the first run to surface failures nobody had seen, because nothing else in your dashboard looks for them.',
   },
   {
     q: '"Our developers don\'t use AI tools that heavily."',
@@ -52,7 +52,7 @@ const objections = [
   },
   {
     q: '"This is an engineering problem, not a DevRel problem."',
-    a: 'DevRel has always influenced documentation and integration design. Agentic Developer Relations formalizes that influence and backs it with measurement. The Agent Champion\'s feedback loop to engineering is the same feedback loop DevRel has always run — with better data.',
+    a: 'Much of it is. Engineering owns the API, sign-in, errors, and tooling. DevRel brings what engineering does not have: the list of things developers are trying to do, a judgment of whether the result is good, and the feedback loop to product. The work is shared, and the evidence is DevRel\'s part.',
   },
 ];
 ---
@@ -65,9 +65,9 @@ const objections = [
     <p class="eyebrow mb-4">For DevRel practitioners</p>
     <h1 class="max-w-3xl">Agentic Developer Relations for DevRel Practitioners</h1>
     <p class="lead text-muted mt-5 max-w-2xl">
-      The relevance crisis is real. The name for what's happening is
-      Agentic Developer Relations. Here's how to lead the conversation — and what
-      to do in week one, with no new budget.
+      The relevance crisis is real. Agentic Developer Relations is the
+      part of the answer DevRel can own. Here's how to lead the
+      conversation — and what to do in week one, with no new budget.
     </p>
   </section>
 
@@ -88,15 +88,15 @@ const objections = [
     <p class="mt-5">
       This doesn't make DevRel obsolete. But it does change where DevRel's
       value concentrates. The execution layer is being automated. The
-      judgment layer is not. And a new layer has appeared that most DevRel
-      programs aren't serving at all: the agent ecosystem layer, where AI
-      coding tools either produce correct integrations with a platform or
-      don't — silently, at scale, without generating any traditional
-      feedback signals.
+      judgment layer is not. And a new audience has appeared that most DevRel
+      programs aren't serving at all: the AI agents developers now work
+      through. Those agents choose platforms, and either produce correct
+      integrations or don't — silently, at scale, without generating any
+      traditional feedback signals.
     </p>
     <p class="mt-5">
-      Agentic Developer Relations names the work that DevRel needs to do at that
-      layer.
+      Agentic Developer Relations names the work that DevRel needs to do for
+      that audience.
     </p>
   </section>
 
@@ -124,12 +124,14 @@ const objections = [
 
   <section class="section container-site">
     <div class="container-prose px-0">
-      <h2>The two-layer operating model</h2>
+      <h2>Two linked kinds of work</h2>
       <p class="mt-5">
         Agentic Developer Relations doesn't replace the human-facing work of DevRel.
-        It runs alongside it as a second operating track — with its own
-        practitioners, metrics, and time horizons, but sharing platform
-        expertise and leadership.
+        It runs alongside it, with its own metrics and methods, sharing
+        platform expertise, leadership, and usually people. Community work
+        keeps its own budget floor. The two are linked in both directions:
+        agent failures tell you what to teach, and what the community
+        writes in public is part of what agents learn from.
       </p>
     </div>
     <TwoLayerModel />
@@ -157,7 +159,7 @@ const objections = [
       <p class="mt-5">
         No new budget required. No new headcount required. One decision
         required: designate one practitioner as the responsible owner of
-        agent ecosystem monitoring. Give them one day per week. Ask them to
+        measuring how agents fare on the platform. Give them one day per week. Ask them to
         do three things:
       </p>
 
@@ -181,8 +183,8 @@ const objections = [
       <p class="mt-6">
         That's your baseline. You now have more signal about agent
         ecosystem health than anything in your current dashboard. Everything
-        else — automation, broader tooling, full recipe library — is built
-        on top of this baseline.
+        else — automated graders, more models, tested guidance for agents —
+        is built on top of this baseline.
       </p>
     </div>
   </section>

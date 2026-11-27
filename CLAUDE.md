@@ -29,7 +29,9 @@ Astro 4, `output: 'static'`, integrations: Tailwind, MDX, sitemap (`astro.config
 
 **Layouts** (`src/layouts/`): `BaseLayout` (html shell, head, theme boot) → `PageLayout` (standard pages) and `EssayLayout` (essay chrome + metadata from frontmatter). Pages under `src/pages/` are one `.astro` file per route.
 
-**Components** are organized by role under `src/components/`: `content/` (Callout, DefinitionBox, PatternCard, CompareTable, PullQuote, RoleCard — usable inside MDX essays), `diagrams/` (inline-SVG framework diagrams; SVGs should use theme tokens so they track light/dark), `sections/`, `nav/`, `ui/`.
+**Components** are organized by role under `src/components/`: `content/` (Callout, DefinitionBox, CompareTable, PullQuote, RoleCard — usable inside MDX essays), `diagrams/` (inline-SVG framework diagrams; SVGs should use theme tokens so they track light/dark), `sections/`, `nav/`, `ui/`.
+
+**Agent-readable output.** `integrations/agent-readable.mjs` (registered in `astro.config.mjs`) post-processes `dist/` on `astro:build:done`: it writes a markdown copy of each page's `<main>` to `<route>/index.md` and `<route>.md` (404 excluded) and generates `llms.txt` from each page's `<title>` and meta description. `BaseLayout` emits the matching `<link rel="alternate" type="text/markdown">`. Inline SVG diagrams become a text line from their `<title>`/`<desc>`; an SVG without a `<title>` is treated as decorative and dropped.
 
 ## Content source
 

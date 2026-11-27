@@ -56,26 +56,26 @@ const pagesToRead = [
   },
   {
     href: '/the-amdahl-tax/',
-    title: 'The Amdahl Tax',
-    body: 'Why the environment is the binding constraint, and what DevRel can do about it.',
+    title: 'The Environment',
+    body: 'Two constraints on agents, tool time and review, and what to build.',
     tone: 'amber',
   },
   {
     href: '/devrel-patterns-reframed/',
     title: 'The 37 Patterns Reframed',
-    body: 'How the 37 DevRel activity patterns sort into three groups for the AI-agent era.',
+    body: 'The 37 DevRel activity patterns, each asked two questions: do agents read it, and can agents join in?',
     tone: 'purple',
   },
   {
     href: '/new-roles/',
-    title: 'New Roles',
-    body: 'The Agent Champion, the Documentation Architect, and the API Experience Designer.',
+    title: 'Who Does the Work',
+    body: 'What DevRel leads, what docs, engineering, and security own, and how to staff it.',
     tone: 'primary',
   },
   {
     href: '/measurement/',
     title: 'Measurement',
-    body: 'FAISR and the four-layer Agent Ecosystem Health Dashboard.',
+    body: 'The six-measure scorecard, the rules that make it trustworthy, and where to start.',
     tone: 'amber',
   },
 ];
@@ -89,13 +89,13 @@ const toneAccent: Record<string, string> = {
 
 <PageLayout
   title="Agentic Developer Relations"
-  description="Agentic Developer Relations is the discipline inside Developer Relations responsible for the AI agent layer of every developer platform. A reference by Chris Woodruff."
+  description="Agentic Developer Relations is the practice within Developer Relations that represents developers who work through AI agents: how well agents choose, understand, build on, and operate a platform. A reference by Chris Woodruff."
 >
   <Hero
-    eyebrow="A new discipline inside Developer Relations"
+    eyebrow="A practice inside Developer Relations"
     headline="When a developer asks AI to integrate with your platform, does it work?"
     highlight="does it work?"
-    subheadline="Most DevRel programs don't know. Agentic Developer Relations is the discipline that makes the answer knowable — and then systematically improves it."
+    subheadline="Most DevRel programs don't know. Agentic Developer Relations is the practice that makes the answer knowable — and then systematically improves it."
     ctaPrimary={{ href: '/what-is-agentic-relations/', label: 'What is Agentic Developer Relations?' }}
     ctaSecondary={{ href: '/essays/', label: 'Read the essays' }}
   />
@@ -121,18 +121,19 @@ const toneAccent: Record<string, string> = {
         </h2>
         <div class="space-y-5 text-lg leading-relaxed text-white/92">
           <p>
-            It doesn't attend your conferences. It doesn't read your blog posts.
-            It doesn't care about your ambassador program. But it touches every
-            integration your platform hosts, amplifies every ambiguity in your
-            documentation, and makes a decision about your platform on behalf
-            of every developer who asks it to write some code.
+            It doesn't attend your conferences. It doesn't care about your
+            ambassador program. But it reads your documentation more often
+            than any person does, stumbles on every ambiguity in it, and
+            makes a decision about your platform on behalf of every
+            developer who asks it to write some code.
           </p>
           <p>
-            That member is the AI coding agent. And Developer Relations, as a
-            field, has no framework for serving it.
+            That member is the AI agent. Engineering teams call how well it
+            fares Agent Experience. Developer Relations needs a practice of
+            its own for it.
           </p>
           <p class="text-2xl md:text-3xl font-bold text-white pt-4">
-            Agentic Developer Relations is that framework.
+            Agentic Developer Relations is that practice.
           </p>
         </div>
       </div>
@@ -143,7 +144,7 @@ const toneAccent: Record<string, string> = {
   <section class="section container-site">
     <SectionMarker numeral="01" eyebrow="The Fundamental Triad, extended" />
     <div class="max-w-2xl mb-6">
-      <h2>One platform. Two audiences. A missing framework.</h2>
+      <h2>One platform. Two audiences.</h2>
       <p class="text-muted mt-5 text-lg leading-relaxed">
         The original Fundamental Triad of Developer Relations — Community,
         Company, Customer — assumed every vertex was human. That assumption

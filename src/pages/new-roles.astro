@@ -1,309 +1,271 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import RoleCard from '../components/content/RoleCard.astro';
-import AgentChampionFlow from '../components/diagrams/AgentChampionFlow.astro';
-import RecipeLibrary from '../components/diagrams/RecipeLibrary.astro';
+import Callout from '../components/content/Callout.astro';
 ---
 
 <PageLayout
-  title="New Roles for Agentic Developer Relations"
-  description="Three new practitioner roles that Agentic Developer Relations requires — the Agent Champion, the Documentation Architect for agent consumption, and the API Experience Designer."
+  title="Who Does the Work"
+  description="Agentic Developer Relations is shared work. Which responsibilities DevRel leads, which belong to docs, platform engineering, security and product, and how to staff it."
 >
   <section class="container-site pt-16 pb-4">
-    <p class="eyebrow mb-4">Operational roles</p>
-    <h1 class="max-w-3xl">New Roles for Agentic Developer Relations</h1>
+    <p class="eyebrow mb-4">Roles and responsibilities</p>
+    <h1 class="max-w-3xl">Who Does the Work</h1>
     <p class="lead text-muted mt-5 max-w-2xl">
-      Three practitioner roles — the Agent Champion, the Documentation
-      Architect for Agent Consumption, and the API Experience Designer.
-      Named, scoped, and measured.
+      Agentic Developer Relations is shared work. What DevRel leads, what
+      belongs to docs, engineering, security and product, and how to
+      staff it.
     </p>
   </section>
 
   <section class="container-prose pb-12">
     <h2>The shift upstream</h2>
     <p class="mt-5">
-      In the traditional DevRel model, value was created through production:
-      writing tutorials, giving talks, building demos, running events. The
-      skill was in execution. Agentic Developer Relations changes where value
-      concentrates. As AI tools accelerate the production of content, the
-      binding constraint shifts from production to judgment. The judgment is
-      where value now accumulates.
+      In the traditional DevRel model, value was created through
+      production: writing tutorials, giving talks, building demos, running
+      events. The skill was in execution.
     </p>
     <p class="mt-5">
-      This is Amdahl's Law applied to DevRel work itself. Scarcity migrates
-      upstream: from execution to review, from review to evaluation of
-      approaches, from evaluation to framing problems, from framing to
-      encoded institutional standards that everything else gets evaluated
-      against.
-    </p>
-    <p class="mt-5">
-      The three new roles Agentic Developer Relations requires each operate primarily
-      at this upstream layer.
+      As AI tools speed up the production of content, the scarce thing
+      becomes judgment: knowing what developers are trying to do, what a
+      correct result looks like, and what to tell the product team. The
+      responsibilities below sit at that end of the work.
     </p>
   </section>
 
   <section class="section section-alt">
     <div class="container-site">
-      <div class="grid md:grid-cols-3 gap-6">
-        <RoleCard
-          title="Agent Champion"
-          also="Also: Agent Liaison · AI Integration Steward"
-          color="primary"
-        >
-          <p>
-            Maintains the agent-consumable infrastructure that determines
-            whether AI coding tools produce correct integrations with the
-            platform. Monitors FAISR. Owns the recipe library. Files the
-            feedback that makes the platform structurally more agent-friendly.
-          </p>
-        </RoleCard>
-        <RoleCard
-          title="Documentation Architect for Agent Consumption"
-          also="Also: AI Documentation Strategist"
-          color="purple"
-        >
-          <p>
-            Optimizes documentation for machine retrieval and semantic
-            precision rather than human navigation. Thinks in chunking
-            strategy, RAG accuracy, and agent query patterns rather than
-            reader journey and progressive disclosure.
-          </p>
-        </RoleCard>
-        <RoleCard
-          title="API Experience Designer"
-          also="Also: Agent-Native API Strategist"
-          color="amber"
-        >
-          <p>
-            Audits the platform's API surface for agent-parseability. Makes
-            the case for agent-native investment. Influences error model
-            design, auth flow simplicity, rate limit calibration, and the
-            availability of machine-readable schemas.
-          </p>
-        </RoleCard>
+      <div class="container-prose px-0">
+        <h2>Responsibilities, and who leads</h2>
+        <p class="mt-5">
+          Companies are organized differently, so treat this as a starting
+          allocation to adapt. Where an Agent Experience team exists in
+          engineering, it will lead more of these.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <section id="agent-champion" class="section container-site">
-    <div class="container-prose px-0">
-      <p class="eyebrow mb-3">Role 01</p>
-      <h2>The Agent Champion</h2>
-      <p class="lead text-muted mt-5">
-        The Agent Champion maintains the agent-consumable infrastructure that
-        determines whether AI coding tools produce correct integrations with
-        the platform — monitoring success rates, maintaining the recipe
-        library, and feeding failures back to the platform engineering team.
-      </p>
-
-      <h3 class="mt-10">What they do day-to-day</h3>
-      <p class="mt-4">
-        <strong>Monitoring (continuous).</strong> The Agent Champion runs a
-        structured test suite weekly — directing multiple AI coding tools at
-        common integration tasks and scoring the output against a rubric. Did
-        the agent authenticate correctly? Did it use current API endpoints?
-        Did it handle the primary error states? Did it over-engineer? This
-        produces a FAISR score, tracked as a time series, broken down by
-        tool and by task.
-      </p>
-      <p class="mt-5">
-        <strong>Maintenance (triggered).</strong> When a new API version
-        ships, the Agent Champion audits all published recipes for breakage
-        and updates them before the old version is deprecated. When
-        monitoring surfaces a recurring failure, they produce a corrective
-        recipe and identify the doc gap that caused it.
-      </p>
-      <p class="mt-5">
-        <strong>Feedback (systematic).</strong> Recurring agent failures are
-        symptoms. Behind each is either a documentation ambiguity, an API
-        surface complexity, or a missing machine-readable schema. The Agent
-        Champion translates symptoms into specific, actionable improvement
-        requests for the platform engineering team — each quantified against
-        the Amdahl ceiling.
-      </p>
-    </div>
-
-    <AgentChampionFlow />
-
-    <div class="container-prose px-0">
-      <h3 class="mt-6">The recipe library</h3>
-      <p class="mt-4">
-        The Agent Champion's primary artifact is the recipe library: a
-        versioned collection of validated prompt recipes, MCP server
-        definitions, and structured integration examples. It is not
-        documentation in the traditional sense — it is designed for agent
-        retrieval, not human navigation. Semantically precise, answer-first,
-        with explicit error taxonomy.
-      </p>
-      <p class="mt-5">
-        Strategically, the recipe library is the platform's encoded
-        institutional taste. The accumulated judgment of every integration
-        failure, architectural decision, and edge case — made accessible to
-        every AI tool a developer might use. It compounds rather than
-        depreciates. It does not depend on any individual's continued
-        employment.
-      </p>
-    </div>
-
-    <RecipeLibrary />
-
-    <div class="container-prose px-0">
-      <h3>Skills profile</h3>
-      <p class="mt-4">
-        Deep platform expertise (non-negotiable) + systematic engineering
-        rigor + data analysis for error log interpretation + enough
-        understanding of AI tool behavior to diagnose prompt engineering
-        failures. This combination is currently rare. It describes the
-        Developer Advocates who already do this work informally and call
-        it "AI tool testing."
-      </p>
-    </div>
-  </section>
-
-  <section id="doc-architect" class="section section-alt">
-    <div class="container-prose">
-      <p class="eyebrow mb-3" style="color: #3C3489">Role 02</p>
-      <h2>The Documentation Architect for Agent Consumption</h2>
-      <p class="lead text-muted mt-5">
-        Optimizes documentation for machine retrieval and semantic precision
-        rather than human navigation — the technical writer equivalent who
-        thinks in chunking strategy, RAG accuracy, and agent query patterns.
-      </p>
-
-      <h3 class="mt-10">What distinguishes this from technical writing</h3>
-      <p class="mt-4">
-        Traditional technical writing optimizes for the human reader:
-        narrative flow, progressive disclosure, assumed prior knowledge,
-        clear headings that support skimming. A skilled technical writer
-        produces documentation a human can navigate efficiently.
-      </p>
-      <p class="mt-5">
-        The Documentation Architect for agent consumption optimizes for a
-        fundamentally different consumer. AI tools retrieve specific
-        sections as context for generation tasks. They don't read
-        progressively. Documentation that is beautifully structured for
-        humans can produce catastrophically bad agent context if:
-      </p>
-      <ul class="list-disc pl-6 mt-4 space-y-2 text-body">
-        <li>The precise answer to a specific integration question is buried inside a larger narrative</li>
-        <li>Ambiguous pronouns make it unclear which parameter or endpoint a sentence refers to</li>
-        <li>Error codes are described without explicit remediation paths</li>
-        <li>Deprecated patterns appear without immediate migration guidance</li>
-      </ul>
-      <p class="mt-5">
-        The Documentation Architect audits documentation against a set of
-        common agent queries, identifies which pages produce the highest
-        rate of agent errors when used as context, and redesigns those
-        pages for dual-audience consumption.
-      </p>
-
-      <h3 class="mt-10">Skills profile</h3>
-      <p class="mt-4">
-        Technical writing experience + understanding of how RAG systems
-        chunk and embed content + ability to think about documentation as a
-        retrieval corpus rather than a narrative + willingness to instrument
-        and measure documentation performance against agent query accuracy.
-      </p>
-    </div>
-  </section>
-
-  <section id="api-designer" class="section container-site">
-    <div class="container-prose px-0">
-      <p class="eyebrow mb-3" style="color: #854F0B">Role 03</p>
-      <h2>The API Experience Designer</h2>
-      <p class="lead text-muted mt-5">
-        Audits the platform's API surface for agent-parseability and makes
-        the case for agent-native investment — influencing error model
-        design, auth flow simplicity, rate limit calibration, and the
-        availability of machine-readable schemas.
-      </p>
-
-      <h3 class="mt-10">The problem they solve</h3>
-      <p class="mt-4">
-        Most APIs are designed for human developers. Error messages are
-        written to be readable. Auth flows are designed for session-based
-        human login. Rate limits are set at levels that prevent abuse by
-        human-speed calling. Response structures are optimized for human
-        comprehension over machine parsing.
-      </p>
-      <p class="mt-5">
-        AI agents interact with all of this at a fundamentally different
-        speed and with a fundamentally different tolerance for ambiguity.
-        "Invalid token — please re-authenticate" may be semantically opaque
-        to an agent that needs to map the error to a specific remediation
-        path. Rate limits calibrated for human-speed calling trigger
-        constantly when an AI agent is making rapid sequential calls.
-      </p>
-      <p class="mt-5">
-        The API Experience Designer sits at the intersection of DevRel and
-        platform engineering. They audit the API surface from the agent's
-        perspective, quantify the Amdahl tax imposed by each human-speed
-        design decision, and make the engineering case for agent-native
-        redesign — backed by adoption data and competitive benchmarking.
-      </p>
-
-      <h3 class="mt-10">Skills profile</h3>
-      <p class="mt-4">
-        Platform engineering credibility + DevRel orientation + deep
-        understanding of AI agent behavior + ability to translate adoption
-        data into engineering investment arguments. The rarest combination
-        of the three new roles.
-      </p>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container-prose">
-      <h2>How the roles interact</h2>
-      <p class="mt-5">
-        The three roles form a feedback loop. The Agent Champion's
-        monitoring surfaces integration failures. The Documentation
-        Architect addresses failures caused by documentation quality. The
-        API Experience Designer addresses failures caused by API surface
-        design. The Agent Champion's metrics validate that the fixes worked.
-      </p>
-      <p class="mt-5">
-        The loop runs weekly for monitoring and maintenance. It runs on a
-        release cadence for API changes. It informs a quarterly product
-        roadmap review for structural investment decisions.
-      </p>
+      <div class="max-w-5xl mx-auto">
+        <div class="overflow-x-auto mt-6">
+          <table class="w-full border-collapse text-left">
+            <thead>
+              <tr class="bg-primary-surface">
+                <th class="p-4 border border-border text-sm font-semibold">Responsibility</th>
+                <th class="p-4 border border-border text-sm font-semibold">Leads</th>
+                <th class="p-4 border border-border text-sm font-semibold">Contributes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">The task list: what developers ask agents to do with the platform</td>
+                <td class="p-4 border border-border text-sm">DevRel</td>
+                <td class="p-4 border border-border text-sm">Support, Product</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Evaluation suite and graders</td>
+                <td class="p-4 border border-border text-sm">DevRel, or an Agent Experience team where one exists</td>
+                <td class="p-4 border border-border text-sm">Platform engineering</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Monitoring what agents choose, and the public record that may influence it</td>
+                <td class="p-4 border border-border text-sm">DevRel</td>
+                <td class="p-4 border border-border text-sm">Marketing</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Feedback into the roadmap</td>
+                <td class="p-4 border border-border text-sm">DevRel brings the evidence; Product decides</td>
+                <td class="p-4 border border-border text-sm">Platform engineering</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Community and maintainer policy on agent contributions</td>
+                <td class="p-4 border border-border text-sm">DevRel</td>
+                <td class="p-4 border border-border text-sm">Open-source office, Legal</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Relationships with the companies that build agents and models</td>
+                <td class="p-4 border border-border text-sm">DevRel</td>
+                <td class="p-4 border border-border text-sm">Partnerships</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Documentation source of truth, and delivering it in a form agents can fetch</td>
+                <td class="p-4 border border-border text-sm">Docs</td>
+                <td class="p-4 border border-border text-sm">DevRel</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Skills, plugins, and instruction files</td>
+                <td class="p-4 border border-border text-sm">Docs and DevRel jointly</td>
+                <td class="p-4 border border-border text-sm">Platform engineering</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">API errors, sign-in, limits, sandbox, CLI, MCP server</td>
+                <td class="p-4 border border-border text-sm">Platform engineering</td>
+                <td class="p-4 border border-border text-sm">DevRel, with evidence from evaluations</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Agent traffic analytics and attribution</td>
+                <td class="p-4 border border-border text-sm">Growth or data</td>
+                <td class="p-4 border border-border text-sm">Docs</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Security review and provenance of agent-facing content</td>
+                <td class="p-4 border border-border text-sm">Security</td>
+                <td class="p-4 border border-border text-sm">Everyone who publishes it</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section container-site">
     <div class="container-prose px-0">
-      <h2>Staffing model by org size</h2>
+      <h2>What DevRel brings</h2>
+      <p class="mt-5">
+        Engineering owns much of what determines how agents fare. DevRel's
+        contribution is distinct, and is the part nobody else is placed
+        to make:
+      </p>
+      <ul class="list-disc pl-6 mt-5 space-y-2">
+        <li>It knows what developers are trying to do, which is where the task list comes from.</li>
+        <li>It can judge whether a result is good, not merely whether it runs.</li>
+        <li>It already carries feedback from developers to the product team.</li>
+        <li>It holds the relationships with the community, and now with the companies that build agents.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>The DevRel lead for agent experience</h2>
+      <p class="mt-5">
+        One person in DevRel should own this. The title matters less than
+        the ownership; "Developer Advocate, Agent Experience" fits most
+        ladders. Their work has three parts.
+      </p>
+      <p class="mt-5">
+        <strong>Evaluation.</strong> They own the task list and the
+        evaluation suite, run it on each release and each new model, and
+        track the <a href="/measurement/">scorecard</a> by model and by
+        task.
+      </p>
+      <p class="mt-5">
+        <strong>Maintenance.</strong> When an API version ships, they check
+        every agent-facing artifact for breakage. When the suite shows a
+        recurring failure, they find the cause and test the fix with and
+        without.
+      </p>
+      <p class="mt-5">
+        <strong>Feedback.</strong> Recurring agent failures are symptoms.
+        Behind each is a documentation gap, an awkward API surface, or a
+        missing machine-readable description. They turn symptoms into
+        specific requests for docs and platform engineering, each with the
+        evidence attached.
+      </p>
+
+      <h3 class="mt-10">Skills profile</h3>
+      <p class="mt-4">
+        Deep platform expertise (non-negotiable) + systematic engineering
+        rigor + enough data analysis to read evaluation results honestly +
+        enough understanding of agent behavior to tell a platform problem
+        from a model problem. This combination is currently rare. It
+        describes the Developer Advocates who already do this work
+        informally and call it "AI tool testing."
+      </p>
+
+      <Callout type="amber" label="What changed on this page">
+        An earlier version named three new DevRel roles: the Agent
+        Champion, the Documentation Architect for Agent Consumption, and
+        the API Experience Designer. The Agent Champion is the lead
+        described above. The other two describe work that usually belongs
+        to docs and to platform engineering, so they appear here as
+        responsibilities, not as DevRel job titles.
+      </Callout>
+    </div>
+  </section>
+
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>When agents operate the product</h2>
+      <p class="mt-5">
+        Agents that act on a platform at runtime, for a user, raise the
+        stakes and shift the balance toward engineering and security.
+      </p>
       <div class="overflow-x-auto mt-6">
         <table class="w-full border-collapse text-left">
           <thead>
             <tr class="bg-primary-surface">
-              <th class="p-4 border border-border text-sm font-semibold">Organization</th>
-              <th class="p-4 border border-border text-sm font-semibold">Minimum viable</th>
-              <th class="p-4 border border-border text-sm font-semibold">Full program</th>
+              <th class="p-4 border border-border text-sm font-semibold">Who</th>
+              <th class="p-4 border border-border text-sm font-semibold">What they do</th>
             </tr>
           </thead>
           <tbody>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Small (1–5 DevRel)</td>
-              <td class="p-4 border border-border text-sm">One practitioner owns Agent Champion function one day per week. Manual test suite of 10 tasks. Recipes in docs.</td>
-              <td class="p-4 border border-border text-sm">Grow suite and recipe library. Hire a dedicated Agent Champion when your own data justifies it: the agent share of your docs traffic, and the gap your first test runs reveal.</td>
+              <td class="p-4 border border-border text-sm font-semibold">Platform engineering</td>
+              <td class="p-4 border border-border text-sm">Scoped, delegated credentials. Spending and rate limits. Revocation. An audit trail. Operations that are safe to repeat. Recovery from half-finished work.</td>
             </tr>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Mid-size (6–15)</td>
-              <td class="p-4 border border-border text-sm">Dedicated Agent Champion, full-time. Automated test suite across 5 AI tools. Versioned recipe library.</td>
-              <td class="p-4 border border-border text-sm">Add Documentation Architect. Agentic Hackathon program. Full four-layer dashboard.</td>
+              <td class="p-4 border border-border text-sm font-semibold">Security</td>
+              <td class="p-4 border border-border text-sm">Reviews what agents are permitted to do, and every change to the content and tools agents consume.</td>
             </tr>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Large (15+)</td>
-              <td class="p-4 border border-border text-sm">Two-track structure: Human Relations + Agent Relations, shared leadership. FAISR and Amdahl ceiling as primary metrics.</td>
-              <td class="p-4 border border-border text-sm">API Experience Designer role. Agent-native MCP server. Competitive benchmarking. Recipe library as published community resource.</td>
+              <td class="p-4 border border-border text-sm font-semibold">Product</td>
+              <td class="p-4 border border-border text-sm">Decides which operations agents may perform at all, and what needs a person to approve.</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">DevRel</td>
+              <td class="p-4 border border-border text-sm">Finds out what users are delegating to agents, documents the limits in plain terms, and reports where agents fail or overreach.</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-8 font-semibold">
-        <a href="/for-devrel-teams/">Continue to: For DevRel Teams →</a>
-      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container-site">
+      <div class="container-prose px-0 mb-2">
+        <h2>Staffing by organization size</h2>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <div class="overflow-x-auto mt-6">
+          <table class="w-full border-collapse text-left">
+            <thead>
+              <tr class="bg-primary-surface">
+                <th class="p-4 border border-border text-sm font-semibold">Organization</th>
+                <th class="p-4 border border-border text-sm font-semibold">Minimum viable</th>
+                <th class="p-4 border border-border text-sm font-semibold">Full program</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Small (1–5 DevRel)</td>
+                <td class="p-4 border border-border text-sm">One practitioner owns this one day per week. A hand-run suite of 10 tasks. Agent-facing guidance kept in the docs.</td>
+                <td class="p-4 border border-border text-sm">Grow and automate the suite. Make the role full-time when your own data justifies it: the agent share of your docs traffic, and the gap your first runs reveal.</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Mid-size (6–15)</td>
+                <td class="p-4 border border-border text-sm">A full-time DevRel lead for agent experience. Automated suite across several models. Each agent-facing artifact tested.</td>
+                <td class="p-4 border border-border text-sm">Selection monitoring. Suite runs on every release. A named counterpart in docs and in platform engineering.</td>
+              </tr>
+              <tr class="align-top">
+                <td class="p-4 border border-border text-sm font-semibold">Large (15+)</td>
+                <td class="p-4 border border-border text-sm">A small DevRel group working with an Agent Experience or platform team. The scorecard reported alongside community measures.</td>
+                <td class="p-4 border border-border text-sm">A published evaluation suite. Security review of agent-facing content. Runtime controls for agents that operate the product.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container-prose px-0 mt-8">
+        <p>
+          Community work keeps its own budget floor at every size. The two
+          kinds of work are done by people who sit close together, and
+          often by the same people.
+        </p>
+        <p class="mt-6">
+          <a href="/for-devrel-teams/" class="font-semibold">
+            Continue to: For DevRel Teams →
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 </PageLayout>

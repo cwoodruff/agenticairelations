@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import agentReadable from './integrations/agent-readable.mjs';
 
 export default defineConfig({
   site: 'https://agenticairelations.com',
@@ -9,6 +10,7 @@ export default defineConfig({
     tailwind(),
     mdx(),
     sitemap(),
+    agentReadable(),
   ],
   output: 'static',
   markdown: {
