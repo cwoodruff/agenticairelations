@@ -32,6 +32,11 @@ const canonicalURL = canonical
   : new URL(Astro.url.pathname, Astro.site);
 
 const ogImageURL = new URL(ogImage, Astro.site);
+
+// Markdown copy written at build time by integrations/agent-readable.mjs (not for 404).
+const markdownURL = /^\/404(\/|\.html)?$/.test(Astro.url.pathname)
+  ? null
+  : new URL('index.md', canonicalURL.href.replace(/\/?$/, '/'));
 ---
 
 <!doctype html>
@@ -49,6 +54,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
       href="/rss.xml"
     />
     <link rel="canonical" href={canonicalURL} />
+    {markdownURL && <link rel="alternate" type="text/markdown" href={markdownURL} />}
 
     <title>{siteTitle}</title>
     <meta name="description" content={description} />

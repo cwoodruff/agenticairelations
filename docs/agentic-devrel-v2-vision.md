@@ -92,7 +92,7 @@ FAISR is retained as one component and no longer stands alone. Version 1 leaves 
 
 - A **run** is one developer request handed to one agent (a named model and harness), ending when the agent stops or a stated budget of time or turns runs out.
 - Inside a run the agent may **retry on its own** as often as the budget allows.
-- A **human intervention** is any further message or edit from the person.
+- A **human intervention** is any further message or edit from the person. Routine permission prompts from the harness do not count, but the permission mode is reported.
 - **FAISR** is then the share of runs that pass the graders with no human intervention. This is a proposed definition; the alternative, counting only the agent's first generated answer, is stricter and less like real use.
 
 | Measure | What it answers | How |
@@ -307,6 +307,18 @@ Ordered by priority. No dates.
 16. Invite named practitioners, including people who work under the AX label, to critique it, and publish the responses.
 17. Find one or two teams willing to be written up, including what did not work.
 18. Apply the framework to the site itself: markdown versions of each page, working source links, and a note on how agents use it.
+
+### Status, 27 November 2026
+
+| Items | State |
+|---|---|
+| 1 to 7 | Done on the site. |
+| 8 to 12 | Done on the site. The pattern mapping (12) has not been checked against the book's text. |
+| 13 | Partly done: the controls and the division of work are published, and stage 4 measures are proposed in the measurement specification. None has been tested. |
+| 14 | Not started. Needs access to live platforms and agents. |
+| 15 | Partly done: the specification is published at `docs/measurement-specification.md` under CC BY 4.0, with a task format. No graders or harness exist yet. |
+| 16, 17 | Not started. These need other people. |
+| 18 | Done: the build writes a markdown copy of every page and an `llms.txt`. Whether agents use them has not been measured. |
 
 ## 14. Decisions
 

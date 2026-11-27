@@ -6,42 +6,42 @@ import Callout from '../components/content/Callout.astro';
 const businessArgs = [
   {
     n: '01',
-    title: 'Platform selection is shifting to AI-assisted evaluation.',
+    title: 'Agents increasingly choose the platform.',
     body:
-      'A technical evaluator choosing between platforms in 2024 ran a proof-of-concept personally. In 2026, they increasingly ask an AI agent to run the proof-of-concept. The platform that produces a working integration in the agent-assisted evaluation wins. This is a current competitive dynamic — and most platforms are not measuring it.',
+      'A technical evaluator used to run the proof of concept personally. More and more, they ask an AI agent which product to use and have it build the trial. An agent that never picks your platform, or builds its own alternative, takes you out of an evaluation you never saw.',
   },
   {
     n: '02',
-    title: 'Agent ecosystem failures are invisible until they are catastrophic.',
+    title: 'Agent failures are invisible until you measure them.',
     body:
-      'When an AI tool produces a broken integration, the developer may debug silently, find a workaround, or abandon the platform. The signal never reaches the product team. The documentation team doesn\'t know its docs are ambiguous. Company metrics look stable while adoption degrades. Agentic Developer Relations creates the measurement infrastructure that surfaces this degradation early.',
+      'When an AI tool produces a broken integration, the developer may debug silently, find a workaround, or abandon the platform. The signal never reaches the product team, and company metrics look stable. An evaluation suite and agent traffic reporting surface the problem early.',
   },
   {
     n: '03',
-    title: 'Encoded judgment compounds; talent mobility does not.',
+    title: 'What you learn is kept, not carried in heads.',
     body:
-      'The most valuable asset in a mature DevRel program is accumulated institutional judgment. It currently lives in senior practitioners\' heads and walks out the door when they leave. The recipe library maintained by an Agentic Developer Relations program encodes that judgment into versioned, machine-accessible artifacts that compound over time.',
+      'The most valuable asset in a mature DevRel program is accumulated judgment about what a correct integration looks like. Today it lives with senior practitioners and leaves when they do. An evaluation suite of tasks and graders records it in a form that outlasts both staff changes and changes of tooling.',
   },
   {
     n: '04',
-    title: 'The Amdahl ceiling is a product roadmap argument.',
+    title: 'Evidence makes the engineering case.',
     body:
-      'When the Agent Champion can show what share of integration time is consumed by human-speed tool interactions — and a competitor has lowered that fraction through agent-native design — DevRel has produced a product investment argument backed by competitive data. This connects DevRel measurement directly to engineering investment decisions.',
+      'When DevRel can show where agents lose time on the platform and where developers have to step in, with traces and failure cases attached, a request to engineering becomes a product investment argument.',
   },
 ];
 ---
 
 <PageLayout
   title="Agentic Developer Relations for Organizations"
-  description="The business case for Agentic Developer Relations — four arguments, the competitive data, and the investment tiers by organization size."
+  description="The business case for Agentic Developer Relations — four arguments, what the data says, investment by organization size, and the scorecard to report to leadership."
 >
   <section class="container-site pt-16 pb-4">
     <p class="eyebrow mb-4">For companies</p>
     <h1 class="max-w-3xl">Agentic Developer Relations for Organizations Evaluating DevRel Investment</h1>
     <p class="lead text-muted mt-5 max-w-2xl">
-      The business case — four arguments, the competitive data, the
-      investment tiers, and the five board-level metrics that make agent
-      ecosystem health visible to leadership.
+      The business case — four arguments, what the data says, investment
+      by organization size, and the scorecard that makes agent experience
+      visible to leadership.
     </p>
   </section>
 
@@ -73,7 +73,8 @@ const businessArgs = [
       test against your own activation data.
     </p>
     <p class="mt-5">
-      Agentic Developer Relations is the practice of measuring and improving that rate.
+      Agentic Developer Relations is the practice of measuring that rate, along
+      with what agents choose and what success costs, and improving them.
       It gives a DevRel program a way to test the executive question
       with data, not proxies.
     </p>
@@ -157,18 +158,18 @@ const businessArgs = [
           <tbody>
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">Small (1–5 DevRel)</td>
-              <td class="p-4 border border-border text-sm">One practitioner owns Agent Champion function 1 day/week. Manual test suite of 10 tasks. Recipes in docs.</td>
-              <td class="p-4 border border-border text-sm">Grow suite and library. Hire a dedicated Agent Champion when your own data justifies it: the agent share of your docs traffic, and the gap your first test runs reveal.</td>
+              <td class="p-4 border border-border text-sm">One practitioner owns this one day per week. A hand-run suite of 10 tasks. Agent-facing guidance kept in the docs.</td>
+              <td class="p-4 border border-border text-sm">Grow and automate the suite. Make the role full-time when your own data justifies it: the agent share of your docs traffic, and the gap your first runs reveal.</td>
             </tr>
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">Mid-size (6–15)</td>
-              <td class="p-4 border border-border text-sm">Dedicated Agent Champion role, full-time. Automated test suite, 5 AI tools. Versioned recipe library.</td>
-              <td class="p-4 border border-border text-sm">Add Documentation Architect. Agentic Hackathon program. Full four-layer dashboard.</td>
+              <td class="p-4 border border-border text-sm">A full-time DevRel lead for agent experience. Automated suite across several models. Each agent-facing artifact tested.</td>
+              <td class="p-4 border border-border text-sm">Selection monitoring. Suite runs on every release. A named counterpart in docs and in platform engineering.</td>
             </tr>
             <tr class="align-top">
               <td class="p-4 border border-border text-sm font-semibold">Large (15+)</td>
-              <td class="p-4 border border-border text-sm">Two-track structure: Human Relations + Agent Relations, shared leadership. FAISR and Amdahl ceiling as primary metrics.</td>
-              <td class="p-4 border border-border text-sm">API Experience Designer role. Agent-native MCP server. Competitive benchmarking program. Recipe library as published community resource.</td>
+              <td class="p-4 border border-border text-sm">A small DevRel group working with an Agent Experience or platform team. The scorecard reported alongside community measures.</td>
+              <td class="p-4 border border-border text-sm">A published evaluation suite. Security review of agent-facing content. Runtime controls for agents that operate the product.</td>
             </tr>
           </tbody>
         </table>
@@ -178,7 +179,7 @@ const businessArgs = [
 
   <section class="section container-site">
     <div class="container-prose px-0">
-      <h2>The board metrics</h2>
+      <h2>The scorecard for leadership</h2>
       <div class="overflow-x-auto mt-6">
         <table class="w-full border-collapse text-left">
           <thead>
@@ -190,29 +191,34 @@ const businessArgs = [
           </thead>
           <tbody>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">FAISR</td>
-              <td class="p-4 border border-border text-sm">First-attempt integration success rate across AI coding tools</td>
-              <td class="p-4 border border-border text-sm">Proposed leading indicator of AI-assisted developer adoption; validate against your own activation data</td>
+              <td class="p-4 border border-border text-sm font-semibold">Selection rate</td>
+              <td class="p-4 border border-border text-sm">How often agents choose the platform for a neutral request, and how often they build their own</td>
+              <td class="p-4 border border-border text-sm">Whether you are in the evaluation at all</td>
             </tr>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Amdahl ceiling</td>
-              <td class="p-4 border border-border text-sm">Fraction of integration time consumed by human-speed overhead</td>
-              <td class="p-4 border border-border text-sm">Product roadmap argument — quantifies engineering investment needed</td>
+              <td class="p-4 border border-border text-sm font-semibold">Completion rate (FAISR)</td>
+              <td class="p-4 border border-border text-sm">Share of agent runs that reach a working integration with no human help</td>
+              <td class="p-4 border border-border text-sm">Proposed leading indicator of AI-assisted adoption; validate against your own activation data</td>
             </tr>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Recipe coverage</td>
-              <td class="p-4 border border-border text-sm">Percentage of common tasks with a validated prompt recipe</td>
-              <td class="p-4 border border-border text-sm">Completeness of agent ecosystem infrastructure</td>
+              <td class="p-4 border border-border text-sm font-semibold">Cost</td>
+              <td class="p-4 border border-border text-sm">Turns, tokens, and time per run, including failures</td>
+              <td class="p-4 border border-border text-sm">What success costs your developers</td>
             </tr>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Recipe freshness</td>
-              <td class="p-4 border border-border text-sm">Lag between API changes and recipe updates</td>
-              <td class="p-4 border border-border text-sm">Operational health of the Agentic Developer Relations program</td>
+              <td class="p-4 border border-border text-sm font-semibold">Artifact lift</td>
+              <td class="p-4 border border-border text-sm">The measured effect of each thing published for agents</td>
+              <td class="p-4 border border-border text-sm">Whether the program's output is working</td>
             </tr>
             <tr class="align-top">
-              <td class="p-4 border border-border text-sm font-semibold">Competitive FAISR delta</td>
-              <td class="p-4 border border-border text-sm">Your FAISR vs. competitors on equivalent tasks</td>
-              <td class="p-4 border border-border text-sm">The board metric — are we winning or losing?</td>
+              <td class="p-4 border border-border text-sm font-semibold">Agent reach</td>
+              <td class="p-4 border border-border text-sm">Agent share of documentation traffic; how often published skills and tools are used</td>
+              <td class="p-4 border border-border text-sm">How much of your audience now arrives through an agent</td>
+            </tr>
+            <tr class="align-top">
+              <td class="p-4 border border-border text-sm font-semibold">Outcome link</td>
+              <td class="p-4 border border-border text-sm">Activation and retention after a staged change</td>
+              <td class="p-4 border border-border text-sm">The test of whether the rest matters</td>
             </tr>
           </tbody>
         </table>

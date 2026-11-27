@@ -1,124 +1,125 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import PatternBifurcation from '../components/diagrams/PatternBifurcation.astro';
-import PatternCard from '../components/content/PatternCard.astro';
-
-type Status = 'gains-layer' | 'rewrite' | 'more-valuable';
 
 interface Pattern {
   name: string;
-  status: Status;
+  read: string;
+  join: string;
+  change: string;
 }
 
 const patterns: Pattern[] = [
-  { name: 'Article', status: 'gains-layer' },
-  { name: 'Blog Post', status: 'gains-layer' },
-  { name: 'Book', status: 'gains-layer' },
-  { name: 'Guide', status: 'gains-layer' },
-  { name: 'Newsletter', status: 'gains-layer' },
-  { name: 'Reference Documentation', status: 'gains-layer' },
-  { name: 'Sample / Example', status: 'gains-layer' },
-  { name: 'SDK', status: 'gains-layer' },
-  { name: 'Social Media', status: 'gains-layer' },
-  { name: 'Tutorial', status: 'gains-layer' },
-  { name: 'Forums', status: 'gains-layer' },
-  { name: 'Open-Source Project', status: 'gains-layer' },
-  { name: 'Survey', status: 'gains-layer' },
-  { name: 'Technical Support', status: 'gains-layer' },
-  { name: 'Recorded Video', status: 'gains-layer' },
-  { name: 'Product/Service Development', status: 'gains-layer' },
-
-  { name: 'Ambassadors → Agent Champion', status: 'rewrite' },
-  { name: 'Hackathon → Agentic Hackathon', status: 'rewrite' },
-  { name: 'Office Hours → Integration Debug Sessions', status: 'rewrite' },
-  { name: 'Training → Agent Direction Training', status: 'rewrite' },
-  { name: 'Code Review', status: 'rewrite' },
-  { name: 'Live Playground', status: 'rewrite' },
-  { name: 'Case Study', status: 'rewrite' },
-  { name: 'Workshop', status: 'rewrite' },
-
-  { name: 'Conference', status: 'more-valuable' },
-  { name: 'Conference Session', status: 'more-valuable' },
-  { name: 'User Group Network', status: 'more-valuable' },
-  { name: 'Party', status: 'more-valuable' },
-  { name: 'Booth', status: 'more-valuable' },
-  { name: 'Live Streaming', status: 'more-valuable' },
-  { name: 'Customer Check-In', status: 'more-valuable' },
-  { name: 'Customer Pre-Sale', status: 'more-valuable' },
-  { name: 'Sponsorship', status: 'more-valuable' },
-  { name: 'Webinar', status: 'more-valuable' },
-  { name: 'Podcast', status: 'more-valuable' },
-  { name: 'Partnerships', status: 'more-valuable' },
-  { name: 'Swag', status: 'more-valuable' },
+  { name: 'Reference Documentation', read: 'Yes', join: 'No', change: 'The source of truth. Markdown delivery, explicit errors and deprecations.' },
+  { name: 'SDK', read: 'Yes', join: 'Yes', change: 'Agents call it as well as read it. Typed interfaces, errors that name the remedy, a CLI alongside.' },
+  { name: 'Sample/Example', read: 'Yes', join: 'No', change: 'Complete, runnable, tested on every release. The raw material for evaluations.' },
+  { name: 'Guide', read: 'Yes', join: 'No', change: 'Still for people. Date and version it; retire stale guides.' },
+  { name: 'Tutorial', read: 'Yes', join: 'No', change: 'As Guide.' },
+  { name: 'Article', read: 'Yes', join: 'No', change: 'The place for judgment and opinion in a named voice.' },
+  { name: 'Blog Post', read: 'Yes', join: 'No', change: 'As Article.' },
+  { name: 'Book', read: 'Yes', join: 'No', change: 'As Article, where the text is available to models.' },
+  { name: 'Case Study', read: 'Yes', join: 'No', change: 'Evidence for a person, and for an agent asked to compare options.' },
+  { name: 'Recorded Video', read: 'Yes, with a transcript', join: 'No', change: 'Publish transcripts.' },
+  { name: 'Podcast', read: 'Yes, with a transcript', join: 'No', change: 'Publish transcripts.' },
+  { name: 'Webinar', read: 'Yes, with a transcript', join: 'No', change: 'Publish transcripts and slides.' },
+  { name: 'Conference Session', read: 'Yes, if recorded', join: 'No', change: 'The talk is human. The recording, slides, and code join the public record.' },
+  { name: 'Live Streaming', read: 'Yes, if recorded', join: 'No', change: 'Real-time and unscripted is the point. The recording can still be read.' },
+  { name: 'Newsletter', read: 'Possibly', join: 'No', change: 'Human reach first. Whether agents read it depends on where it is published.' },
+  { name: 'Social Media', read: 'Possibly', join: 'No', change: 'As Newsletter.' },
+  { name: 'Forums', read: 'Yes', join: 'Possibly', change: 'Answers become part of the record. Decide, and state, whether agent-written posts are allowed.' },
+  { name: 'Technical Support', read: 'Yes', join: 'Yes', change: 'Agents ask as well as people. Also the place to learn what the agent got wrong.' },
+  { name: 'Open-Source Project', read: 'Yes', join: 'Yes', change: 'Needs an explicit policy on agent contributions.' },
+  { name: 'Product/Service Development', read: 'No', join: 'Yes', change: 'The core loop. Evaluation failures become product changes.' },
+  { name: 'Customer Pre-Sale', read: 'No', join: 'Yes', change: "The buyer's agent may run the proof of concept. Be ready for it." },
+  { name: 'Code Review', read: 'No', join: 'Yes', change: 'Reviewing agent-written integrations, where the effort of checking lands.' },
+  { name: 'Hackathon', read: 'No', join: 'Yes', change: 'Teams build with agents. Judge what was verified, not how much was produced.' },
+  { name: 'Workshop', read: 'No', join: 'Yes', change: 'Teach directing and checking an agent on this platform.' },
+  { name: 'Training', read: 'No', join: 'Yes', change: 'As Workshop.' },
+  { name: 'Office Hours', read: 'No', join: 'Yes', change: '"Bring the transcript": diagnose what the agent did.' },
+  { name: 'Live Playground', read: 'No', join: 'Only if built for it', change: 'A page for people is not a sandbox for agents. That needs programmatic access, isolation, and reset.' },
+  { name: 'Survey', read: 'No', join: 'No', change: 'Research with people. Ask how they use agents with the platform; this feeds the task list.' },
+  { name: 'Customer Check-In', read: 'No', join: 'No', change: 'Add a question: what are your agents struggling with?' },
+  { name: 'Ambassadors', read: 'No', join: 'No', change: 'Remain external people. They may contribute to evaluations and skills.' },
+  { name: 'Partnerships', read: 'No', join: 'No', change: 'A new partner type: the companies that build agents and models.' },
+  { name: 'Conference', read: 'No', join: 'No', change: 'Presence and trust. Unchanged.' },
+  { name: 'Booth', read: 'No', join: 'No', change: 'As Conference.' },
+  { name: 'Party', read: 'No', join: 'No', change: 'As Conference.' },
+  { name: 'User Group Network', read: 'No', join: 'No', change: 'As Conference.' },
+  { name: 'Sponsorship', read: 'No', join: 'No', change: 'I see no agent dimension.' },
+  { name: 'Swag', read: 'No', join: 'No', change: 'As Sponsorship.' },
 ];
 ---
 
 <PageLayout
   title="The 37 DevRel Patterns, Reframed"
-  description="How the 37 activity patterns in Developer Relations Activity Patterns sort into three groups in the AI-agent era — what changes, what stays, and what needs a complete rewrite."
+  description="The 37 activity patterns in Developer Relations Activity Patterns, each asked two questions for the AI-agent era: do agents read what it produces, and can agents take part?"
 >
   <section class="container-site pt-16 pb-4">
     <p class="eyebrow mb-4">The patterns, reframed</p>
     <h1 class="max-w-3xl">The 37 DevRel Patterns, Reframed for Agentic Developer Relations</h1>
     <p class="lead text-muted mt-5 max-w-2xl">
-      The patterns don't become obsolete. They sort into three groups — and
-      understanding which group each pattern falls into is the first step in adapting a
-      DevRel program for the two-layer operating environment.
+      The patterns don't become obsolete. Each one is asked two
+      questions: do agents read what it produces, and can agents take
+      part in it?
     </p>
   </section>
 
   <section class="container-prose pb-12">
     <p class="mt-4">
       Every activity pattern in <em>Developer Relations Activity Patterns</em>
-      was documented for a human audience. None of the 37 patterns becomes
-      obsolete in the Agentic Developer Relations era. But the agent era touches them
-      differently — some requiring only the addition of an agent-facing variant, some
-      requiring substantive rewriting, and some growing more valuable
-      precisely because they are irreducibly human.
+      was documented for a human audience. None of the 37 becomes obsolete
+      in the Agentic Developer Relations era. What changes depends on two
+      things, which are independent of each other:
+    </p>
+    <ul class="list-disc pl-6 mt-5 space-y-2">
+      <li><strong>Read:</strong> does the pattern produce something agents read or use?</li>
+      <li><strong>Join:</strong> can an agent take part in the activity itself?</li>
+    </ul>
+    <p class="mt-5">
+      A pattern can be yes on both, on one, or on neither. An earlier
+      version of this page sorted the patterns into three exclusive
+      groups; the two questions replace them.
+    </p>
+    <p class="mt-5 text-sm text-muted">
+      This mapping is my own reading of the patterns. It is not a joint
+      position of the book's four authors.
     </p>
   </section>
 
   <section class="section section-alt">
     <div class="container-site">
-      <div class="container-prose px-0 mb-4">
-        <h2>The three categories</h2>
-        <p class="mt-5">
-          <strong>Gains an agent layer</strong> (16 patterns): the human
-          variant continues largely unchanged. A parallel agent-facing variant
-          is required.
-        </p>
-        <p class="mt-3">
-          <strong>Requires substantive rewriting</strong> (8 patterns): the
-          core intent survives, but implementation, participants, metrics, and
-          sometimes the name must change.
-        </p>
-        <p class="mt-3">
-          <strong>Grows more valuable</strong> (13 patterns): irreducibly
-          human patterns that increase in strategic value as AI floods every
-          content channel with generic material.
-        </p>
+      <div class="container-prose px-0">
+        <h2>All 37 patterns</h2>
       </div>
-
-      <PatternBifurcation />
+      <div class="overflow-x-auto mt-8 max-w-5xl mx-auto rounded-xl border border-border bg-surface">
+        <table class="w-full border-collapse text-left">
+          <thead>
+            <tr class="bg-primary-surface">
+              <th class="p-4 border-b border-border text-sm font-semibold">Pattern</th>
+              <th class="p-4 border-b border-border text-sm font-semibold">Read</th>
+              <th class="p-4 border-b border-border text-sm font-semibold">Join</th>
+              <th class="p-4 border-b border-border text-sm font-semibold">What changes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              patterns.map((p) => (
+                <tr class="align-top">
+                  <td class="p-4 border-b border-border text-sm font-semibold">{p.name}</td>
+                  <td class="p-4 border-b border-border text-sm">{p.read}</td>
+                  <td class="p-4 border-b border-border text-sm">{p.join}</td>
+                  <td class="p-4 border-b border-border text-sm">{p.change}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <section class="section container-site">
-    <div class="container-prose px-0 mb-6">
-      <h2>All 37 patterns at a glance</h2>
-      <p class="mt-5">
-        The full pattern catalog from <em>Developer Relations Activity
-        Patterns</em>, tagged with Agentic Developer Relations status.
-      </p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      {patterns.map((p) => <PatternCard name={p.name} status={p.status} />)}
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container-prose">
-      <h2>Deep dive: Reference Documentation reframed</h2>
+    <div class="container-prose px-0">
+      <h2>Deep dive: Reference Documentation</h2>
       <p class="mt-5">
         The Reference Documentation pattern exists to give developers the
         complete technical information they need to use a platform correctly.
@@ -127,26 +128,25 @@ const patterns: Pattern[] = [
         knowledge.
       </p>
       <p class="mt-5">
-        In the Agentic Developer Relations context, Reference Documentation must serve
-        two readers simultaneously. The human reader still navigates, still
-        uses context, still exercises judgment. The agent reader retrieves —
-        it searches for specific sections as context for generation tasks. It
-        cannot navigate ambiguity; it amplifies it into bugs.
+        Reference Documentation now serves two readers. The human reader
+        still navigates and exercises judgment. The agent fetches a page,
+        often as markdown, and works from what it says. It resolves
+        ambiguity by guessing, and a wrong guess becomes a bug.
       </p>
       <p class="mt-5">
-        The practical implication: every Reference Documentation page should
-        be audited against a standard set of agent queries — "how do I
-        authenticate," "what do I do with a 429," "what is the correct
-        structure for X." If the page doesn't answer those questions directly
-        and unambiguously, agents will generate incorrect integrations using
-        it as context, regardless of how clearly it reads to a human.
+        The practical implication: test reference pages against the
+        questions agents need answered — "how do I authenticate," "what do
+        I do with a 429," "what is the correct structure for X" — by
+        running the <a href="/measurement/">evaluation</a> and seeing
+        which pages are behind the failures. Then fix those pages, and
+        measure again.
       </p>
     </div>
   </section>
 
-  <section class="section container-site">
-    <div class="container-prose px-0">
-      <h2>Deep dive: Ambassador → Agent Champion</h2>
+  <section class="section section-alt">
+    <div class="container-prose">
+      <h2>Deep dive: Ambassadors</h2>
       <p class="mt-5">
         The Ambassador earns trust through authentic community presence. The
         relationship <em>is</em> the mechanism. Human developers trust
@@ -154,74 +154,43 @@ const patterns: Pattern[] = [
         have observed them using the platform in real contexts.
       </p>
       <p class="mt-5">
-        AI agents don't operate on trust. They operate on pattern matching
-        against whatever context they have. The "Ambassador" for the agent
-        ecosystem is a practitioner who maintains the corpus of configurations,
-        recipes, and schemas that agents draw on. I call this practitioner the
-        <strong>Agent Champion</strong>.
+        An earlier version of this page said the Ambassador pattern turns
+        into an internal role, the Agent Champion. That was a category
+        error. Ambassadors are external members of the community. The
+        internal work of maintaining what agents consume belongs to a
+        <a href="/new-roles/">DevRel lead for agent experience</a>.
       </p>
       <p class="mt-5">
-        The Agent Champion's currency is not reputation. It is a demonstrated
-        success rate: the percentage of AI tool interactions with the platform
-        that produce working integrations because the recipes the Agent
-        Champion maintains are accurate. This is measurable in a way that
-        Ambassador impact never was.
-      </p>
-      <p class="mt-5">
-        <a href="/new-roles/#agent-champion" class="font-semibold">
-          Read the full Agent Champion role description →
-        </a>
+        Ambassadors stay what they are. Their honest public writing and
+        speaking is part of the record that agents draw on, and those who
+        want to can contribute tasks to the evaluation suite or review
+        agent-facing guidance. Neither should become a condition of the
+        program.
       </p>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container-prose">
-      <h2>Deep dive: Hackathon → Agentic Hackathon</h2>
+  <section class="section container-site">
+    <div class="container-prose px-0">
+      <h2>Deep dive: Hackathon</h2>
       <p class="mt-5">
         The traditional Hackathon evaluates what developers build when given
-        creative freedom, tools, and time pressure. The implicit assumption is
-        that build output is primarily a product of developer skill and
-        creativity.
+        creative freedom, tools, and time pressure. When AI coding agents
+        do much of the building, what gets built depends on how well the
+        team directs and checks its tools, and on how well the platform
+        supports agents.
       </p>
-      <p class="mt-5">
-        When AI coding agents are the primary builders, that assumption
-        breaks. What gets built in an Agentic Hackathon is primarily a product
-        of how well the team directs its AI tools — and how well the
-        platform's agent-consumable infrastructure supports that direction.
-      </p>
-      <ol class="list-decimal pl-6 mt-5 space-y-3">
-        <li>
-          <strong>Direction as a first-class role.</strong> Each team has a
-          designated Director who writes the prompts, evaluates agent output,
-          and decides what to accept, reject, or redirect.
-        </li>
-        <li>
-          <strong>Robustness over completeness.</strong> Submissions are
-          stress-tested against error conditions and edge cases, not just
-          demoed.
-        </li>
-        <li>
-          <strong>Recipe output is required.</strong> Teams submit the prompt
-          recipe library they developed during the build.
-        </li>
-        <li>
-          <strong>Architectural decision logs.</strong> Teams document which
-          AI decisions they accepted or overrode, and why.
-        </li>
-        <li>
-          <strong>Platform monitors, not just mentors.</strong> Agent
-          Champions observe team-AI interactions throughout, cataloging where
-          the platform's agent-consumable infrastructure is failing.
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="container-site pt-4 pb-20">
-    <div class="container-prose px-0">
-      <p class="font-semibold text-lg">
-        <a href="/new-roles/">Continue to: New Roles for Agentic Developer Relations →</a>
+      <ul class="list-disc pl-6 mt-5 space-y-3">
+        <li><strong>Direction as a first-class role.</strong> Each team has a designated Director who writes the prompts, evaluates agent output, and decides what to accept, reject, or redirect.</li>
+        <li><strong>Verified over voluminous.</strong> Submissions are stress-tested against error conditions and edge cases, not just demoed. Judges score what was checked, not how much was produced.</li>
+        <li><strong>Failure reports are required.</strong> Teams submit where the agent went wrong on the platform and what fixed it. That is the most useful output for the host.</li>
+        <li><strong>Decision logs.</strong> Teams document which agent decisions they accepted or overrode, and why.</li>
+        <li><strong>A commons rule.</strong> Nothing in the event rewards agent-generated issues or pull requests to third-party projects. Contributions follow the target project's AI policy and are disclosed.</li>
+      </ul>
+      <p class="mt-8">
+        <a href="/new-roles/" class="font-semibold">
+          Continue to: Who Does the Work →
+        </a>
       </p>
     </div>
   </section>
